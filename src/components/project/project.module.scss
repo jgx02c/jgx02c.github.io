@@ -1,0 +1,51 @@
+.root {
+  display: block;
+  justify-self: center;
+}
+.paragraphDesc {
+}
+.projectName {
+}
+.project {
+  display: inline-block;
+  margin: auto;
+}
+.pictureProj {
+  margin: 0em 1em 0em 0em;
+  padding: 1.2em;
+  width: 40em;
+  height: 30em;
+  display: inline-block;
+}
+.projH1 {
+  padding-top: 0em;
+  text-align: start;
+  padding-right: 0em;
+}
+.projParagraph {
+  text-align: start;
+}
+.projButton {
+  margin: 0.2em;
+  text-align: start;
+  background-color: rgba(26, 26, 26, 0);
+  border: 3px solid #232392;
+}
+.buttonRowProj {
+  text-align: start;
+  position: static;
+  display: flex;
+}
+.allignProj {
+  display: center;
+  margin-top: 0em;
+  margin-right: 0em;
+  margin-bottom: 0em;
+  margin-left: 0em;
+}
+.imgClass {
+  padding: 0em;
+  margin: 0em 2em 0em 0em;
+  height: 25em;
+  width: 35em;
+}
