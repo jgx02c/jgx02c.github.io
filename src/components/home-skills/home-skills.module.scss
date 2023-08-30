@@ -1,0 +1,34 @@
+.root {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .logoSpace {
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  
+  .background {
+    margin: 16em;
+  }
+  
+  .logosClass {
+    justify-content: center;
+    display: inline-block;
+    margin-left: 20em;
+    margin-right: 20em;
+    padding-top: 6em;
+    padding-bottom: 5em;
+  }
+  
+  .h1 {
+    font-size: 2em;
+    padding-bottom: 1em;
+    padding-top: 1.5em;
+    color: #ffffff;
+  }
+  

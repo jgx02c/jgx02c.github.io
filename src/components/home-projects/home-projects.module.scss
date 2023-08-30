@@ -1,0 +1,26 @@
+.root {
+    box-sizing: border-box;
+    z-index: 1;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+  }
+  
+  .space {
+    padding-top: 2em;
+    display: inline-block;
+    justify-content: center;
+    margin: auto;
+    padding-bottom: 2em;
+  }
+  .projectSize {
+    padding-top: 4em;
+  }
+  .center {
+    margin: 6em 0em 0em;
+  }
+  
+  .h1MyProjects {
+    padding-top: 1em;
+    font-size: 1.8em;
+  }
+  
