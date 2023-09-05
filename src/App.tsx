@@ -11,7 +11,6 @@ function App() {
     return (
         <div className={styles.App}>
             <BrowserRouter>
-          
                  <NavHeader />
                     <Routes>
                     <Route path='/' element={<HomePage />}/>
