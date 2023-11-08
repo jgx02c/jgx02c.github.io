@@ -1,9 +1,5 @@
-import { HomeProjectComponent } from "../components/home-project-component/home-project-component";
 import { HomeProjects } from "../components/home-projects/home-projects";
-import { HomeSkills } from "../components/home-skills/home-skills";
 import { Line } from "../components/line/line";
-import { ProjectsIntro } from "../components/projects-intro/projects-intro";
-
 import  ReactLogo from '../assets/react.svg';
 import JavaLogo  from '../assets/java.svg';
 import  ViteLogo  from '../assets/vite.svg';

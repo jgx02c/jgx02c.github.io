@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styles from './App.module.scss';
 import { NavHeader } from './components/nav-header/nav-header';
-import  ParticlesBackground  from './ParticlesBackground';
 
 import  WorkPage  from "./pages/WorkPage";
 import   HomePage  from "./pages/HomePage";

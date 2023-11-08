@@ -3,6 +3,6 @@ import { HomeSections } from '../../../components/home-sections/home-sections';
 
 export default createBoard({
     name: 'HomeSections',
-    Board: () => <HomeSections />,
+    Board: () => <HomeSections sections={[]} />,
     isSnippet: true,
 });

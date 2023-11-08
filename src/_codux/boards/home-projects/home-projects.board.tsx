@@ -3,6 +3,6 @@ import { HomeProjects } from '../../../components/home-projects/home-projects';
 
 export default createBoard({
     name: 'HomeProjects',
-    Board: () => <HomeProjects />,
+    Board: () => <HomeProjects projects={[]} />,
     isSnippet: true,
 });
