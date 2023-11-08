@@ -1,59 +1,95 @@
-import { Particles } from "react-particles";
+import { useCallback } from "react";
+import type { Container, Engine } from "tsparticles-engine";
+import Particles from "react-tsparticles";
+//import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
+ // if you are going to use `loadSlim`, install the "tsparticles-slim" package too.
 
 const ParticlesBackground = () => {
+    const particlesInit = useCallback(async (engine: Engine) => {
+        console.log(engine);
+
+     
+    }, []);
+
+    const particlesLoaded = useCallback(async (container: Container | undefined) => {
+        await console.log(container);
+    }, []);
     return (
-        <div className="App">
-            <Particles 
+        <Particles
+            id="tsparticles"
+            init={particlesInit}
+            loaded={particlesLoaded}
             options={{
                 background: {
-                    color: "#0e378a",
+                    color: {
+                        value: "#0d47a1",
+                    },
                 },
-                fps_limit: 60,
+                fpsLimit: 120,
                 interactivity: {
-                    detectsOn: "canvas",
                     events: {
+                        onClick: {
+                            enable: true,
+                            mode: "push",
+                        },
+                        onHover: {
+                            enable: true,
+                            mode: "repulse",
+                        },
                         resize: true,
+                    },
+                    modes: {
+                        push: {
+                            quantity: 4,
+                        },
+                        repulse: {
+                            distance: 200,
+                            duration: 0.4,
+                        },
                     },
                 },
                 particles: {
                     color: {
-                        value: "9fafca"
+                        value: "#ffffff",
+                    },
+                    links: {
+                        color: "#ffffff",
+                        distance: 150,
+                        enable: true,
+                        opacity: 0.5,
+                        width: 1,
+                    },
+                    move: {
+                        direction: "none",
+                        enable: true,
+                        outModes: {
+                            default: "bounce",
+                        },
+                        random: false,
+                        speed: 6,
+                        straight: false,
                     },
                     number: {
                         density: {
                             enable: true,
-                            area: 1080
+                            area: 800,
                         },
-                        limit: 0,
-                        value: 400,
+                        value: 80,
                     },
                     opacity: {
-                        animation: {
-                            enable: true,
-                            minimumValue: 0.5,
-                            speed: 1,
-                            sync: false,
-                        },
-                        random: {
-                            enable: true,
-                            minimumValue: 0.05,
-                        },
-                        value: 1,
+                        value: 0.5,
                     },
                     shape: {
                         type: "circle",
                     },
                     size: {
-                        random: {
-                            enable: true,
-                            minimumValue: 0.5,
-                        },
-                        value: 1,
+                        value: { min: 1, max: 5 },
                     },
                 },
-            }}/>
-        </div>
-    )
-}
+                detectRetina: true,
+            }}
+        />
+    );
+};
 
 export default ParticlesBackground;

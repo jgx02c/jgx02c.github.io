@@ -1,8 +1,10 @@
 import classNames from 'classnames';
 import styles from './home-intro.module.scss';
+import selfie from '../../assets/selfie.png';
 
 export interface HomeIntroProps {
     className?: string;
+
 }
 
 /**
@@ -13,19 +15,21 @@ export const HomeIntro = ({ className }: HomeIntroProps) => {
     return (
         <div className={classNames(styles.root, className, styles.intro)}>
             <div>
+                <div className={styles.imageClass}>
+                    <img src={selfie} alt="" className={styles.profileImage} />
+                </div>
                 <h2 className={classNames(styles.intro, styles.h2title)}>
                     Hi, I am Joshua Goodman
                 </h2>
                 <h3 className={styles.h3subtitle}>Software Engineer and Creative Designer</h3>
             </div>
             <p className={styles.textparagraph}>
-                I am currentally working as a software developer at <br></br>
-                Optionality. I spend my days working on projects with<br></br> TypeScript, React.js,
-                Node.js, C# and AWS <br></br>
+                I am currentally working as a website developer at <br></br>
+                Optionality & creative designer at Finned. I am also<br></br> a front-end software engineer.<br></br>
             </p>
             <span className={styles.root}>
-                <button className={styles.button}>&lt;/&gt; Projects</button>
-                <button className={styles.button}>Git Hub</button>
+            <a href="https://www.linkedin.com/in/joshua-goodman-215900220" className={styles.button}>LinkedIn</a>
+                <a href="https://github.com/jgx02c" className={styles.button}>Git Hub</a>
             </span>
         </div>
     );

@@ -5,4 +5,7 @@ export default createBoard({
     name: 'NavHeader',
     Board: () => <NavHeader />,
     isSnippet: true,
+    environmentProps: {
+        windowWidth: 1350
+    }
 });

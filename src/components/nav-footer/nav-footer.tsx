@@ -1,14 +1,45 @@
 import classNames from 'classnames';
 import styles from './nav-footer.module.scss';
+import React from 'react';
+import resume from '../../assets/Joshua Goodman.pdf';
 
 export interface NavFooterProps {
     className?: string;
 }
 
-/**
- * This component was created using Codux's Default new component template.
- * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
- */
-export const NavFooter = ({ className }: NavFooterProps) => {
-    return <div className={classNames(styles.root, className)}>NavFooter</div>;
+const FileDownload: React.FC<{ fileUrl: string, fileName: string }> = ({ fileUrl, fileName }) => {
+    const handleDownload = () => {
+        const link = document.createElement('a');
+        link.href = fileUrl;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
+    return (
+        <a onClick={handleDownload} className={styles.linkClass}>
+            Resume
+        </a>
+    );
+};
+
+export const NavFooter: React.FC<NavFooterProps> = ({ className }) => {
+    const handleEmailClick = () => {
+        window.location.href = 'mailto:goodman.joshua02@gmail.com';
+    };
+
+    return (
+        <div className={classNames(styles.root, className)}>
+            <div>
+                <h1 className={styles.contactClass}>Contact</h1>
+                <span>
+                    <a href="https://www.instagram.com/jgx02/" className={styles.linkClass}>Instagram</a>
+                    <a href="https://www.linkedin.com/in/joshua-goodman-215900220" className={styles.linkClass}>LinkedIn</a>
+                    <a onClick={handleEmailClick} className={styles.linkClass}>Email</a>
+                    <FileDownload fileUrl={resume} fileName="Joshua Goodman CV.pdf" />
+                </span>
+            </div>
+        </div>
+    );
 };

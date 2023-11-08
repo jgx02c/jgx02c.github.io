@@ -1,0 +1,47 @@
+.root {
+    display: inline-block;
+}
+
+.divSVG {
+    align-items: center;
+    width: 70em;
+    display: inline;
+    /* Changed to display: grid to utilize grid properties */
+    grid-template-columns: repeat(7, 1fr);
+    /* Changed to 7 columns */
+    justify-content: center;
+    /* Added justify-content to center the columns */
+    isolation: isolate;
+    mix-blend-mode: normal;
+}
+
+.spanSVG {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-flow: row;
+    isolation: isolate;
+    mix-blend-mode: normal;
+}
+
+.svgContainer {
+    isolation: isolate;
+    mix-blend-mode: normal;
+    margin: 0.5em;
+}
+
+/* Centering the last row of logos */
+.divSVG .svgContainer:last-child {
+    justify-content: center;
+    display: flex;
+    /* Ensures the flexbox behavior for centering */
+}
+
+.spanSVG .svgContainer:last-child {
+    justify-content: center;
+    display: flex;
+    /* Ensures the flexbox behavior for centering */
+}
+
+.skillsClass {
+    padding-bottom: 1em;
+}

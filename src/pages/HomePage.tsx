@@ -1,171 +1,53 @@
 import { HomeIntro } from '../components/home-intro/home-intro';
-import { HomeProjects } from '../components/home-projects/home-projects';
-import { HomeSkills } from '../components/home-skills/home-skills'
-import { HomeBusiness } from '../components/home-business/home-business';
-import { HomeEducation } from '../components/home-education/home-education'; 
-import { HomeContact } from '../components/home-contact/home-contact';
 import { NavFooter } from '../components/nav-footer/nav-footer';
-import  ParticlesBackground  from '../ParticlesBackground';
+import { Line } from '../components/line/line';
+import { HomeSections } from '../components/home-sections/home-sections';
 
-import Styles from './HomePage.module.scss';
+import img1 from '../assets/finned_logo.png';
+import img2 from '../assets/optionality_logo.png';
+import img3 from '../assets/jglogo.png';
+import img1_1 from '../assets/mug.png';
+import img2_2 from '../assets/artboard.png';
+import img3_3 from '../assets/jg_img.png';
 
 function HomePage () {
 
-    const projects = [
+    const sections = [
         {
             id: 1,
-            title: 'Nerf Turret Defender',
-            imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-            description: 'hats section',
-            demo: true,
-            demoLink: '',
-            code: true,
-            codeLink: '',
-            live: true,
-            liveLink: '',
+            titleLogo: img1,
+            subText: 'Passion Worth Sharing',
+            description: 'The epitome of automotive heritage and modern craftsmanship, meticulously designed to pay homage to the timeless elegance.',
+            linkText: 'View Website',
+            link: 'https://www.finnedmugs.com',
+            image: img1_1,
         },
         {
             id: 2,
-            title: 'Open Tune',
-            imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
-            description: 'jackets section',
-            demo: true,
-            demoLink: '',
-            code: true,
-            codeLink: '',
-            live: true,
-            liveLink: '',
+            titleLogo: img2,
+            subText: 'Flexible Business Services & Technology Solutions',
+            description: 'Our clients include, local restaurants, online retailers, fitness brands and many more.',
+            linkText: 'View Website',
+            link: 'https://www.optionality.biz',
+            image: img2_2,
         },
         {
             id: 3,
-            title: 'Order Side (Front)',
-            imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
-            description: 'sneakers section',
-            demo: true,
-            demoLink: '',
-            code: true,
-            codeLink: '',
-            live: true,
-            liveLink: '',
-        },
-        {
-            id: 4,
-            title: 'Order Side (Rear)',
-            imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
-            description: 'womens section',
-            demo: true,
-            demoLink: '',
-            code: true,
-            codeLink: '',
-            live: true,
-            liveLink: '',
-        },
-        {
-            id: 5,
-            title: 'OrderSide Mobile User',
-            imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-            description: 'mens section',
-            demo: true,
-            demoLink: '',
-            code: true,
-            codeLink: '',
-            live: true,
-            liveLink: '',
-        },
-        {
-            id: 6,
-            title: 'OrderSide Mobile Host',
-            imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-            description: 'mens section',
-            demo: true,
-            demoLink: '',
-            code: true,
-            codeLink: '',
-            live: true,
-            liveLink: '',
-        },
-        {
-            id: 7,
-            title: 'Open Tune Ignition',
-            imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-            description: 'mens section',
-            demo: true,
-            demoLink: '',
-            code: true,
-            codeLink: '',
-            live: true,
-            liveLink: '',
-        },
-        {
-            id: 8,
-            title: 'Cash4Clunkers (Front)',
-            imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-            description: 'mens section',
-            demo: true,
-            demoLink: '',
-            code: true,
-            codeLink: '',
-            live: true,
-            liveLink: '',
-        },
-        {
-            id: 9,
-            title: 'Cash4Clunkers (Rear)',
-            imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-            description: 'mens section',
-            demo: true,
-            demoLink: '',
-            code: true,
-            codeLink: '',
-            live: true,
-            liveLink: '',
-        },
-        {
-            id: 10,
-            title: 'Pong in C#',
-            imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-            description: 'mens section',
-            demo: true,
-            demoLink: '',
-            code: true,
-            codeLink: '',
-            live: true,
-            liveLink: '',
-        },
-        {
-            id: 11,
-            title: 'Uni Project #1',
-            imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-            description: 'mens section',
-            demo: true,
-            demoLink: '',
-            code: true,
-            codeLink: '',
-            live: true,
-            liveLink: '',
-        },
-        {
-            id: 12,
-            title: 'Uni Project #2',
-            imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-            description: 'mens section',
-            demo: true,
-            demoLink: '',
-            code: true,
-            codeLink: '',
-            live: true,
-            liveLink: '',
-        },
+            titleLogo: img3,
+            subText: 'Software Engineer',
+            description: 'Programming Projects from University and self-intrist. Here, you can find a portfolio of my programming skills',
+            linkText: 'View Projects',
+            link: 'https://joshuagoodman.me/projects',
+            image: img3_3,
+        }
     ];
 
+    
     return (
         <div>
                 <HomeIntro />
-                <HomeProjects projects={projects} />
-                <HomeSkills />
-                 <HomeBusiness />
-                 <HomeEducation />
-                 <HomeContact />
+                <Line />
+                <HomeSections sections={sections} />
                 <NavFooter />
             </div>
     )

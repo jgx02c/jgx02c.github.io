@@ -1,0 +1,92 @@
+.root {
+    background-color: #FFFFFF;
+    width: 60em;
+    display: inline-block;
+    border-radius: 1em;
+}
+
+.mainSpan {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+}
+
+.divImg {
+    margin: 2em 10em;
+}
+
+.image {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 1.8em;
+}
+
+.mainDiv {
+    display: block;
+}
+
+.imgLogo {
+    width: 10em;
+    margin-top: 0em;
+    padding: 0em;
+}
+
+.h3Class {
+    text-align: left;
+}
+
+.divParagraph {
+    margin-top: 2em;
+    margin-left: 10em;
+    font-size: 1.25em;
+}
+
+.paragraph {
+    text-align: left;
+    font-size: 1em;
+    font-weight: 100;
+}
+
+.linkClass {
+    align-self: center;
+    color: #000000;
+    font-size: 0.9em;
+    font-weight: 700;
+}
+
+.spanlink {
+    display: flex;
+    margin-top: 0.5em;
+    height: 1em;
+    align-items: center;
+}
+
+.spanLogo {
+    display: flex;
+    width: 15em;
+    margin: 2em 0em 0em;
+}
+
+.preLogoImage {
+    width: 1.25em;
+    height: 1.25em;
+    align-self: center;
+}
+
+.subtextDiv {
+    display: block;
+    padding-top: 0.8em;
+}
+
+.subText {
+    font-size: 1.2em;
+    font-weight: 100;
+}
+
+.arrowImg {
+    width: 0.7em;
+    height: 0.7em;
+    padding: 0em;
+    margin-left: 0.5em;
+}

@@ -1,32 +1,57 @@
 .root {
     padding-top: 1em;
     padding-bottom: 2em;
-  }
-  .navLink {
-    margin-right: 2em;
+}
+
+.navLink {
+    margin-right: 1em;
     text-decoration-line: none;
-    color: #ffffff;
+    color: #000000;
     align-self: baseline;
     display: inline-block;
-  }
-  .spanClass {
+    font-weight: 300;
+    font-size: 1em;
+    margin-left: 1em;
+    border-radius: 1.5em;
+    padding: 0.25em;
+}
+
+.spanClass {
     padding: 1.5em;
+    justify-content: space-between;
     display: flex;
-    align-items: stretch;
-    justify-items: center;
-  }
-  .imgNav {
+    width: 70em;
+}
+
+.imgNav {
     padding-right: 2em;
     margin-right: 20em;
     display: inline;
     margin-top: 0em;
     width: 20em;
-  }
-  .div {
+}
+
+.div {
     display: inline;
     align-self: center;
-  }
-  .divContent {
+    border-radius: 2em;
+    background-color: #EBEBEB;
+    padding: 0.6em;
+}
+
+.divContent {
     display: inline-block;
-  }
-  
+}
+
+.nameH1 {
+    font-family: "BillionDreams";
+    font-weight: 200;
+    font-size: 2.5em;
+}
+
+@font-face {
+    font-family: "BillionDreams";
+    src: local("BillionDreams"),
+        url("../../assets/BillionDreams.ttf") format("truetype");
+    font-weight: bold;
+}

@@ -3,9 +3,10 @@ import styles from './App.module.scss';
 import { NavHeader } from './components/nav-header/nav-header';
 import  ParticlesBackground  from './ParticlesBackground';
 
-import  ContactPage  from "./pages/ContactPage";
+import  WorkPage  from "./pages/WorkPage";
 import   HomePage  from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
+import  ContactPage  from "./pages/ContactPage";
 
 function App() {
     return (
@@ -14,8 +15,9 @@ function App() {
                  <NavHeader />
                     <Routes>
                     <Route path='/' element={<HomePage />}/>
-                    <Route path='/contact' element={<ContactPage />}/>
+                    <Route path='/work' element={<WorkPage />}/>
                     <Route path='/projects' element={<ProjectsPage />}/>
+                    <Route path='/contact' element={<ContactPage />}/>
                 </Routes>
             </BrowserRouter>
         </div>

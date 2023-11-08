@@ -3,35 +3,80 @@
     padding-top: 0em;
     margin: 0em 2px 2px;
     padding-bottom: 3em;
-  }
-  
-  .intro {
+}
+
+.intro {
     text-align: center;
     padding-top: 1.5em;
     padding-right: 0px;
     margin-right: 15px;
     margin-left: 15px;
     margin-top: 0em;
-  }
-  .button {
-    padding: 1em 2.5em;
-    margin-top: 1.5em;
-    margin-right: 1em;
-    margin-left: 1em;
-    background-color: #2010a2;
-    border: 3px solid #ffffff;
-    color: #ffffff;
-  }
-  .h2title {
+}
+
+.button {
+    background-color: #FFFFFF;
+    border: 1px solid rgb(209, 213, 219);
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: #111827;
+    font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    padding: 0.75rem 1rem .75rem;
+    margin-left: .5em;
+    margin-left: .5em;
+    text-align: center;
+    text-decoration: none #D1D5DB solid;
+    text-decoration-thickness: auto;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-right: 0.5em;
+}
+
+.button:hover {
+    background-color: rgb(249, 250, 251);
+}
+
+.button:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.button:focus-visible {
+    box-shadow: none;
+}
+
+.h2title {
+    color: #000000;
+    padding-top: 0.2em;
     font-size: 3.4em;
-    color: #ffffff;
-  }
-  .h3subtitle {
+    font-weight: 300;
+}
+
+.h3subtitle {
     font-size: 1.4em;
-    color: #ffffff;
-  }
-  .textparagraph {
-    font-size: 1.5em;
-    color: #fffefe;
-  }
-  
+    color: #000000;
+    font-weight: 400;
+    margin: 0.3em;
+}
+
+.textparagraph {
+    font-size: 1.65em;
+    color: #000000;
+    font-weight: 200;
+    margin-bottom: 1em;
+}
+
+.imageClass {}
+
+.profileImage {
+    border-radius: 20em;
+    width: 8em;
+    height: 8em;
+    border: 5px solid #C0C0C0;
+}

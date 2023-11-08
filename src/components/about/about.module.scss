@@ -1,0 +1,41 @@
+.root {}
+
+.divIntro {
+    width: 100%;
+    overflow: auto;
+}
+
+.paragraph {
+    font-size: 1.25em;
+    font-family: Arial, sans-serif;
+}
+
+.divText {
+    text-align: start;
+    margin-left: 12em;
+    padding: 10px;
+}
+
+
+.imageClass {
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    float: left;
+    margin: 10px;
+    border: 5px solid #C0C0C0;
+}
+
+@media (max-width: 600px) {
+
+    .text,
+    .image {
+        width: 100%;
+        float: none;
+    }
+}
+
+.divMaster {
+    width: 50em;
+    display: inline-block;
+}

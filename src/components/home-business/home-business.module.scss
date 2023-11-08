@@ -1,2 +1,32 @@
 .root {
 }
+.businessSpan {
+  gap: 5em;
+  display: grid;
+  grid-auto-flow: column;
+}
+.businessDiv {
+  background-color: #ffffff;
+  padding: 0.5em 2em 0.5em 1em;
+}
+.imgTxtSpan {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.imgClass {
+  width: 10em;
+  height: 10em;
+  padding: 2em;
+}
+.divText {
+}
+.h2Class {
+  font-size: 1.2em;
+  display: flex;
+  align-items: start;
+  justify-items: start;
+}
+.paragraphClass {
+  width: 15em;
+}
