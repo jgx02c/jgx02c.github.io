@@ -13,6 +13,8 @@
     /* Added justify-content to center the columns */
     isolation: isolate;
     mix-blend-mode: normal;
+    overflow: hidden;
+    background: white;
 }
 
 .spanSVG {
@@ -21,12 +23,28 @@
     grid-auto-flow: row;
     isolation: isolate;
     mix-blend-mode: normal;
+    background: white;
+}
+
+.logoSpace {
+    height: 6.5em;
+    width: 6.5em;
+    margin: 0.35em;
+}
+
+.svgA {
+    
 }
 
 .svgContainer {
     isolation: isolate;
     mix-blend-mode: normal;
     margin: 0.5em;
+}
+
+.svgContainer:hover {
+    transition: 0.3s;
+    transform: scale(1.2);
 }
 
 /* Centering the last row of logos */
@@ -39,6 +57,8 @@
 .spanSVG .svgContainer:last-child {
     justify-content: center;
     display: flex;
+    isolation: isolate;
+    mix-blend-mode: normal;
     /* Ensures the flexbox behavior for centering */
 }
 

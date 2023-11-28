@@ -1,26 +1,26 @@
 import { HomeProjects } from "../components/home-projects/home-projects";
 import { Line } from "../components/line/line";
-import  ReactLogo from '../assets/react.svg';
-import JavaLogo  from '../assets/java.svg';
-import  ViteLogo  from '../assets/vite.svg';
-import  TypescriptLogo  from '../assets/typescript.svg';
-import ScssLogo  from '../assets/scss.svg';
-import AwsLogo from '../assets/aws.svg';
-import  BootstrapLogo  from '../assets/bootstrap.svg';
-import  CssLogo  from '../assets/css.svg';
-import  FirebaseLogo  from '../assets/firebase.svg';
-import HtmlfiveLogo  from '../assets/htmlfive.svg';
-import JavascriptLogo from '../assets/javascript.svg';
-import  MsdotnetLogo  from '../assets/msdotnet.svg';
-import  MysqlLogo  from '../assets/mysql.svg';
-import NodejsLogo from '../assets/nodejs.svg';
-import ShopifyLogo from '../assets/shopify.svg';
-import StripeLogo from '../assets/stripe.svg';
-import CLogo from '../assets/c.svg';
-import CplusplusLogo from '../assets/cplusplus.svg';
-import CsharpLogo from '../assets/csharp.svg';
-import MongodbLogo from '../assets/mongodb.svg';
-import PythonLogo from '../assets/python-logo-only.svg';
+import  ReactLogo from '../assets/svg/react.svg';
+import JavaLogo  from '../assets/svg/java.svg';
+import  ViteLogo  from '../assets/svg/vite.svg';
+import  TypescriptLogo  from '../assets/svg/typescript.svg';
+import ScssLogo  from '../assets/svg/scss.svg';
+import AwsLogo from '../assets/svg/aws.svg';
+import  BootstrapLogo  from '../assets/svg/bootstrap.svg';
+import  CssLogo  from '../assets/svg/css.svg';
+import  FirebaseLogo  from '../assets/svg/firebase.svg';
+import HtmlfiveLogo  from '../assets/svg/htmlfive.svg';
+import JavascriptLogo from '../assets/svg/javascript.svg';
+import  MsdotnetLogo  from '../assets/svg/msdotnet.svg';
+import  MysqlLogo  from '../assets/svg/mysql.svg';
+import NodejsLogo from '../assets/svg/nodejs.svg';
+import ShopifyLogo from '../assets/svg/shopify.svg';
+import StripeLogo from '../assets/svg/stripe.svg';
+import CLogo from '../assets/svg/c.svg';
+import CplusplusLogo from '../assets/svg/cplusplus.svg';
+import CsharpLogo from '../assets/svg/csharp.svg';
+import MongodbLogo from '../assets/svg/mongodb.svg';
+import PythonLogo from '../assets/svg/python.svg';
 import Blank from '../assets/blank.png';
 import project1PNG from '../assets/collegiateSite.png';
 import project2PNG from '../assets/travell4all.png';
@@ -46,9 +46,9 @@ function ProjectsPage () {
             madeWith1: TypescriptLogo,
             madeWith2: ReactLogo,
             madeWith3: MysqlLogo,
-            madeWith4: Blank,
-            madeWith5: Blank,
-            madeWith6: Blank,
+            madeWith4: JavascriptLogo,
+            madeWith5: NodejsLogo,
+            madeWith6: ViteLogo,
             demo: false,
             demoLink: '',
             code: true,
@@ -61,8 +61,8 @@ function ProjectsPage () {
             title: 'Collegiate Standard Inventory',
             imageUrl: project1PNG,
             description: 'For this project, I developed a small application to replace a pre-existing outdated MS-Acess application developed for friend I used to work for before starting Optionality and Finned. This application makes it easier to train employees on how to use the system and uses pre-existing sql data tables. Although still in development, this application will have the ability to pull and process sales from Shopify, Amazon, Ebay and Etsy.',
-            madeWith1: JavascriptLogo,
-            madeWith2: TypescriptLogo,
+            madeWith1: TypescriptLogo,
+            madeWith2: JavascriptLogo,
             madeWith3: NodejsLogo,
             madeWith4: MysqlLogo,
             madeWith5: ShopifyLogo,
@@ -104,7 +104,7 @@ function ProjectsPage () {
             madeWith5: Blank,
             madeWith6: Blank,
             demo: true,
-            demoLink: '',
+            demoLink: 'https://www.youtube.com/watch?v=_ELVZCTzOtQ',
             code: true,
             codeLink: 'https://github.com/jgx02c/OpenTune',
             live: false,

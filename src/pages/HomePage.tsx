@@ -6,9 +6,11 @@ import { HomeSections } from '../components/home-sections/home-sections';
 import img1 from '../assets/finned_logo.png';
 import img2 from '../assets/optionality_logo.png';
 import img3 from '../assets/jglogo.png';
+import img4 from '../assets/jglogo.png';
 import img1_1 from '../assets/mug.png';
 import img2_2 from '../assets/artboard.png';
 import img3_3 from '../assets/jg_img.png';
+import img4_4 from '../assets/jg_img.png';
 
 function HomePage () {
 
@@ -35,7 +37,7 @@ function HomePage () {
             id: 3,
             titleLogo: img3,
             subText: 'Software Engineer',
-            description: 'Programming Projects from University and self-intrist. Here, you can find a portfolio of my programming skills',
+            description: 'Programming Projects from University and self-interest. Here, you can find a portfolio of my programming projects and skills.',
             linkText: 'View Projects',
             link: 'https://joshuagoodman.me/projects',
             image: img3_3,

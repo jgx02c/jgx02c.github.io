@@ -1,0 +1,23 @@
+.root {}
+
+.centerLine {
+    height: 40em;
+    background-color: #D5D5D5;
+    border-radius: 10em;
+    width: 0.25em;
+}
+
+.spanTimeline {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.divLeftTimeline {}
+
+.divTimelineRight {}
+
+.divCenter {
+    display: inline-block;
+    width: 40em;
+}

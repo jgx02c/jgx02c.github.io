@@ -1,3 +1,11 @@
+:root {
+  font-family: 'Myriad Pro Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Minion Pro Semibold'), url('../src/assets/Minion.woff2') format('woff');
+
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -6,7 +14,7 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Nunito", sans-serif, ;
+  font-family: 'Minion Pro Semibold' ;
 }
 
 body {
@@ -24,7 +32,7 @@ a {
 }
 
 .main-font {
-  font-family: "Nunito", sans-serif;
+  font-family: "Minion Pro Semibold";
 }
 
 .text-center {
