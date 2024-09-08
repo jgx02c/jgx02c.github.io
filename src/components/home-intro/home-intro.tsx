@@ -4,13 +4,8 @@ import selfie from '../../assets/selfie.png';
 
 export interface HomeIntroProps {
     className?: string;
-
 }
 
-/**
- * This component was created using Codux's Default new component template.
- * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
- */
 export const HomeIntro = ({ className }: HomeIntroProps) => {
     return (
         <div className={classNames(styles.root, className, styles.intro)}>
@@ -24,11 +19,11 @@ export const HomeIntro = ({ className }: HomeIntroProps) => {
                 <h3 className={styles.h3subtitle}>Software Engineer and Creative Designer</h3>
             </div>
             <p className={styles.textparagraph}>
-                I am currentally working as a website developer at <br></br>
-                Optionality & creative designer at Finned. I am also<br></br> a front-end software engineer.<br></br>
+                I am currentally working as a Full Stack developer at <br></br>
+                Piclist. I also am a creative designer at Finned  <br></br> and founded Optionality.<br></br>
             </p>
             <span className={styles.root}>
-            <a href="https://www.linkedin.com/in/joshua-goodman-215900220" className={styles.button}>LinkedIn</a>
+            <a href="https://www.linkedin.com/in/joshuajgoodman" className={styles.button}>LinkedIn</a>
                 <a href="https://github.com/jgx02c" className={styles.button}>Git Hub</a>
             </span>
         </div>

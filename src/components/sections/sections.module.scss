@@ -1,35 +1,41 @@
 .root {
     background-color: #FFFFFF;
-    width: 60em;
-    display: inline-block;
-    border-radius: 1em;
+    width: 100%;
+    display: block; // Changed to block for better control
+    border-radius: 1.5em; // Slightly increased border-radius for a softer look
+    padding: 2em; // Increased padding for more spacious layout
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Added shadow for depth
+    margin-bottom: 2em; // Added margin for spacing between sections
 }
 
 .mainSpan {
     display: flex;
-    justify-content: space-between;
-    margin-left: 2.5em;
-    margin-right: 2.5em;
+    flex-direction: column;
+    gap: 1.5em; // Added gap between elements for better spacing
+    margin-bottom: 1.5em; // Added margin for spacing
 }
 
 .divImg {
-    margin: 2em 10em;
+    margin-top: 1.5em; // Increased top margin for spacing
+    text-align: center;
 }
 
 .image {
     max-width: 100%;
-    max-height: 100%;
-    border-radius: 1.8em;
+    height: auto;
+    border-radius: 1.2em; // Slightly decreased border-radius for a sleeker look
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Added shadow for image depth
 }
 
 .mainDiv {
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
 .imgLogo {
-    width: 10em;
-    margin-top: 0em;
-    padding: 0em;
+    width: 12em; // Increased logo size for better visibility
+    margin-top: 0.5em; // Added margin-top for spacing
+    padding: 0;
 }
 
 .h3Class {
@@ -37,56 +43,86 @@
 }
 
 .divParagraph {
-    margin-top: 2em;
-    margin-left: 10em;
-    font-size: 1.25em;
+    margin-top: 1.5em; // Increased top margin for spacing
+    font-size: 1.1em; // Slightly increased font size
+    line-height: 1.6; // Added line-height for readability
 }
 
 .paragraph {
     text-align: left;
-    font-size: 1em;
-    font-weight: 100;
+    font-size: 1.1em;
+    font-weight: 300; // Lightened font weight for a modern look
+    line-height: 1.6; // Added line-height for readability
 }
 
 .linkClass {
-    align-self: center;
-    color: #000000;
-    font-size: 0.9em;
-    font-weight: 700;
+    color: #007BFF; // Changed color to a more modern blue
+    font-size: 1em; // Adjusted font size
+    font-weight: 600; // Adjusted font weight for prominence
+    text-decoration: none; // Removed underline for cleaner look
+    transition: color 0.3s; // Added transition for hover effect
+}
+
+.linkClass:hover {
+    color: #0056b3; // Darkened color on hover for interaction
 }
 
 .spanlink {
     display: flex;
-    margin-top: 0.5em;
-    height: 1em;
     align-items: center;
+    gap: 0.5em; // Added gap between text and icon
+    margin-top: 0.5em;
 }
 
 .spanLogo {
     display: flex;
-    width: 15em;
-    margin: 2em 0em 0em;
+    justify-content: center;
+    gap: 1em; // Added gap between images
 }
 
 .preLogoImage {
-    width: 1.25em;
-    height: 1.25em;
-    align-self: center;
+    width: 1.5em; // Slightly increased size
+    height: 1.5em; // Slightly increased size
+    margin-right: 0.5em;
 }
 
 .subtextDiv {
-    display: block;
-    padding-top: 0.8em;
+    padding-top: 1em; // Increased padding for more spacing
 }
 
 .subText {
-    font-size: 1.2em;
-    font-weight: 100;
+    font-size: 1.3em; // Increased font size for emphasis
+    font-weight: 400; // Adjusted font weight
+    text-align: center;
 }
 
 .arrowImg {
-    width: 0.7em;
-    height: 0.7em;
-    padding: 0em;
+    width: 1em; // Increased size for better visibility
+    height: 1em; // Increased size for better visibility
     margin-left: 0.5em;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .mainSpan {
+        flex-direction: row;
+        gap: 2em; // Added gap between elements
+    }
+
+    .divParagraph {
+        margin-top: 2em;
+        font-size: 1.2em; // Slightly increased font size
+    }
+
+    .subText {
+        text-align: left;
+    }
+
+    .spanLogo {
+        justify-content: flex-start;
+    }
+
+    .divImg {
+        margin: 2em 0; // Adjusted margins for spacing
+    }
 }

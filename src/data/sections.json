@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "titleLogo": "../assets/dialogica_logo.png",
+        "subText": "Pic. Post. Sell.",
+        "description": "Optimize and manage your ecommerce side hustle backed by A.I.",
+        "linkText": "View Website",
+        "link": "https://piclist.ai",
+        "image": "../assets/dashboard.png"
+    },
+    {
+        "id": 2,
+        "titleLogo": "../assets/finned_logo.png",
+        "subText": "Passion Worth Sharing",
+        "description": "The epitome of automotive heritage and modern craftsmanship, meticulously designed to pay homage to the timeless elegance.",
+        "linkText": "View Website",
+        "link": "https://www.finnedmugs.com",
+        "image": "../assets/mug.png"
+    },
+    {
+        "id": 3,
+        "titleLogo": "../assets/optionality_logo.png",
+        "subText": "Flexible Business Services & Technology Solutions",
+        "description": "Our clients include, local restaurants, online retailers, fitness brands and many more.",
+        "linkText": "View Website",
+        "link": "https://www.optionality.biz",
+        "image": "../assets/artboard.png"
+    },
+    {
+        "id": 4,
+        "titleLogo": "../assets/jglogo.png",
+        "subText": "Software Engineer",
+        "description": "Programming Projects from University and self-interest. Here, you can find a portfolio of my programming projects and skills.",
+        "linkText": "View Projects",
+        "link": "https://joshuagoodman.me/projects",
+        "image": "../assets/jg_img.png"
+    }
+]

@@ -2,7 +2,6 @@ import classNames from 'classnames';
 import styles from './work-card-two.module.scss';
 import png from '../../assets/ssCase.png';
 
-
 export interface WorkCardTwoProps {
     className?: string;
 }
@@ -14,14 +13,12 @@ export interface WorkCardTwoProps {
 export const WorkCardTwo = ({ className }: WorkCardTwoProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-           
             <div className={styles.divCardTwo}>
-          
-                <img src={png} alt="" className={styles.imgCardTwo} />
+                <img src={png} alt="Backend Configuration" className={styles.imgCardTwo} />
                 <h3 className={styles.h3CardTwo}>Backend Configuration</h3>
                 <p className={styles.parCardOne}>
-                    Wordpress Backend Configuration with Online Ordering Services 
-                </p>        
+                    Wordpress Backend Configuration with Online Ordering Services
+                </p>
             </div>
         </div>
     );

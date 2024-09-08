@@ -22,38 +22,32 @@ export interface project {
     liveLink: string;
 }
 
-export const HomeProjectComponent: React.FC<project> = ({ className, id, imageUrl, title, description, madeWith1, madeWith2, madeWith3, madeWith4, madeWith5, madeWith6, code, codeLink, demo, demoLink, live, liveLink }) => {
+export const HomeProjectComponent: React.FC<project> = ({
+    className, id, imageUrl, title, description,
+    madeWith1, madeWith2, madeWith3, madeWith4, madeWith5, madeWith6,
+    code, codeLink, demo, demoLink, live, liveLink
+}) => {
 
-    const isDemoTrue = (demo: boolean) => {
-        return demo === true;
-    };
-
-    const isCodeTrue = (code: boolean) => {
-        return code === true;
-    };
-
-    const isLiveTrue = (live: boolean) => {
-        return live === true;
-    };
+    const isDemoTrue = (demo: boolean) => demo === true;
+    const isCodeTrue = (code: boolean) => code === true;
+    const isLiveTrue = (live: boolean) => live === true;
 
     return (
-        <div key={id} className={styles.masterDiv}>
+        <div key={id} className={classNames(styles.masterDiv, className)}>
             <div className={styles.mainDiv}>
                 <span className={styles.main_span}>
                     <div className={styles.divLeft}>
                         <div>
                             <h1 className={styles.h1Class}>{title}</h1>
                             <span className={styles.span_logo}>
-                                <div>
-                                    <span className={styles.spanLogo}>
-                                        <h4 className={styles.h4Class}>Made With:</h4>
-                                        <img src={madeWith1} alt="" className={styles.languageLogo} />
-                                        <img src={madeWith2} alt="" className={styles.languageLogo} />
-                                        <img src={madeWith3} alt="" className={styles.languageLogo} />
-                                        <img src={madeWith4} alt="" className={styles.languageLogo} />
-                                        <img src={madeWith5} alt="" className={styles.languageLogo} />
-                                        <img src={madeWith6} alt="" className={styles.languageLogo} />
-                                    </span>
+                                <div className={styles.spanLogo}>
+                                    <h4 className={styles.h4Class}>Made With:</h4>
+                                    <img src={madeWith1} alt="" className={styles.languageLogo} />
+                                    <img src={madeWith2} alt="" className={styles.languageLogo} />
+                                    <img src={madeWith3} alt="" className={styles.languageLogo} />
+                                    <img src={madeWith4} alt="" className={styles.languageLogo} />
+                                    <img src={madeWith5} alt="" className={styles.languageLogo} />
+                                    <img src={madeWith6} alt="" className={styles.languageLogo} />
                                 </div>
                             </span>
                             <p className={styles.paragraph}>{description}</p>

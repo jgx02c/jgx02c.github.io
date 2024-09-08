@@ -13,13 +13,11 @@ export interface WorkCardSixProps {
 export const WorkCardSix = ({ className }: WorkCardSixProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            
-            <div className={styles.divCardThree}>
-                <img src={png} alt="" className={styles.imgCardThree} />
-                <h2 className={styles.h2CardThree}>Passion</h2>
-                <p className={styles.parCardThree}>Idea, Design, Branding, Manufacturing, Marketing & Patent</p>
+            <div className={styles.divCardSix}>
+                <img src={png} alt="Passion" className={styles.imgCardSix} />
+                <h2 className={styles.h2CardSix}>Passion</h2>
+                <p className={styles.parCardSix}>Idea, Design, Branding, Manufacturing, Marketing & Patent</p>
             </div>
-         
         </div>
     );
 };

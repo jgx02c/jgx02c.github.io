@@ -1,29 +1,29 @@
 .root {
-    display: inline-block;
+    width: 100%;
+  
+}
+
+.skillsClass {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1em;
+    text-align: center;
+    width: 100%;
 }
 
 .divSVG {
-    align-items: center;
-    width: 70em;
-    display: inline;
-    /* Changed to display: grid to utilize grid properties */
-    grid-template-columns: repeat(7, 1fr);
-    /* Changed to 7 columns */
+    display: flex;
     justify-content: center;
-    /* Added justify-content to center the columns */
-    isolation: isolate;
-    mix-blend-mode: normal;
-    overflow: hidden;
-    background: white;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .spanSVG {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-auto-flow: row;
-    isolation: isolate;
-    mix-blend-mode: normal;
-    background: white;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: .5vh;
+    width: 100%;
+    max-width: 70em;
 }
 
 .logoSpace {
@@ -32,11 +32,10 @@
     margin: 0.35em;
 }
 
-.svgA {
-    
-}
-
 .svgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     isolation: isolate;
     mix-blend-mode: normal;
     margin: 0.5em;
@@ -47,21 +46,25 @@
     transform: scale(1.2);
 }
 
-/* Centering the last row of logos */
-.divSVG .svgContainer:last-child {
-    justify-content: center;
-    display: flex;
-    /* Ensures the flexbox behavior for centering */
+/* Media Queries */
+@media (min-width: 768px) {
+    .spanSVG {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .logoSpace {
+        height: 7em;
+        width: 7em;
+    }
 }
 
-.spanSVG .svgContainer:last-child {
-    justify-content: center;
-    display: flex;
-    isolation: isolate;
-    mix-blend-mode: normal;
-    /* Ensures the flexbox behavior for centering */
-}
+@media (min-width: 1024px) {
+    .spanSVG {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
 
-.skillsClass {
-    padding-bottom: 1em;
+    .logoSpace {
+        height: 7.5em;
+        width: 7.5em;
+    }
 }

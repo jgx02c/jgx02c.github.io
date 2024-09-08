@@ -13,15 +13,13 @@ export interface WorkCard1Props {
 export const WorkCardOne = ({ className }: WorkCard1Props) => {
     return (
         <div className={classNames(styles.root, className)}>
-           
             <div className={styles.cardOneDiv}>
                 <img src={png} alt="" className={styles.imgCardOne} />
                 <h3 className={styles.h3CardOne}>Web Design</h3>
                 <p className={styles.parCardTwo}>
-                    Website with Content Creation featuring Lottie Animations{' '}
+                    Website with Content Creation featuring Lottie Animations
                 </p>
             </div>
-           
         </div>
     );
 };

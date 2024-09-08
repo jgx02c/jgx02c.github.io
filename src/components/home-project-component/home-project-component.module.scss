@@ -1,62 +1,100 @@
-.project_left {
-    width: 50%;
-
-
+.masterDiv {
+    border: 1px solid #DBDBDB;
+    border-radius: 0.8em;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 60em;
+    background-color: #F2F2F2;
+    padding: 1em;
+    margin: 1em 0;
 }
 
-.main {}
-
-.h2_class {
-    text-align: center;
-    margin-bottom: 3rem;
-    font-weight: bold;
+.mainDiv {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .main_span {
     display: flex;
+    align-items: center;
 }
 
-.span_logo {
-    display: grid;
-    grid-auto-flow: row;
+.divRight{
+    width: 50%;
+}
+
+.divLeft {
+    width: 50%;
+    margin-right: 2vh;
+}
+
+.divLeft {
+    margin-bottom: 1em;
+}
+
+.h1Class {
+    text-align: left;
+    font-size: 2rem;
+    font-weight: 300;
     margin-bottom: 0.5em;
 }
 
-.button {
+.span_logo {
+    margin-bottom: 0.5em;
+}
 
-    margin-right: .5rem;
-    margin-left: .5rem;
+.spanLogo {
+    display: flex;
     align-items: center;
-    appearance: none;
+    flex-wrap: wrap;
+}
+
+.h4Class {
+    font-size: 1em;
+    margin-right: 0.5em;
+}
+
+.languageLogo {
+    height: 2em;
+    width: 2em;
+    margin: 0.25em;
+}
+
+.paragraph {
+    text-align: left;
+    max-width: 100%;
+    font-weight: 200;
+    margin-bottom: 1em;
+}
+
+.divButton {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button {
+    margin: 0.5em;
+    align-items: center;
     background-color: #fff;
     border-radius: 24px;
     border-style: none;
     box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
-    box-sizing: border-box;
     color: #3c4043;
     cursor: pointer;
     display: inline-flex;
-    fill: currentcolor;
     font-family: "Google Sans", Roboto, Arial, sans-serif;
     font-size: 14px;
     font-weight: 500;
     height: 48px;
     justify-content: center;
-    letter-spacing: .25px;
-    line-height: normal;
-    max-width: 100%;
-    overflow: visible;
     padding: 2px 24px;
-    position: relative;
     text-align: center;
-    text-transform: none;
     transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
     user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
     width: auto;
     will-change: transform, opacity;
-    z-index: 0;
 }
 
 .button:hover {
@@ -66,7 +104,6 @@
 
 .button:active {
     box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
-    outline: none;
 }
 
 .button:focus {
@@ -74,176 +111,34 @@
     border: 2px solid #4285f4;
 }
 
-.button:not(:disabled) {
-    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
-}
-
-.button:not(:disabled):hover {
-    box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
-}
-
-.button:not(:disabled):focus {
-    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
-}
-
-.button:not(:disabled):active {
-    box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
-}
-
-.button:disabled {
-    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
-}
-
-
-
-.divButton {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: left;
-    margin-right: 0rem;
-    margin-left: 0rem;
-}
-
-.mainDiv {
-    height: 29em;
-}
-
-.divLeft {
-    width: 50%;
-    margin-right: 2rem;
-    padding-top: 2em;
-    margin-top: 2em;
-    margin-left: 2em;
-}
-
 .divRight {
-    width: 50%;
-    padding-top: 4em;
-    padding-bottom: 0em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .imgClass {
     border: 1px solid lightgray;
     border-radius: 1em;
-    bottom: 0;
-    right: 0;
-    margin: 0em;
-    padding-top: 0em;
     height: 25.1em;
-    width: 30.1em;
+    width: 100%;
+    max-width: 30em;
+    object-fit: cover;
 }
 
-.liClass {
-    display: inline-block;
-    vertical-align: top;
-
-}
-
-.pargraphClass {
-    margin-right: 1rem;
-
-}
-
-.ulClass {
-    display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
-    margin-top: 1rem;
-}
-
-.h1Class {
-    text-align: left;
-    font-size: 2rem;
-    font-weight: 300;
-}
-
-
+/* Responsive adjustments */
 @media screen and (max-width: 860px) {
-    .projects {
-        .project-row {
-            display: flex;
-            margin-bottom: 3rem;
-            flex-direction: column;
-
-            .project-left {
-                width: 100%;
-                // max-height: 400px;
-            }
-
-            .project-right {
-                width: 100%;
-            }
-        }
+    .main_span {
+        flex-direction: column;
     }
-}
 
-@media screen and (max-width: 500px) {
-    .project-left {
-        min-height: 200px;
+    .divLeft, .divRight {
+        width: 100%;
     }
-}
 
-@media screen and (min-width: 501px) and (max-width: 700px) {
-    .project-left {
-        min-height: 300px;
+    .imgClass {
+        height: auto;
+        width: 100%;
+        max-width: none;
     }
-}
-
-@media screen and (min-width: 701px) and (max-width: 859px) {
-    .project-left {
-        min-height: 350px;
-    }
-}
-
-.masterDiv {
-    border: 1px solid #DBDBDB;
-    border-radius: 0.8em;
-    display: inline-block;
-    width: 60em;
-    background-color: #F2F2F2;
-    padding-right: 0;
-    padding-left: 0;
-}
-
-.svgClass {
-    display: inline-block;
-    vertical-align: top;
-    width: 16px;
-    height: 16px;
-    margin: 4px 8px 0 0;
-    fill: none;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-dasharray: 14px;
-    stroke: var(--success);
-    stroke-dashoffset: calc(var(--success-stroke) * 1px);
-}
-
-.svg {}
-
-.paragraph {
-    text-align: left;
-    max-width: 90%;
-    font-weight: 200;
-}
-
-.MadeWith {
-    font-weight: 600;
-    font-size: 1.1em;
-}
-
-.languageLogo {
-    height: 2em;
-    width: 2em;
-    margin: 0.25em;
-}
-
-.spanLogo {
-    display: flex;
-    align-items: center;
-}
-
-.h4Class {
-    font-size: 1em;
 }

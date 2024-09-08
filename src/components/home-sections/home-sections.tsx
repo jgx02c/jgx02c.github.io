@@ -1,3 +1,4 @@
+import React from 'react'; // Add this line at the top of your file
 import classNames from 'classnames';
 import styles from './home-sections.module.scss';
 import { Sections, section } from '../sections/sections';
@@ -8,31 +9,23 @@ export interface HomeSectionsProps {
     sections: section[];
 }
 
-/**
- * This component was created using Codux's Default new component template.
- * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
- */
-
-
 export const HomeSections = ({ className, sections }: HomeSectionsProps) => {
-    return <div className={classNames(styles.root, className)}>
-        <div>
-            {sections.map((section) =>
-                <div>
-            <Sections 
-                key={section.id}
-                id={section.id}
-                titleLogo={section.titleLogo} 
-                subText={section.subText}
-                description={section.description}
-                linkText={section.linkText}
-                link={section.link}
-                image={section.image}
-                />
-                <Line />
-                </div>
-            )}
-           
+    return (
+        <div className={classNames(styles.root, className)}>
+                {sections.map((section) => (
+                    <React.Fragment key={section.id}>
+                        <Sections
+                            id={section.id}
+                            titleLogo={section.titleLogo}
+                            subText={section.subText}
+                            description={section.description}
+                            linkText={section.linkText}
+                            link={section.link}
+                            image={section.image}
+                        />
+                        <Line />
+                    </React.Fragment>
+                ))}
         </div>
-    </div>;
+    );
 };

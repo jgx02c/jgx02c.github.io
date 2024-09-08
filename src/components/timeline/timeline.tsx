@@ -1,27 +1,35 @@
-import classNames from 'classnames';
+import React from 'react';
 import styles from './timeline.module.scss';
-import { TimelineComonentRight } from '../timeline-comonent-right/timeline-comonent-right';
 
-export interface TimelineProps {
-    className?: string;
+export interface TimelineItemData {
+    id: number;
+    title: string;
+    organization: string;
+    description: string;
+    date: string;
+    type: string;
 }
 
-/**
- * This component was created using Codux's Default new component template.
- * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
- */
+interface TimelineProps {
+    items: TimelineItemData[];
+}
 
-
-export const Timeline = ({ className }: TimelineProps) => {
-    return <div className={classNames(styles.root, className)}>
-        <div className={styles.divCenter}>
-            <span className={styles.spanTimeline}><div className={styles.divLeftTimeline}>
-                <TimelineComonentRight />
-            </div>
-                <div className={styles.centerLine} />
-                <div className={styles.divTimelineRight}>
-                    <TimelineComonentRight />
+export const Timeline: React.FC<TimelineProps> = ({ items }) => {
+    return (
+        <div className={styles.timelineContainer}>
+            <div className={styles.timelineLine}></div>
+            {items.map((item) => (
+                <div key={item.id} className={styles.timelineItem}>
+                    <div className={styles.timelineMarker}></div>
+                    <div className={styles.timelineContent}>
+                        <h3>{item.organization}</h3>
+                        <h3>{item.title}</h3>
+                        <p>{item.description}</p>
+                        <p>{item.type}</p>
+                        <span>{item.date}</span>
+                    </div>
                 </div>
-            </span>
-        </div></div>;
+            ))}
+        </div>
+    );
 };

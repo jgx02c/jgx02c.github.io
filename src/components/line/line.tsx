@@ -10,7 +10,9 @@ export interface LineProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const Line = ({ className }: LineProps) => {
-    return <div className={classNames(styles.root, className)}>
-        <div className={styles.divLine} />
-    </div>;
+    return (
+        <div className={classNames(styles.root, className)}>
+            <div className={styles.divLine} />
+        </div>
+    );
 };

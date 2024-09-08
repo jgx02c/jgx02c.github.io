@@ -5,22 +5,32 @@ import JavaLogo  from '../assets/svg/java.svg';
 import  ViteLogo  from '../assets/svg/vite.svg';
 import  TypescriptLogo  from '../assets/svg/typescript.svg';
 import ScssLogo  from '../assets/svg/scss.svg';
+import FlutterLogo from '../assets/svg/flutter-logo.svg'
 import AwsLogo from '../assets/svg/aws.svg';
 import  BootstrapLogo  from '../assets/svg/bootstrap.svg';
 import  CssLogo  from '../assets/svg/css.svg';
+import DjangoLogo from '../assets/svg/django.svg'
 import  FirebaseLogo  from '../assets/svg/firebase.svg';
 import HtmlfiveLogo  from '../assets/svg/htmlfive.svg';
 import JavascriptLogo from '../assets/svg/javascript.svg';
 import  MsdotnetLogo  from '../assets/svg/msdotnet.svg';
 import  MysqlLogo  from '../assets/svg/mysql.svg';
+import TauriLogo from '../assets/svg/tauri.svg';
+import LangChainLogo from '../assets/svg/langchain-seeklogo.svg'
 import NodejsLogo from '../assets/svg/nodejs.svg';
 import ShopifyLogo from '../assets/svg/shopify.svg';
 import StripeLogo from '../assets/svg/stripe.svg';
+import NextLogo from '../assets/svg/next-js.svg'
+import FastLogo from '../assets/svg/fastapi.svg'
+import AssemblyLogo from '../../src/assets/assembly.png'
 import CLogo from '../assets/svg/c.svg';
+import OpenAI from '../assets/svg/openai.svg';
 import CplusplusLogo from '../assets/svg/cplusplus.svg';
 import CsharpLogo from '../assets/svg/csharp.svg';
 import MongodbLogo from '../assets/svg/mongodb.svg';
 import PythonLogo from '../assets/svg/python.svg';
+import FlaskLogo from '../assets/flask.png'
+import Snippetz from '../assets/snippetz.png';
 import Blank from '../assets/blank.png';
 import project1PNG from '../assets/collegiateSite.png';
 import project2PNG from '../assets/travell4all.png';
@@ -32,12 +42,86 @@ import project7PNG from '../assets/livableWage.png';
 import project8PNG from '../assets/cSharpProject.png';
 import project9PNG from '../assets/wildfire-active-map-tracker-features.jpeg';
 import project10PNG from '../assets/login.png';
+import project11PNG from '../assets/Banner.png';
+import project12PNG from '../assets/dashbaord.png'
 import { SkillsProject } from "../components/skills-project/skills-project";
 import { NavFooter } from "../components/nav-footer/nav-footer";
 
 function ProjectsPage () {
 
     const projects = [
+        {
+            id: 12,
+            title: 'Dialogica Demo',
+            imageUrl: project12PNG,
+            description: 'Dialogica operates in sync with your efforts, actively engaging in conversations and offering valuable insights. Specifically designed for legal depositions, interrogations, and trials, Dialogica collaborates with you to enhance your understanding in real-time. By accessing user-uploaded documents, Legal Databases, and various generative External services, Dialogica empowers attorneys with comprehensive support.',
+            madeWith1: TypescriptLogo,
+            madeWith2: NextLogo,
+            madeWith3: AwsLogo,
+            madeWith4: OpenAI,
+            madeWith5: AssemblyLogo,
+            madeWith6: FlaskLogo,
+            demo: true,
+            demoLink: 'https://www.youtube.com/watch?v=2PnzFxdACoo',
+            code: false,
+            codeLink: '',
+            live: true,
+            liveLink: 'https://www.dialogicaai.com/demo',
+        },
+        {
+            id: 13,
+            title: 'Snippez',
+            imageUrl: Snippetz,
+            description: 'Snippez is a personal project to store snippets of code that I want to quickly reference and reuse. It pairs with my BYOC GPT Coder. It helps improve efficiency and accuracy.             ',
+            madeWith1: TypescriptLogo,
+            madeWith2: NextLogo,
+            madeWith3: MongodbLogo,
+            madeWith4: JavascriptLogo,
+            madeWith5: TauriLogo,
+            madeWith6: ScssLogo,
+            demo: false,
+            demoLink: '',
+            code: true,
+            codeLink: 'https://github.com/jgx02c/snippets',
+            live: false,
+            liveLink: '',
+        },
+        {
+            id: 14,
+            title: 'BYOC GPT Coder',
+            imageUrl: project4PNG,
+            description: 'BYOC (Bring Your Own Code) GPT Coder is an AI wrapper using Langchain R.A.G. operations and my personal code library with Chat GPT to generate code. It solves the problems of copyrighted material by leveraging previous projects and manually submitting code databases when generating code. ',
+            madeWith1: TypescriptLogo,
+            madeWith2: NextLogo,
+            madeWith3: MongodbLogo,
+            madeWith4: FastLogo,
+            madeWith5: OpenAI,
+            madeWith6: LangChainLogo,
+            demo: false,
+            demoLink: '',
+            code: true,
+            codeLink: 'https://github.com/jgx02c/BYOCGPTCoder.git',
+            live: false,
+            liveLink: '',
+        },
+        {
+            id: 1,
+            title: 'Ez Inventor Management',
+            imageUrl: project1PNG,
+            description: 'For this project, I developed a small application to replace a pre-existing outdated MS-Acess application developed for friend I used to work for before starting Optionality and Finned. This application makes it easier to train employees on how to use the system and uses pre-existing sql data tables. Although still in development, this application will have the ability to pull and process sales from Shopify, Amazon, Ebay and Etsy.',
+            madeWith1: TypescriptLogo,
+            madeWith2: NextLogo,
+            madeWith3: TauriLogo,
+            madeWith4: MysqlLogo,
+            madeWith5: ScssLogo,
+            madeWith6: ShopifyLogo,
+            demo: false,
+            demoLink: 'www.youtube.com',
+            code: true,
+            codeLink: 'https://github.com/jgx02c/EzInventoryManagement.git',
+            live: false,
+            liveLink: '',
+        },
         {
             id: 10,
             title: 'Doctors Office Appoiment Booking',
@@ -57,20 +141,20 @@ function ProjectsPage () {
             liveLink: '',
         },
         {
-            id: 1,
-            title: 'Collegiate Standard Inventory',
-            imageUrl: project1PNG,
-            description: 'For this project, I developed a small application to replace a pre-existing outdated MS-Acess application developed for friend I used to work for before starting Optionality and Finned. This application makes it easier to train employees on how to use the system and uses pre-existing sql data tables. Although still in development, this application will have the ability to pull and process sales from Shopify, Amazon, Ebay and Etsy.',
-            madeWith1: TypescriptLogo,
-            madeWith2: JavascriptLogo,
-            madeWith3: NodejsLogo,
-            madeWith4: MysqlLogo,
-            madeWith5: ShopifyLogo,
-            madeWith6: ViteLogo,
-            demo: false,
-            demoLink: '',
-            code: false,
-            codeLink: '',
+            id: 3,
+            title: 'Open Tune Ignition',
+            imageUrl: project3PNG,
+            description: 'OpenTune is a custom made electronic ignition that I developed as a way to create variable timing based on throttle position for Dual Carbuerated VW’s. Initially starting of as a small circuit as a way to create a 6v electronic ignition (Sucuessfull), the project took a change when I added more magnets and an Arduino as a way to calculator the engines rpm, position, and set timing.',
+            madeWith1: CLogo,
+            madeWith2: CplusplusLogo,
+            madeWith3: JavaLogo,
+            madeWith4: Blank,
+            madeWith5: Blank,
+            madeWith6: Blank,
+            demo: true,
+            demoLink: 'https://www.youtube.com/watch?v=_ELVZCTzOtQ',
+            code: true,
+            codeLink: 'https://github.com/jgx02c/OpenTune',
             live: false,
             liveLink: '',
         },
@@ -90,24 +174,6 @@ function ProjectsPage () {
             code: true,
             codeLink: 'https://github.com/jgx02c/BinaryGame',
             live: true,
-            liveLink: '',
-        },
-        {
-            id: 3,
-            title: 'Open Tune Ignition',
-            imageUrl: project3PNG,
-            description: 'OpenTune is a custom made electronic ignition that I developed as a way to create variable timing based on throttle position for Dual Carbuerated VW’s. Initially starting of as a small circuit as a way to create a 6v electronic ignition (Sucuessfull), the project took a change when I added more magnets and an Arduino as a way to calculator the engines rpm, position, and set timing.',
-            madeWith1: CLogo,
-            madeWith2: CplusplusLogo,
-            madeWith3: JavaLogo,
-            madeWith4: Blank,
-            madeWith5: Blank,
-            madeWith6: Blank,
-            demo: true,
-            demoLink: 'https://www.youtube.com/watch?v=_ELVZCTzOtQ',
-            code: true,
-            codeLink: 'https://github.com/jgx02c/OpenTune',
-            live: false,
             liveLink: '',
         },
         {
@@ -147,6 +213,24 @@ function ProjectsPage () {
             liveLink: '',
         },
         {
+            id: 11,
+            title: 'Pick Up Coin',
+            imageUrl: project11PNG,
+            description: 'For this project, I created a simple mobile application for CS 4750 and uploaded it to the play store',
+            madeWith1: FlutterLogo,
+            madeWith2: Blank,
+            madeWith3: Blank,
+            madeWith4: Blank,
+            madeWith5: Blank,
+            madeWith6: Blank,
+            demo: true,
+            demoLink: 'https://www.youtube.com/',
+            code: true,
+            codeLink: 'https://github.com/jgx02c/cs4750_flutter_app',
+            live: true,
+            liveLink: 'https://play.google.com/store/games?hl=en_US&gl=US',
+        },
+        {
             id: 8,
             title: 'Task Manager Console App',
             imageUrl: project8PNG,
@@ -175,7 +259,7 @@ function ProjectsPage () {
             madeWith3: MongodbLogo,
             madeWith4: HtmlfiveLogo,
             madeWith5: ScssLogo,
-            madeWith6: Blank,
+            madeWith6: DjangoLogo,
             demo: false,
             demoLink: '',
             code: true,
@@ -192,7 +276,7 @@ function ProjectsPage () {
             madeWith2: MsdotnetLogo,
             madeWith3: FirebaseLogo,
             madeWith4: BootstrapLogo,
-            madeWith5: Blank,
+            madeWith5: OpenAI,
             madeWith6: Blank,
             demo: false,
             demoLink: '',

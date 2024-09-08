@@ -1,6 +1,9 @@
+/* Existing styles */
+
 .root {
     padding-top: 1em;
     padding-bottom: 2em;
+    width: 100%;
 }
 
 .navLink {
@@ -20,33 +23,47 @@
     padding: 1.5em;
     justify-content: space-between;
     display: flex;
-    width: 70em;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .imgNav {
     padding-right: 2em;
-    margin-right: 20em;
+    margin-right: 20%;
     display: inline;
     margin-top: 0em;
-    width: 20em;
+    width: 20%;
 }
 
 .div {
-    display: inline;
-    align-self: center;
-    border-radius: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: .5em;
     background-color: #EBEBEB;
     padding: 0.6em;
 }
 
 .divContent {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .nameH1 {
     font-family: "BillionDreams";
     font-weight: 200;
     font-size: 2.5em;
+    text-align: center;
+}
+
+.activeLink {
+    background-color: #ffffff; /* Example: Change background color */
+    color: #000000;           /* Example: Change text color */
+    border-radius: .5em;
+    padding: .5em;   /* Make the active link bold */
 }
 
 @font-face {
@@ -54,4 +71,70 @@
     src: local("BillionDreams"),
         url("../../assets/BillionDreams.ttf") format("truetype");
     font-weight: bold;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .spanClass {
+        flex-direction: row;
+    }
+
+    .div {
+        flex-direction: row;
+    }
+
+    .navLink {
+        font-size: 1.2em;
+    }
+
+    .nameH1 {
+        font-size: 3em;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+
+    .navLinks {
+        display: flex;
+    }
+}
+
+@media (max-width: 767px) {
+    .navLinks {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        position: relative;
+        z-index: 10;
+    }
+
+    .navMenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #EBEBEB;
+        width: 100%;
+        text-align: center;
+        border-radius: 0.5em;
+    }
+
+    .navMenu.show {
+        display: block;
+    }
+
+    .navMenu a {
+        display: block;
+        padding: 1em;
+        color: #000000;
+        text-decoration: none;
+    }
+
+    .navMenu a:hover {
+        background-color: #E0E0E0;
+    }
 }

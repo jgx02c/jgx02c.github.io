@@ -1,20 +1,54 @@
 .root {
-    padding-top: 10em;
+  display: flex;
+  justify-content: center;
+  width: 45%;
+}
+
+.divCardFour {
+  box-shadow: 0 0 black;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  max-width: 100vh;
+  padding: 1em;
+  background-color: #ffffff;
+  border-radius: 0.5em;
+}
+
+.h3CardFour {
+  color: #4d4d4d;
+  font-size: 1.5em;
+  margin-top: 0.5em;
+}
+
+.imgCardFour {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5em;
+  border: 1px solid #ededed;
+}
+
+
+.parCardFour {
+  color: #000000;
+  font-size: 1.2em;
+  margin-top: 0.5em;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .cardOneDiv {
+      width: 100%;
+      padding: 0.5em;
   }
-  .h3CardFour {
-    color: #4d4d4d;
-    text-align: start;
-    font-size: 1.2em;
+
+  .h3CardOne {
+      font-size: 1.3em;
   }
-  .parCardFour {
-    text-align: start;
-    color: #2f2626;
-    font-size: 2em;
-    width: 10em;
+
+  .parCardTwo {
+      font-size: 1em;
   }
-  .divCardFour {
-  }
-  .imgCardFour {
-    width: 40em;
-  }
-  
+}
+

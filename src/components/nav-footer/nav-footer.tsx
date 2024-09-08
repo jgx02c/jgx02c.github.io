@@ -31,11 +31,11 @@ export const NavFooter: React.FC<NavFooterProps> = ({ className }) => {
 
     return (
         <div className={classNames(styles.root, className)}>
-            <div>
+            <div className={styles.container}>
                 <h1 className={styles.contactClass}>Contact</h1>
-                <span>
+                <span className={styles.linksSpan}>
                     <a href="https://www.instagram.com/jgx02/" className={styles.linkClass}>Instagram</a>
-                    <a href="https://www.linkedin.com/in/joshua-goodman-215900220" className={styles.linkClass}>LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/joshuajgoodman" className={styles.linkClass}>LinkedIn</a>
                     <a onClick={handleEmailClick} className={styles.linkClass}>Email</a>
                     <FileDownload fileUrl={resume} fileName="Joshua Goodman CV.pdf" />
                 </span>
