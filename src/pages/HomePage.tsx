@@ -20,8 +20,8 @@ function HomePage () {
         {
             id: 1,
             titleLogo: img5,
-            subText: 'Point. Click. Post.',
-            description: 'Optimize and manage your ecommerence side hustle backed by A.I.',
+            subText: 'Automatically create listings with our API',
+            description: 'Boost your organization with AI image recognition.',
             linkText: 'View Website',
             link: 'https://piclist.ai',
             image: img5_5,
