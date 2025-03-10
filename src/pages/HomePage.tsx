@@ -1,6 +1,5 @@
 import { HomeIntro } from '../components/home-intro/home-intro';
 import { NavFooter } from '../components/nav-footer/nav-footer';
-import { Line } from '../components/line/line';
 import { HomeSections } from '../components/home-sections/home-sections';
 import sectionsData from '../data/sections.json';
 
@@ -37,7 +36,6 @@ function HomePage() {
     return (
         <div>
             <HomeIntro />
-            <Line />
             <HomeSections sections={sections} />
             <NavFooter />
         </div>

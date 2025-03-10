@@ -1,45 +1,60 @@
 .root {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    padding: 1em;
+    padding: 1em 0;
+}
+
+.divider {
+    width: calc(100% + 1em);
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 0 0 1em -1em;
 }
 
 .container {
-    width: 100%;
-    max-width: 65em;
+    width: calc(100% - 1em);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .contactClass {
     margin: 0 0 0.5em;
-    font-size: 2.25em;
+    font-size: 1.5em;
     text-align: center;
+    font-weight: 500;
+    color: #333;
 }
 
 .linksSpan {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     width: 100%;
 }
 
 .linkClass {
     color: #000000;
     font-size: 1.25em;
-    margin: 1em;
+    margin: 1em 0;
     font-weight: 300;
-    text-align: center;
+    text-align: right;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: #666;
+    }
 }
 
 /* Media Queries */
 @media (min-width: 768px) {
     .container {
         flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
+        justify-content: flex-end;
+        align-items: center;
     }
 
     .contactClass {
@@ -49,5 +64,6 @@
     .linksSpan {
         flex-direction: row;
         justify-content: flex-end;
+        gap: 2em;
     }
 }

@@ -1,82 +1,143 @@
 .root {
-    position: center;
-    padding-top: 0em;
-    margin: 0em 2px 2px;
-    padding-bottom: 3em;
+    width: 100%;
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
 }
 
-.intro {
+.content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.profileImage {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    border: 4px solid #C0C0C0;
+    object-fit: cover;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.textContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding-top: 1.5em;
-    padding-right: 0px;
-    margin-right: 15px;
-    margin-left: 15px;
-    margin-top: 0em;
+}
+
+.title {
+    font-size: 3.2rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    color: #333;
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+.description {
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #555;
+    max-width: 800px;
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2rem;
 }
 
 .button {
-    background-color: #FFFFFF;
-    border: 1px solid rgb(209, 213, 219);
-    border-radius: .5rem;
-    box-sizing: border-box;
-    color: #111827;
-    font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: .875rem;
-    font-weight: 600;
-    line-height: 1.25rem;
-    padding: 0.75rem 1rem .75rem;
-    margin-left: .5em;
-    margin-left: .5em;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: #333;
+    background-color: transparent;
+    border: 2px solid #333;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    min-width: 120px;
     text-align: center;
-    text-decoration: none #D1D5DB solid;
-    text-decoration-thickness: auto;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    cursor: pointer;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    margin-right: 0.5em;
+    
+    &:hover {
+        background-color: #333;
+        color: white;
+        transform: translateY(-2px);
+    }
 }
 
-.button:hover {
-    background-color: rgb(249, 250, 251);
+@media (max-width: 768px) {
+    .content {
+        gap: 2rem;
+    }
+
+    .title {
+        font-size: 2.8rem;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+    }
+
+    .description {
+        font-size: 1.2rem;
+    }
+
+    .buttonContainer {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .button {
+        flex: 1;
+        max-width: 200px;
+    }
 }
 
-.button:focus {
-    outline: 2px solid transparent;
-    outline-offset: 2px;
-}
+@media (max-width: 480px) {
+    .root {
+        padding: 3rem 1rem;
+    }
 
-.button:focus-visible {
-    box-shadow: none;
-}
+    .title {
+        font-size: 2.4rem;
+    }
 
-.h2title {
-    color: #000000;
-    padding-top: 0.2em;
-    font-size: 3.4em;
-    font-weight: 300;
-}
+    .subtitle {
+        font-size: 1.3rem;
+    }
 
-.h3subtitle {
-    font-size: 1.4em;
-    color: #000000;
-    font-weight: 400;
-    margin: 0.3em;
-}
+    .description {
+        font-size: 1.1rem;
+    }
 
-.textparagraph {
-    font-size: 1.65em;
-    color: #000000;
-    font-weight: 200;
-    margin-bottom: 1em;
-}
-
-.imageClass {}
-
-.profileImage {
-    border-radius: 20em;
-    width: 8em;
-    height: 8em;
-    border: 5px solid #C0C0C0;
+    .button {
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+    }
 }

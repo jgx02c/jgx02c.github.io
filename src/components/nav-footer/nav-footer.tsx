@@ -8,7 +8,10 @@ export interface NavFooterProps {
 
 const CVLink: React.FC = () => {
     const handleCVClick = () => {
-        window.open('https://docs.google.com/document/d/1XNtqMK-W0VmqscDLTBxo_3hFB4gC1uKtl-cc3yRL9So/edit?usp=sharing', '_blank');
+        // Using the export/download URL format for Google Docs
+        const docId = '1XNtqMK-W0VmqscDLTBxo_3hFB4gC1uKtl-cc3yRL9So';
+        const downloadUrl = `https://docs.google.com/document/d/${docId}/export?format=pdf`;
+        window.open(downloadUrl, '_blank');
     };
 
     return (
@@ -25,8 +28,8 @@ export const NavFooter: React.FC<NavFooterProps> = ({ className }) => {
 
     return (
         <div className={classNames(styles.root, className)}>
+            <div className={styles.divider} />
             <div className={styles.container}>
-                <h1 className={styles.contactClass}>Contact</h1>
                 <span className={styles.linksSpan}>
                     <a href="https://www.instagram.com/jgx02/" className={styles.linkClass}>Instagram</a>
                     <a href="https://www.linkedin.com/in/joshuajgoodman" className={styles.linkClass}>LinkedIn</a>
