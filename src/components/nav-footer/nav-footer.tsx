@@ -1,24 +1,18 @@
 import classNames from 'classnames';
 import styles from './nav-footer.module.scss';
 import React from 'react';
-import resume from '../../assets/Joshua Goodman.pdf';
 
 export interface NavFooterProps {
     className?: string;
 }
 
-const FileDownload: React.FC<{ fileUrl: string, fileName: string }> = ({ fileUrl, fileName }) => {
-    const handleDownload = () => {
-        const link = document.createElement('a');
-        link.href = fileUrl;
-        link.download = fileName;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+const CVLink: React.FC = () => {
+    const handleCVClick = () => {
+        window.open('https://docs.google.com/document/d/1XNtqMK-W0VmqscDLTBxo_3hFB4gC1uKtl-cc3yRL9So/edit?usp=sharing', '_blank');
     };
 
     return (
-        <a onClick={handleDownload} className={styles.linkClass}>
+        <a onClick={handleCVClick} className={styles.linkClass}>
             Resume
         </a>
     );
@@ -37,9 +31,11 @@ export const NavFooter: React.FC<NavFooterProps> = ({ className }) => {
                     <a href="https://www.instagram.com/jgx02/" className={styles.linkClass}>Instagram</a>
                     <a href="https://www.linkedin.com/in/joshuajgoodman" className={styles.linkClass}>LinkedIn</a>
                     <a onClick={handleEmailClick} className={styles.linkClass}>Email</a>
-                    <FileDownload fileUrl={resume} fileName="Joshua Goodman CV.pdf" />
+                    <CVLink />
                 </span>
             </div>
         </div>
     );
 };
+
+export default NavFooter;

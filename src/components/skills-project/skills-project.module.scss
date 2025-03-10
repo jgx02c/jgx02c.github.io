@@ -1,70 +1,98 @@
 .root {
     width: 100%;
-  
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .skillsClass {
     display: flex;
     flex-direction: column;
-    padding-bottom: 1em;
+    padding-bottom: 2rem;
     text-align: center;
     width: 100%;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
 }
 
 .divSVG {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     width: 100%;
 }
 
 .spanSVG {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: .5vh;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
     width: 100%;
-    max-width: 70em;
+    justify-items: center;
+    align-items: center;
 }
 
 .logoSpace {
-    height: 6.5em;
-    width: 6.5em;
-    margin: 0.35em;
+    height: 4em;
+    width: 4em;
+    padding: 0.5em;
+    transition: transform 0.2s ease-out;
 }
 
 .svgContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    isolation: isolate;
-    mix-blend-mode: normal;
-    margin: 0.5em;
-}
-
-.svgContainer:hover {
-    transition: 0.3s;
-    transform: scale(1.2);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    padding: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease-out;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        
+        .logoSpace {
+            transform: scale(1.1);
+        }
+    }
 }
 
 /* Media Queries */
-@media (min-width: 768px) {
+@media (max-width: 1200px) {
     .spanSVG {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    }
-
-    .logoSpace {
-        height: 7em;
-        width: 7em;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.5rem;
     }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 992px) {
     .spanSVG {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.25rem;
     }
-
+    
     .logoSpace {
-        height: 7.5em;
-        width: 7.5em;
+        height: 3.5em;
+        width: 3.5em;
+    }
+}
+
+@media (max-width: 768px) {
+    .spanSVG {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    
+    .logoSpace {
+        height: 3em;
+        width: 3em;
+    }
+}
+
+@media (max-width: 480px) {
+    .spanSVG {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
     }
 }

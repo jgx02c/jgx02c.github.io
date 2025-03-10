@@ -22,6 +22,36 @@ import fastapi from '../../assets/svg/fastapi.svg';
 import python from '../../assets/svg/python.svg';
 import langchain from '../../assets/svg/langchain-seeklogo.svg';
 
+interface Skill {
+    logo: string;
+    name: string;
+}
+
+const skills: Skill[] = [
+    // Frontend
+    { logo: reactLogo, name: 'React' },
+    { logo: nextjs, name: 'Next.js' },
+    { logo: typescriptLogo, name: 'TypeScript' },
+    { logo: javascriptLogo, name: 'JavaScript' },
+    { logo: htmlfiveLogo, name: 'HTML5' },
+    { logo: scssLogo, name: 'SCSS' },
+    // Backend & Databases
+    { logo: nodejsLogo, name: 'Node.js' },
+    { logo: python, name: 'Python' },
+    { logo: flask, name: 'Flask' },
+    { logo: fastapi, name: 'FastAPI' },
+    { logo: mongodbLogo, name: 'MongoDB' },
+    { logo: mysqlLogo, name: 'MySQL' },
+    // Tools & Platforms
+    { logo: viteLogo, name: 'Vite' },
+    { logo: awsLogo, name: 'AWS' },
+    { logo: shopifyLogo, name: 'Shopify' },
+    { logo: cplusplusLogo, name: 'C++' },
+    // AI & ML
+    { logo: openai, name: 'OpenAI' },
+    { logo: langchain, name: 'LangChain' },
+];
+
 export interface SkillsProjectProps {
     className?: string;
 }
@@ -29,32 +59,22 @@ export interface SkillsProjectProps {
 export const SkillsProject = ({ className }: SkillsProjectProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-
-            
-            <h1 className={styles.skillsClass}>Skills</h1>
-
             <div className={styles.divSVG}>
                 <span className={styles.spanSVG}>
-                    <div className={styles.svgContainer}><a className={styles.svgA}><img src={viteLogo} alt="Vite Logo" className={styles.logoSpace} /></a></div>
-                    <div className={styles.svgContainer}><a className={styles.svgA}><img src={reactLogo} alt="React Logo" className={styles.logoSpace} /></a></div>
-                    <div className={styles.svgContainer}><a className={styles.svgA}><img src={typescriptLogo} alt="Typescript Logo" className={styles.logoSpace} /></a></div>
-                    <div className={styles.svgContainer}><a className={styles.svgA}><img src={scssLogo} alt="SCSS Logo" className={styles.logoSpace} /></a></div>
-                    <div className={styles.svgContainer}><a className={styles.svgA}><img src={awsLogo} alt="AWS Logo" className={styles.logoSpace} /></a></div>
-                    <div className={styles.svgContainer}><a className={styles.svgA}><img src={htmlfiveLogo} alt="HTML5 Logo" className={styles.logoSpace} /></a></div>
-                    <div className={styles.svgContainer}><a className={styles.svgA}><img src={javascriptLogo} alt="JavaScript Logo" className={styles.logoSpace} /></a></div>
-                    <div className={styles.svgContainer}><a className={styles.svgA}><img src={mysqlLogo} alt="MySQL Logo" className={styles.logoSpace} /></a></div>
-                    <div className={styles.svgContainer}><a className={styles.svgA}><img src={mongodbLogo} alt="MongoDB Logo" className={styles.logoSpace} /></a></div>
-                    <div className={styles.svgContainer}><a className={styles.svgA}><img src={nodejsLogo} alt="Node.js Logo" className={styles.logoSpace} /></a></div>
-                    <div className={styles.svgContainer}><a className={styles.svgA}><img src={shopifyLogo} alt="Shopify Logo" className={styles.logoSpace} /></a></div>
-                    <div className={styles.svgContainer}><a className={styles.svgA}><img src={cplusplusLogo} alt="C++ Logo" className={styles.logoSpace} /></a></div>
-                    <div className={styles.svgContainer}><a className={styles.svgA}><img src={openai} alt="OpenAI Logo" className={styles.logoSpace} /></a></div>
-                    <div className={styles.svgContainer}><a className={styles.svgA}><img src={nextjs} alt="NextJS Logo" className={styles.logoSpace} /></a></div>
-                    <div className={styles.svgContainer}><a className={styles.svgA}><img src={flask} alt="Flask Logo" className={styles.logoSpace} /></a></div>
-                    <div className={styles.svgContainer}><a className={styles.svgA}><img src={fastapi} alt="Fast API Logo" className={styles.logoSpace} /></a></div>
-                    <div className={styles.svgContainer}><a className={styles.svgA}><img src={langchain} alt="LangChain Logo" className={styles.logoSpace} /></a></div>
-                    <div className={styles.svgContainer}><a className={styles.svgA}><img src={python} alt="Python Logo" className={styles.logoSpace} /></a></div> 
+                    {skills.map((skill, index) => (
+                        <div key={index} className={styles.svgContainer}>
+                            <img 
+                                src={skill.logo} 
+                                alt={`${skill.name} Logo`} 
+                                className={styles.logoSpace}
+                                title={skill.name}
+                            />
+                        </div>
+                    ))}
                 </span>
             </div>
         </div>
     );
 };
+
+export default SkillsProject;
