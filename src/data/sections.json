@@ -1,12 +1,12 @@
 [
     {
         "id": 1,
-        "titleLogo": "../assets/dialogica_logo.png",
+        "titleLogo": "../assets/PiclistLogo.png",
         "subText": "Pic. Post. Sell.",
         "description": "Optimize and manage your ecommerce side hustle backed by A.I.",
         "linkText": "View Website",
         "link": "https://piclist.ai",
-        "image": "../assets/dashboard.png"
+        "image": "../assets/PiclistDashboard.png"
     },
     {
         "id": 2,

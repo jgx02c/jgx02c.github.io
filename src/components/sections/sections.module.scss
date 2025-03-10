@@ -1,128 +1,224 @@
 .root {
-    background-color: #FFFFFF;
     width: 100%;
-    display: block; // Changed to block for better control
-    border-radius: 1.5em; // Slightly increased border-radius for a softer look
-    padding: 2em; // Increased padding for more spacious layout
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Added shadow for depth
-    margin-bottom: 2em; // Added margin for spacing between sections
-}
-
-.mainSpan {
     display: flex;
     flex-direction: column;
-    gap: 1.5em; // Added gap between elements for better spacing
-    margin-bottom: 1.5em; // Added margin for spacing
+    padding: 6rem 0;
+    position: relative;
+    min-height: 60vh;
+    opacity: 0.4;
+    transition: opacity 0.6s ease-out;
+    
+    // Dotted line background
+    &:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background-image: linear-gradient(to bottom, rgba(200, 200, 200, 0.5) 50%, transparent 50%);
+        background-size: 2px 10px;
+        z-index: 0;
+    }
 }
 
-.divImg {
-    margin-top: 1.5em; // Increased top margin for spacing
-    text-align: center;
+.visible {
+    opacity: 0.7;
 }
 
-.image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 1.2em; // Slightly decreased border-radius for a sleeker look
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Added shadow for image depth
+.active {
+    opacity: 1;
 }
 
 .mainDiv {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 1.5rem;
+    
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+}
+
+.contentContainer {
     display: flex;
     flex-direction: column;
+    transform: translateY(3rem);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    
+    .active & {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.headerSection {
+    margin-bottom: 1.5rem;
+}
+
+.spanLogo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.preLogoImage {
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-right: 1rem;
+    animation: spin 15s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .imgLogo {
-    width: 12em; // Increased logo size for better visibility
-    margin-top: 0.5em; // Added margin-top for spacing
-    padding: 0;
+    width: 12rem;
+    max-height: 4rem;
+    object-fit: contain;
 }
 
-.h3Class {
-    text-align: left;
+.subtextDiv {
+    margin-top: 1rem;
+}
+
+.subText {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+    line-height: 1.3;
 }
 
 .divParagraph {
-    margin-top: 1.5em; // Increased top margin for spacing
-    font-size: 1.1em; // Slightly increased font size
-    line-height: 1.6; // Added line-height for readability
+    margin-top: 1rem;
 }
 
 .paragraph {
-    text-align: left;
-    font-size: 1.1em;
-    font-weight: 300; // Lightened font weight for a modern look
-    line-height: 1.6; // Added line-height for readability
-}
-
-.linkClass {
-    color: #007BFF; // Changed color to a more modern blue
-    font-size: 1em; // Adjusted font size
-    font-weight: 600; // Adjusted font weight for prominence
-    text-decoration: none; // Removed underline for cleaner look
-    transition: color 0.3s; // Added transition for hover effect
-}
-
-.linkClass:hover {
-    color: #0056b3; // Darkened color on hover for interaction
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #666;
+    margin: 0;
+    font-weight: 300;
 }
 
 .spanlink {
     display: flex;
     align-items: center;
-    gap: 0.5em; // Added gap between text and icon
-    margin-top: 0.5em;
+    margin-top: 1.5rem;
 }
 
-.spanLogo {
-    display: flex;
-    justify-content: center;
-    gap: 1em; // Added gap between images
-}
-
-.preLogoImage {
-    width: 1.5em; // Slightly increased size
-    height: 1.5em; // Slightly increased size
-    margin-right: 0.5em;
-}
-
-.subtextDiv {
-    padding-top: 1em; // Increased padding for more spacing
-}
-
-.subText {
-    font-size: 1.3em; // Increased font size for emphasis
-    font-weight: 400; // Adjusted font weight
-    text-align: center;
+.linkClass {
+    color: #1a73e8;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 1.05rem;
+    position: relative;
+    transition: color 0.2s ease;
+    
+    &:hover {
+        color: #1557b0;
+    }
+    
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #1a73e8;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease;
+    }
+    
+    &:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
 }
 
 .arrowImg {
-    width: 1em; // Increased size for better visibility
-    height: 1em; // Increased size for better visibility
-    margin-left: 0.5em;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-left: 0.5rem;
+    transition: transform 0.2s ease;
 }
 
-/* Media Queries */
-@media (min-width: 768px) {
-    .mainSpan {
-        flex-direction: row;
-        gap: 2em; // Added gap between elements
-    }
+.spanlink:hover .arrowImg {
+    transform: translateX(5px);
+}
 
-    .divParagraph {
-        margin-top: 2em;
-        font-size: 1.2em; // Slightly increased font size
+.divImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    
+    .active & {
+        opacity: 1;
+        transform: scale(1);
     }
+}
 
-    .subText {
-        text-align: left;
+.image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     }
+}
 
-    .spanLogo {
-        justify-content: flex-start;
+// Progress indicator
+.progressIndicator {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    
+    .active & {
+        opacity: 1;
     }
+}
 
-    .divImg {
-        margin: 2em 0; // Adjusted margins for spacing
-    }
+.progressDot {
+    width: 10px;
+    height: 10px;
+    background-color: #1a73e8;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// Subtle background pattern
+body {
+    background-color: #ffffff;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
 }

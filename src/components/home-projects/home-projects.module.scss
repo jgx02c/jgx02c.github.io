@@ -1,29 +1,55 @@
 .root {
-    
-  
     background-color: rgb(255, 255, 255);
     width: 100%;
- 
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
   
-  }
-  
-  .space {
+.space {
     padding-top: 2em;
-    display: inline-block;
-    justify-content: center;
-    columns: 1;
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding-bottom: 2em;
-  }
-  .projectSize {
+}
+
+.projectSize {
+    padding-top: 2em;
+}
+
+.list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.h1MyProjects {
+    padding-top: 1em;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 1em;
+    color: #333;
+}
+
+.center {
+    text-align: center;
+}
+
+.projectSize {
     padding-top: 4em;
-  }
-  .center {
+}
+
+.center {
    
-  }
-  
-  .h1MyProjects {
+}
+
+.h1MyProjects {
     padding-top: 1em;
     font-size: 1.8em;
-  }
+}
 
  

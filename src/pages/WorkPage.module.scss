@@ -1,60 +1,100 @@
 .root {
     background-color: #ffffff;
-    padding-bottom: 0em;
     width: 100%;
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1.2px, transparent 1.2px);
+    background-size: 22px 22px;
+}
+
+.headerSection {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    padding: 3rem 1rem 1rem;
 }
 
 .title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    
+    @media (max-width: 768px) {
+        font-size: 2rem;
+    }
 }
 
-.titleSpan {
-    font-family: 'Times New Roman', serif;
-    font-size: 2em;
-    padding: 1em 0.5em;
+.subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+    
+    @media (max-width: 768px) {
+        font-size: 1rem;
+    }
+}
+
+.timelineContainer {
+    margin: 0 auto;
+    position: relative;
+}
+
+.loading {
     text-align: center;
-    width: 100%;
+    padding: 3rem;
+    font-size: 1.2rem;
+    color: #666;
+    position: relative;
+    
+    &:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, 1rem);
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #1a73e8, transparent);
+        animation: loadingPulse 1.5s infinite;
+    }
 }
 
-.spanClassOurWork {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1em;
-    width: 100%;
-}
-
-.divcenter {
-    margin-bottom: 2.5em;
-    padding: 2em 0em 0em;
-    width: 100%;
+@keyframes loadingPulse {
+    0% {
+        opacity: 0.2;
+        width: 20px;
+    }
+    50% {
+        opacity: 1;
+        width: 60px;
+    }
+    100% {
+        opacity: 0.2;
+        width: 20px;
+    }
 }
 
 /* Media Queries */
 @media (min-width: 768px) {
-    .titleSpan {
-        font-size: .5em;
+    .root {
+        padding: 3rem 2rem 6rem;
     }
-
-    .spanClassOurWork {
-        gap: 2em;
-    }
-
-    .divcenter {
-        padding: 4em 0em 0em;
+    
+    .headerSection {
+        padding-top: 4rem;
     }
 }
 
 @media (min-width: 1024px) {
-    .titleSpan {
-        font-size: 1.8em;
+    .root {
+        padding: 4rem 2rem 8rem;
     }
-
-    .spanClassOurWork {
-        gap: 3em;
+    
+    .headerSection {
+        padding-top: 5rem;
     }
 }

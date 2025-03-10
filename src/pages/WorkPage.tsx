@@ -1,15 +1,19 @@
+import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import styles from './WorkPage.module.scss';
-import { WorkCardOne } from '../../src/components/work-card-one/work-card-one';
-import { WorkCardTwo } from '../../src/components/work-card-two/work-card-two';
-import { WorkCardThree } from '../../src/components/work-card-three/work-card-three';
-import { WorkCardFour } from '../../src/components/work-card-four/work-card-four';
-import { WorkCardFive } from '../../src/components/work-card-five/work-card-five';
-import { WorkCardSix } from '../../src/components/work-card-six/work-card-six';
-import { Line } from '../../src/components/line/line';
-import { NavFooter } from '../../src/components/nav-footer/nav-footer';
+import { Timeline, WorkHistoryItem } from '../components/timeline/timeline';
+import workHistoryData from '../data/workHistory.json';
+import { NavFooter } from '../components/nav-footer/nav-footer';
 
-export interface OurWorkProps {
+// Import all company logos
+import piclistLogo from '../assets/PiclistLogo.png';
+import finnedLogo from '../assets/finned_logo.png';
+import optionalityLogo from '../assets/optionality_logo.png';
+import mxLogo from '../assets/mx.webp';
+import dialogicaLogo from '../assets/dialogica_logo.png';
+import jgLogo from '../assets/jglogo.png';
+
+export interface WorkPageProps {
     className?: string;
 }
 
@@ -17,34 +21,48 @@ export interface OurWorkProps {
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
-const WorkPage = ({ className }: OurWorkProps) => {
+const WorkPage = ({ className }: WorkPageProps) => {
+    const [workHistory, setWorkHistory] = useState<WorkHistoryItem[]>([]);
+    
+    useEffect(() => {
+        // Create a mapping of logo paths to imported images
+        const logoMap: { [key: string]: string } = {
+            '../assets/PiclistLogo.png': piclistLogo,
+            '../assets/finned_logo.png': finnedLogo,
+            '../assets/optionality_logo.png': optionalityLogo,
+            '../assets/mx.webp': mxLogo,
+            '../assets/dialogica_logo.png': dialogicaLogo,
+            '../assets/jglogo.png': jgLogo
+        };
+        
+        // Process the work history data to handle image paths
+        const processedWorkHistory = workHistoryData.map(item => ({
+            ...item,
+            logo: logoMap[item.logo] || jgLogo // Use jgLogo as fallback
+        }));
+        
+        setWorkHistory(processedWorkHistory);
+    }, []);
+    
     return (
         <div className={classNames(styles.root, className)}>
-       
-                <span className={styles.titleSpan}>
-                    <h1 className={styles.title}>
-                        Web Design / Marketing / Branding / Content Creation / Consulting
-                    </h1>
-                </span>
-                
-                <span className={styles.spanClassOurWork}>
-                    <WorkCardTwo />
-                    <WorkCardOne />
-                </span>
-                <div className={styles.divcenter}>
-                    <WorkCardSix />
-                </div>
-                <span className={styles.spanClassOurWork}>
-                    <WorkCardFour />
-                    <WorkCardFive />
-                </span>
-                <div className={styles.divcenter}>
-                    <WorkCardThree />
-                    <Line />
-                    <NavFooter />
-                </div>
+            <div className={styles.headerSection}>
+                <h1 className={styles.title}>Professional Experience</h1>
+                <p className={styles.subtitle}>
+                    My professional journey in software development and entrepreneurship
+                </p>
             </div>
-        
+            
+            {workHistory.length > 0 ? (
+                <div className={styles.timelineContainer}>
+                    <Timeline items={workHistory} />
+                </div>
+            ) : (
+                <div className={styles.loading}>Loading timeline...</div>
+            )}
+            
+            <NavFooter />
+        </div>
     );
 };
 

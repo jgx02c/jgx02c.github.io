@@ -1,18 +1,47 @@
-.timelineContainer {
+.timeline {
     position: relative;
-    width: 100%;
-    padding: 2em 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    overflow: visible;
 }
 
 .timelineLine {
     position: absolute;
+    left: 50%;
     top: 0;
     bottom: 0;
-    left: 50%;
-    width: .5em;
-    border-radius: 2em;
-    background-color: #d9d9dd;
+    width: 2px;
+    background-color: rgba(26, 115, 232, 0.3);
     transform: translateX(-50%);
+    z-index: 1;
+}
+
+.timelineStart, .timelineEnd {
+    position: absolute;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #1a73e8;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.timelineStart {
+    top: 0;
+}
+
+.timelineEnd {
+    bottom: 0;
+}
+
+.timelineItems {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
 }
 
 .timelineItem {
@@ -69,4 +98,53 @@
     .timelineItem {
         margin-bottom: 3em;
     }
+}
+
+/* Animation for items coming into view */
+.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Media query for narrow screens */
+@media (max-width: 768px) {
+    .timeline {
+        padding: 2rem 1rem;
+    }
+    
+    .timelineLine {
+        left: 50%;  /* Keep centered even on mobile */
+    }
+    
+    .timelineStart, .timelineEnd {
+        left: 50%;  /* Keep centered even on mobile */
+    }
+    
+    /* On mobile, all items appear on the right of the timeline */
+    .leftItem, .rightItem {
+        align-self: flex-start !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 60px !important;
+    }
+
+}
+
+/* Explicitly position items left or right */
+.leftItem {
+    align-self: flex-start !important;
+    margin-right: 50% !important; 
+}
+
+.rightItem {
+    align-self: flex-end !important;
+    margin-left: 50% !important;
+}
+
+/* Add this to properly export the CSS classes for JS access */
+:export {
+    timelineItem: "timelineItem";
+    visible: "visible";
+    leftItem: "leftItem";
+    rightItem: "rightItem";
 }

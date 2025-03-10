@@ -1,9 +1,12 @@
 :root {
   font-family: 'Myriad Pro Regular';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Minion Pro Semibold'), url('../src/assets/Minion.woff2') format('woff');
-
+  font-weight: 400;
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 
 html {
@@ -22,6 +25,7 @@ body {
   line-height: 1.5;
   background: #ffffff;
 }
+
 body .noscroll {
   overflow-x: hidden;
 }

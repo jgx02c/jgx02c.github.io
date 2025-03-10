@@ -1,0 +1,28 @@
+.projectsPage {
+  padding: 2rem 0;
+  background-color: #f9fafb;
+  min-height: 100vh;
+}
+
+.githubSection {
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+
+.projectsSection {
+  margin: 3rem 0;
+}
+
+@media (max-width: 768px) {
+  .projectsPage {
+    padding: 1rem 0;
+  }
+  
+  .githubSection {
+    margin-bottom: 2rem;
+  }
+  
+  .projectsSection {
+    margin: 2rem 0;
+  }
+} 

@@ -1,35 +1,47 @@
-import React from 'react';
+import { useEffect, useRef } from 'react';
+import classNames from 'classnames';
 import styles from './timeline.module.scss';
+import { TimelineItem } from '../timeline-item/timeline-item';
 
-export interface TimelineItemData {
+export interface WorkHistoryItem {
     id: number;
-    title: string;
-    organization: string;
+    companyName: string;
+    role: string;
+    period: string;
     description: string;
-    date: string;
-    type: string;
+    technologies: string[];
+    achievements: string[];
+    logo: string;
 }
 
-interface TimelineProps {
-    items: TimelineItemData[];
+export interface TimelineProps {
+    className?: string;
+    items: WorkHistoryItem[];
 }
 
-export const Timeline: React.FC<TimelineProps> = ({ items }) => {
+export const Timeline = ({ className, items }: TimelineProps) => {
+    const timelineRef = useRef<HTMLDivElement>(null);
+
     return (
-        <div className={styles.timelineContainer}>
-            <div className={styles.timelineLine}></div>
-            {items.map((item) => (
-                <div key={item.id} className={styles.timelineItem}>
-                    <div className={styles.timelineMarker}></div>
-                    <div className={styles.timelineContent}>
-                        <h3>{item.organization}</h3>
-                        <h3>{item.title}</h3>
-                        <p>{item.description}</p>
-                        <p>{item.type}</p>
-                        <span>{item.date}</span>
-                    </div>
-                </div>
-            ))}
+        <div 
+            ref={timelineRef}
+            className={classNames(styles.timeline, className)}
+        >
+            <div className={styles.timelineLine}>
+                <div className={styles.timelineStart}></div>
+                <div className={styles.timelineEnd}></div>
+            </div>
+            
+            <div className={styles.timelineItems}>
+                {items.map((item, index) => (
+                    <TimelineItem 
+                        key={item.id}
+                        item={item}
+                        position={index % 2 === 0 ? 'left' : 'right'} 
+                        className={index % 2 === 0 ? styles.leftItem : styles.rightItem}
+                    />
+                ))}
+            </div>
         </div>
     );
 };
