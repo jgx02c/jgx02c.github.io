@@ -3,8 +3,6 @@ import classNames from 'classnames';
 import styles from './sections.module.scss';
 import finned from '../../assets/mug.png';
 import finnedLogo from '../../assets/finned_logo.png';
-import reccord from '../../assets/record.png';
-import arrow from '../../assets/right-arrow.png'
 
 export interface section {
     className?: string;
@@ -99,7 +97,6 @@ export const Sections = ({ className, id, titleLogo, subText, description, linkT
                 <div className={styles.contentContainer}>
                     <div className={styles.headerSection}>
                         <span className={styles.spanLogo}>
-                            <img src={reccord} alt="" className={styles.preLogoImage} />
                             <img src={titleLogo} alt="" className={styles.imgLogo} />
                         </span>
                         <div className={styles.subtextDiv}>
@@ -109,8 +106,21 @@ export const Sections = ({ className, id, titleLogo, subText, description, linkT
                     <div className={styles.divParagraph}>
                         <p className={styles.paragraph}>{description}
                             <span className={styles.spanlink}>
-                                <a href={link} className={styles.linkClass}>{linkText}</a>
-                                <img src={arrow} alt="" className={styles.arrowImg} />
+                                <a href={link} className={styles.linkClass}>
+                                    {linkText}
+                                    <svg 
+                                        className={styles.arrowImg} 
+                                        viewBox="0 0 24 24" 
+                                        fill="none" 
+                                        stroke="currentColor" 
+                                        strokeWidth="2" 
+                                        strokeLinecap="round" 
+                                        strokeLinejoin="round"
+                                    >
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </a>
                             </span>
                         </p>
                     </div>
