@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Line } from "../components/line/line";
+import classNames from 'classnames';
 import { project } from '../components/home-project-component/home-project-component';
 import { SkillsProject } from "../components/skills-project/skills-project";
 import { NavFooter } from "../components/nav-footer/nav-footer";
@@ -62,22 +62,31 @@ function ProjectsPage() {
                 <>
                     {projects.length > 0 ? (
                         <>
-                            {/* GitHub Contribution Graph */}
-                            <section className={styles.githubSection}>
-                                <GitHubContribution username="jgx02c" />
-                            </section>
-                            
-                            <Line />
-                            
+                            {/* Header Section */}
+                            <div className={styles.headerSection}>
+                                <h1 className={styles.title}>My Projects</h1>
+                                <p className={styles.subtitle}>
+                                    A collection of my latest work in software development and web applications
+                                </p>
+                            </div>
+
                             {/* Projects Grid */}
                             <section className={styles.projectsSection}>
                                 <ProjectsGrid projects={projects} />
                             </section>
                             
-                            <Line />
+                            {/* GitHub Contribution Graph */}
+                            <section className={styles.githubSection}>
+                                <h2 className={styles.sectionTitle}>GitHub Activity</h2>
+                                <GitHubContribution username="jgx02c" />
+                            </section>
                             
-                            <SkillsProject />
-                            <Line />
+                            {/* Skills Section */}
+                            <section className={styles.skillsSection}>
+                                <h2 className={styles.sectionTitle}>My Skills</h2>
+                                <SkillsProject />
+                            </section>
+
                             <NavFooter />
                         </>
                     ) : (

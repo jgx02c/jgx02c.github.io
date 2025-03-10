@@ -10,7 +10,6 @@ export const GitHubContribution: React.FC<GitHubContributionProps> = ({ username
     
     return (
         <div className={styles.container}>
-            <h2 className={styles.title}>GitHub Contributions</h2>
             <div className={styles.contributionWrapper}>
                 <img 
                     src={iframeUrl} 

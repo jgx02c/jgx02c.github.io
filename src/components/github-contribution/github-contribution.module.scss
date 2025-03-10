@@ -1,40 +1,19 @@
 .container {
   width: 100%;
   max-width: 1200px;
-  margin: 2rem auto;
+  margin: 0 auto;
   padding: 1.8rem;
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-.title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  color: #333;
-  position: relative;
-  
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background-color: #3498db;
-    border-radius: 2px;
-  }
-}
-
 .contributionWrapper {
   display: flex;
   justify-content: center;
   overflow-x: auto;
-  padding: 1.5rem 0;
-  margin: 1rem 0;
+  padding: 1rem 0;
+  margin: 0;
   
   &::-webkit-scrollbar {
     height: 8px;
@@ -64,7 +43,7 @@
 
 .githubDetails {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 1.5rem auto 0;
   text-align: center;
 }
 
@@ -76,7 +55,7 @@
 }
 
 .githubLink {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   text-align: center;
 }
 
@@ -101,11 +80,7 @@
 @media (max-width: 768px) {
   .container {
     padding: 1.2rem;
-    margin: 1.5rem auto;
-  }
-  
-  .title {
-    font-size: 1.6rem;
+    margin: 0 auto;
   }
   
   .description {
