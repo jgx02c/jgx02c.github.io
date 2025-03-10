@@ -15,33 +15,15 @@ function ProjectsPage() {
 
     useEffect(() => {
         try {
-            console.log("Loading projects data...");
-            
-            // Set projects data with a slight delay to ensure component is mounted
-            setTimeout(() => {
-                try {
-                    // Log the raw data for debugging
-                    console.log("Raw projects data:", JSON.stringify(projectsData).substring(0, 200) + "...");
-                    
-                    // Cast and set the projects data
-                    setProjects(projectsData as project[]);
-                    setIsLoading(false);
-                    console.log("Projects loaded successfully:", projects.length);
-                } catch (err) {
-                    console.error("Error setting projects data:", err);
-                    setError("Failed to process projects data: " + (err instanceof Error ? err.message : String(err)));
-                    setIsLoading(false);
-                }
-            }, 500);
+            // Set projects data immediately
+            setProjects(projectsData as project[]);
+            setIsLoading(false);
         } catch (err) {
-            console.error("Error in projects useEffect:", err);
+            console.error("Error loading projects:", err);
             setError("Failed to load projects: " + (err instanceof Error ? err.message : String(err)));
             setIsLoading(false);
         }
-    }, []);
-
-    // Add this for debugging
-    console.log("Current state:", { isLoading, projectsCount: projects.length, hasError: !!error });
+    }, []); // Empty dependency array since we're only loading once
 
     if (error) {
         return (

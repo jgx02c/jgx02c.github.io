@@ -11,48 +11,28 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
     const projectsRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const animateCards = () => {
-            if (!projectsRef.current) return;
+        if (!projectsRef.current) return;
 
-            const projectItems = projectsRef.current.querySelectorAll(`.${styles.projectItem}`);
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        // Add animation with staggered delay
-                        const delay = index * 0.1;
-                        entry.target.classList.add(styles.visible);
-                        (entry.target as HTMLElement).style.animationDelay = `${delay}s`;
-                        
-                        // Unobserve after animating
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.2 });
-
-            projectItems.forEach(item => {
-                observer.observe(item);
+        const projectItems = projectsRef.current.querySelectorAll(`.${styles.projectItem}`);
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add(styles.visible);
+                    observer.unobserve(entry.target);
+                }
             });
+        }, { 
+            threshold: 0.1,
+            rootMargin: '50px'
+        });
 
-            return () => {
-                projectItems.forEach(item => {
-                    observer.unobserve(item);
-                });
-            };
-        };
+        projectItems.forEach(item => observer.observe(item));
 
-        // Initial animation setup
-        animateCards();
-        
-        // Re-run on window resize
-        window.addEventListener('resize', animateCards);
-        
-        return () => {
-            window.removeEventListener('resize', animateCards);
-        };
-    }, [projects]);
+        return () => observer.disconnect();
+    }, []);
 
-    if (!projects || !Array.isArray(projects) || projects.length === 0) {
+    if (!projects?.length) {
         return (
             <div className={styles.emptyState}>
                 <p>No projects available</p>

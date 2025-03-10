@@ -24,13 +24,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
     }, [project.imageUrl, project.title]);
     
     useEffect(() => {
-        // Prevent scrolling when modal is open
-        if (isOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
-        
         // Handle click outside to close
         const handleClickOutside = (event: MouseEvent) => {
             if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
@@ -51,11 +44,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
             document.removeEventListener('keydown', handleEscKey);
-            document.body.style.overflow = 'auto';
         };
-    }, [isOpen, onClose]);
-    
-    if (!isOpen) return null;
+    }, [onClose]);
     
     return (
         <div className={styles.modalOverlay}>

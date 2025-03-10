@@ -4,6 +4,7 @@ import { project } from '../home-project-component/home-project-component';
 import getLogoImage from '../../utils/logoMapper';
 import getProjectImage from '../../utils/imageImporter';
 import ProjectModal from '../project-modal/project-modal';
+import ModalPortal from '../modal-portal/modal-portal';
 
 export const ProjectCard: React.FC<project> = (props) => {
     const {
@@ -39,10 +40,14 @@ export const ProjectCard: React.FC<project> = (props) => {
         // Prevent the click from triggering other elements
         e.stopPropagation();
         setIsModalOpen(true);
+        // Prevent scrolling when modal is open
+        document.body.style.overflow = 'hidden';
     };
 
     const closeModal = () => {
         setIsModalOpen(false);
+        // Restore scrolling
+        document.body.style.overflow = 'auto';
     };
 
     return (
@@ -99,11 +104,13 @@ export const ProjectCard: React.FC<project> = (props) => {
                 </div>
             </div>
 
-            <ProjectModal 
-                project={props} 
-                isOpen={isModalOpen}
-                onClose={closeModal}
-            />
+            <ModalPortal isOpen={isModalOpen}>
+                <ProjectModal 
+                    project={props} 
+                    isOpen={isModalOpen}
+                    onClose={closeModal}
+                />
+            </ModalPortal>
         </>
     );
 };
