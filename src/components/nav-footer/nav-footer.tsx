@@ -23,7 +23,7 @@ const CVLink: React.FC = () => {
 
 export const NavFooter: React.FC<NavFooterProps> = ({ className }) => {
     const handleEmailClick = () => {
-        window.location.href = 'mailto:goodman.joshua02@gmail.com';
+        window.location.href = 'mailto:joshua.goodman02@gmail.com';
     };
 
     return (

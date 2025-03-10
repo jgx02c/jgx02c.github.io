@@ -12,7 +12,9 @@ import optionalityLogo from '../assets/optionality_logo.png';
 import mxLogo from '../assets/mx.webp';
 import dialogicaLogo from '../assets/dialogica_logo.png';
 import jgLogo from '../assets/jglogo.png';
-
+import byobLogo from '../assets/byob.png';
+import quicksightLogo from '../assets/quicksight.jpeg';
+import collegiatestandardLogo from '../assets/collegiatestandardlogo.png';
 export interface WorkPageProps {
     className?: string;
 }
@@ -32,7 +34,10 @@ const WorkPage = ({ className }: WorkPageProps) => {
             '../assets/optionality_logo.png': optionalityLogo,
             '../assets/mx.webp': mxLogo,
             '../assets/dialogica_logo.png': dialogicaLogo,
-            '../assets/jglogo.png': jgLogo
+            '../assets/jglogo.png': jgLogo,
+            '../assets/byob.png': byobLogo,
+            '../assets/quicksight.jpeg': quicksightLogo,
+            '../assets/collegiatestandardlogo.png': collegiatestandardLogo
         };
         
         // Process the work history data to handle image paths

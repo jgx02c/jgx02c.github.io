@@ -1,11 +1,11 @@
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 65rem;
   margin: 0 auto;
-  padding: 1.8rem;
+  padding: 2rem 1rem;
   background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
 }
 
 .contributionWrapper {
@@ -16,17 +16,17 @@
   margin: 0;
   
   &::-webkit-scrollbar {
-    height: 8px;
+    height: 0.5rem;
   }
   
   &::-webkit-scrollbar-track {
     background: #f1f1f1;
-    border-radius: 10px;
+    border-radius: 0.625rem;
   }
   
   &::-webkit-scrollbar-thumb {
     background: #888;
-    border-radius: 10px;
+    border-radius: 0.625rem;
   }
   
   &::-webkit-scrollbar-thumb:hover {
@@ -37,12 +37,12 @@
 .contributionChart {
   max-width: 100%;
   height: auto;
-  border-radius: 5px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 0.3125rem;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.08);
 }
 
 .githubDetails {
-  max-width: 800px;
+  max-width: 50rem;
   margin: 1.5rem auto 0;
   text-align: center;
 }
@@ -65,19 +65,19 @@
   background-color: #24292e;
   color: white;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   font-weight: 500;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.15);
   
   &:hover {
     background-color: #3a3f46;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .container {
     padding: 1.2rem;
     margin: 0 auto;

@@ -113,11 +113,11 @@
     }
     
     .timelineLine {
-        left: 50%;  /* Keep centered even on mobile */
+        left: 30px;  /* Align with mobile timeline points */
     }
     
     .timelineStart, .timelineEnd {
-        left: 50%;  /* Keep centered even on mobile */
+        left: 30px;  /* Align with mobile timeline points */
     }
     
     /* On mobile, all items appear on the right of the timeline */
@@ -126,19 +126,35 @@
         margin-left: 0 !important;
         margin-right: 0 !important;
         padding-left: 60px !important;
+        
+        .timelinePoint {
+            left: 30px !important;
+            transform: translateX(-50%) !important;
+        }
     }
-
 }
 
 /* Explicitly position items left or right */
 .leftItem {
     align-self: flex-start !important;
     margin-right: 50% !important; 
+    padding-right: 40px !important;
+    
+    .timelinePoint {
+        right: -10px !important;
+        transform: translateX(50%) !important;
+    }
 }
 
 .rightItem {
     align-self: flex-end !important;
     margin-left: 50% !important;
+    padding-left: 40px !important;
+    
+    .timelinePoint {
+        left: -10px !important;
+        transform: translateX(-50%) !important;
+    }
 }
 
 /* Add this to properly export the CSS classes for JS access */

@@ -6,6 +6,7 @@ import project5PNG from '../assets/login.png';
 import project7PNG from '../assets/livableWage.png';
 import project8PNG from '../assets/wildfire-active-map-tracker-features.jpeg';
 import project9PNG from '../assets/gpt2hpccpp.png';
+import scopePNG from '../assets/scope.png';
 
 interface ImageMap {
   [key: string]: string;
@@ -22,7 +23,8 @@ const imageMap: ImageMap = {
   '../assets/login.png': project5PNG,
   '../assets/livableWage.png': project7PNG,
   '../assets/wildfire-active-map-tracker-features.jpeg': project8PNG,
-  '../assets/gpt2hpccpp.png': project9PNG
+  '../assets/gpt2hpccpp.png': project9PNG,
+  '../assets/scope.png': scopePNG
 };
 
 export const getProjectImage = (imagePath: string): string => {

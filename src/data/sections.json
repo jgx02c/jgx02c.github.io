@@ -1,12 +1,12 @@
 [
     {
         "id": 1,
-        "titleLogo": "../assets/PiclistLogo.png",
-        "subText": "Pic. Post. Sell.",
-        "description": "Optimize and manage your ecommerce side hustle backed by A.I.",
+        "titleLogo": "../assets/dialogica_logo.png",
+        "subText": "The words Smartest Second Chair",
+        "description": "Experience the world's smartest second chair, always at your side—your copilot for every deposition, examination, trial, or hearing.",
         "linkText": "View Website",
-        "link": "https://piclist.ai",
-        "image": "../assets/PiclistDashboard.png"
+        "link": "https://www.dialogicaai.com/",
+        "image": "../assets/dialogica-new.png"
     },
     {
         "id": 2,

@@ -5,7 +5,6 @@ function ContactPage () {
     return(
         <div>
             <About /> 
-            <Line />
             <NavFooter />
         </div>
     )

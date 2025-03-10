@@ -23,7 +23,7 @@ export const About = ({ className }: AboutProps) => {
         const formData = new FormData(form);
 
         try {
-            const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+            const response = await fetch('https://formspree.io/f/xjkyvwrq', {
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -67,10 +67,10 @@ export const About = ({ className }: AboutProps) => {
                         <a href="https://github.com/jgx02c" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
                             <FaGithub /> GitHub
                         </a>
-                        <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+                        <a href="https://www.linkedin.com/in/joshuajgoodman/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
                             <FaLinkedin /> LinkedIn
                         </a>
-                        <a href="mailto:your.email@example.com" className={styles.socialLink}>
+                        <a href="mailto:joshua.goodman02@gmail.com" className={styles.socialLink}>
                             <FaEnvelope /> Email
                         </a>
                     </div>

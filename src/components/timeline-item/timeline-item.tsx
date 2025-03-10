@@ -14,7 +14,6 @@ export const TimelineItem = ({ className, item, position }: TimelineItemProps) =
         role,
         period,
         description,
-        technologies,
         achievements,
         logo
     } = item;
@@ -44,17 +43,6 @@ export const TimelineItem = ({ className, item, position }: TimelineItemProps) =
                 </div>
                 
                 <p className={styles.description}>{description}</p>
-                
-                {technologies && technologies.length > 0 && (
-                    <div className={styles.technologies}>
-                        <h5 className={styles.sectionTitle}>Technologies</h5>
-                        <div className={styles.techList}>
-                            {technologies.map((tech, index) => (
-                                <span key={index} className={styles.techTag}>{tech}</span>
-                            ))}
-                        </div>
-                    </div>
-                )}
                 
                 {achievements && achievements.length > 0 && (
                     <div className={styles.achievements}>
