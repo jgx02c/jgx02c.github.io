@@ -17,6 +17,8 @@ export interface project {
     codeLink: string;
     live: boolean;
     liveLink: string;
+    projectType?: 'personal' | 'work' | '';
+    companyName?: string;
 }
 
 export const HomeProjectComponent: React.FC<project> = ({

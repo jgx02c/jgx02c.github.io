@@ -5,6 +5,10 @@ import getLogoImage from '../../utils/logoMapper';
 import getProjectImage from '../../utils/imageImporter';
 import ProjectModal from '../project-modal/project-modal';
 import ModalPortal from '../modal-portal/modal-portal';
+import selfie from '../../assets/selfie.png';
+import cppLogo from '../../assets/Cal-Poly-Pomona-Logo.png';
+import piclistLogo from '../../assets/PiclistLogo.png';
+import byobLogo from '../../assets/BYOB.png';
 
 export const ProjectCard: React.FC<project> = (props) => {
     const {
@@ -19,6 +23,8 @@ export const ProjectCard: React.FC<project> = (props) => {
         codeLink = '',
         live = false,
         liveLink = '',
+        projectType = '',
+        companyName = '',
     } = props;
 
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -50,6 +56,35 @@ export const ProjectCard: React.FC<project> = (props) => {
         document.body.style.overflow = 'auto';
     };
 
+    const getProjectTypeInfo = () => {
+        if (projectType && projectType.toLowerCase() === 'work') {
+            if (companyName === 'Piclist') {
+                return {
+                    logo: piclistLogo,
+                    text: 'Piclist'
+                };
+            }
+            if (companyName === 'BYOB') {
+                return {
+                    logo: byobLogo,
+                    text: 'BYOB'
+                };
+            }
+        }
+        if (projectType && projectType.toLowerCase() === 'school') {
+            return {
+                logo: cppLogo,
+                text: 'School'
+            };
+        }
+        return {
+            logo: selfie,
+            text: 'Personal Project'
+        };
+    };
+
+    const projectTypeInfo = getProjectTypeInfo();
+
     return (
         <>
             <div className={styles.card} onClick={openModal}>
@@ -72,6 +107,11 @@ export const ProjectCard: React.FC<project> = (props) => {
                 </div>
                 
                 <div className={styles.content}>
+                    <div className={styles.projectTypeIndicator}>
+                        <img src={projectTypeInfo.logo} alt={projectTypeInfo.text} className={styles.projectTypeImage} />
+                        <span>{projectTypeInfo.text}</span>
+                    </div>
+                    
                     <h3 className={styles.title}>{title}</h3>
                     
                     <div className={styles.technologies}>
@@ -106,7 +146,7 @@ export const ProjectCard: React.FC<project> = (props) => {
 
             <ModalPortal isOpen={isModalOpen}>
                 <ProjectModal 
-                    project={props} 
+                    project={props}
                     isOpen={isModalOpen}
                     onClose={closeModal}
                 />

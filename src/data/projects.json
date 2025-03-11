@@ -12,7 +12,9 @@
     "code": false,
     "codeLink": "",
     "live": true,
-    "liveLink": "https://www.dialogicaai.com/"
+    "liveLink": "https://www.dialogicaai.com/",
+    "projectType": "personal",
+    "companyName": ""
   },
   {
     "id": 2,
@@ -32,7 +34,9 @@
     "code": true,
     "codeLink": "https://github.com/jgx02c/web-anlysis-scraper",
     "live": true,
-    "liveLink": "https://www.scopelabsai.com/"
+    "liveLink": "https://www.scopelabsai.com/",
+    "projectType": "personal",
+    "companyName": ""
   },
   {
     "id": 3,
@@ -52,7 +56,9 @@
     "code": true,
     "codeLink": "https://github.com/jgx02c/Frontend-Auction",
     "live": true,
-    "liveLink": ""
+    "liveLink": "",
+    "projectType": "personal",
+    "companyName": ""
   },
   {
     "id": 4,
@@ -72,7 +78,9 @@
     "code": true,
     "codeLink": "https://github.com/jgx02c/snippets",
     "live": true,
-    "liveLink": "https://joshuagoodman.me/Emberlight/"
+    "liveLink": "https://joshuagoodman.me/Emberlight/",
+    "projectType": "personal",
+    "companyName": ""
   },
   {
     "id": 5,
@@ -92,7 +100,9 @@
     "code": true,
     "codeLink": "https://github.com/cs3560-03-01/CS3560-Proj",
     "live": false,
-    "liveLink": ""
+    "liveLink": "",
+    "projectType": "school",
+    "companyName": ""
   },
   {
     "id": 6,
@@ -112,7 +122,9 @@
     "code": true,
     "codeLink": "https://github.com/jgx02c/LivableWageCalcuator",
     "live": false,
-    "liveLink": ""
+    "liveLink": "",
+    "projectType": "personal",
+    "companyName": ""
   },
   {
     "id": 7,
@@ -132,7 +144,9 @@
     "code": true,
     "codeLink": "https://github.com/doxid/CS4800.01_AWS2_AI",
     "live": false,
-    "liveLink": ""
+    "liveLink": "",
+    "projectType": "school",
+    "companyName": ""
   },
   {
     "id": 8,
@@ -148,6 +162,52 @@
     "code": true,
     "codeLink": "https://github.com/jgx02c/cs3700-presentation",
     "live": false,
-    "liveLink": ""
+    "liveLink": "",
+    "projectType": "school",
+    "companyName": ""
+  },
+  {
+    "id": 9,
+    "title": "A.I. Crosslisting",
+    "imageUrl": "../assets/PiclistLogo.png",
+    "description": "Led the development of an AI-powered cross-listing solution for Piclist, enabling seamless product listing across multiple e-commerce platforms. The system intelligently optimizes listings for each marketplace while maintaining consistency and automating the cross-posting process.",
+    "madeWith": [
+      "react-native",
+      "typescript",
+      "nodejs",
+      "openai",
+      "mongodb",
+      "aws"
+    ],
+    "demo": false,
+    "demoLink": "",
+    "code": false,
+    "codeLink": "",
+    "live": true,
+    "liveLink": "https://www.piclist.com",
+    "projectType": "work",
+    "companyName": "Piclist"
+  },
+  {
+    "id": 10,
+    "title": "Creator Deals",
+    "imageUrl": "../assets/BYOB.png",
+    "description": "Developed a comprehensive platform for BYOB that connects creators with exclusive brand deals and sponsorship opportunities. The platform features automated deal matching, analytics tracking, and a streamlined negotiation process.",
+    "madeWith": [
+      "react-native",
+      "nodejs",
+      "typescript",
+      "mongodb",
+      "aws",
+      "firebase"
+    ],
+    "demo": false,
+    "demoLink": "",
+    "code": false,
+    "codeLink": "",
+    "live": true,
+    "liveLink": "https://www.byob.ai",
+    "projectType": "work",
+    "companyName": "BYOB"
   }
 ] 

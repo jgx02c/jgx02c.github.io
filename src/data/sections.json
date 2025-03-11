@@ -1,13 +1,5 @@
 [
-    {
-        "id": 1,
-        "titleLogo": "../assets/dialogica_logo.png",
-        "subText": "The words Smartest Second Chair",
-        "description": "Experience the world's smartest second chair, always at your side—your copilot for every deposition, examination, trial, or hearing.",
-        "linkText": "View Website",
-        "link": "https://www.dialogicaai.com/",
-        "image": "../assets/dialogica-new.png"
-    },
+   
     {
         "id": 2,
         "titleLogo": "../assets/finned_logo.png",
@@ -32,7 +24,7 @@
         "subText": "Software Engineer",
         "description": "Programming Projects from University and self-interest. Here, you can find a portfolio of my programming projects and skills.",
         "linkText": "View Projects",
-        "link": "https://joshuagoodman.me/projects",
+        "link": "/projects",
         "image": "../assets/jg_img.png"
     }
 ]

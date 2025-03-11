@@ -8,9 +8,15 @@ interface GitHubContributionProps {
 export const GitHubContribution: React.FC<GitHubContributionProps> = ({ username }) => {
     const iframeUrl = `https://ghchart.rshah.org/${username}`;
     
+    // Hardcoded value based on what you mentioned
+    const contributionsCount = 1093;
+    
     return (
         <div className={styles.container}>
             <div className={styles.contributionWrapper}>
+                <div className={styles.contributionCount}>
+                    {contributionsCount.toLocaleString()} contributions in the last year
+                </div>
                 <img 
                     src={iframeUrl} 
                     alt={`${username}'s GitHub Contribution Graph`} 
