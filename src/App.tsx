@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { clarity } from 'react-microsoft-clarity';
+import { useEffect } from 'react';
 import styles from './App.module.scss';
 import { NavHeader } from './components/nav-header/nav-header';
 
@@ -8,6 +10,10 @@ import ProjectsPage from "./pages/ProjectsPage";
 import ContactPage from "./pages/ContactPage";
 
 function App() {
+    useEffect(() => {
+        clarity.init('qmqw6gnm3f');
+    }, []);
+
     return (
         <div className={styles.App}>
             <BrowserRouter>
