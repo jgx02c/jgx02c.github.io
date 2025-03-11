@@ -57,6 +57,8 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
                             codeLink={project.codeLink}
                             live={project.live}
                             liveLink={project.liveLink}
+                            projectType={project.projectType}
+                            companyName={project.companyName}
                         />
                     </div>
                 ))}

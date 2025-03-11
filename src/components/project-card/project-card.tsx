@@ -1,3 +1,4 @@
+// ProjectCard.tsx
 import React, { useState } from 'react';
 import styles from './project-card.module.scss';
 import { project } from '../home-project-component/home-project-component';
@@ -16,21 +17,21 @@ export const ProjectCard: React.FC<project> = (props) => {
         title,
         description,
         imageUrl,
-        madeWith = [],
-        demo = false,
-        demoLink = '',
-        code = false,
-        codeLink = '',
-        live = false,
-        liveLink = '',
-        projectType = '',
-        companyName = '',
+        madeWith,
+        demo,
+        demoLink,
+        code,
+        codeLink,
+        live,
+        liveLink,
+        projectType,
+        companyName,
     } = props;
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     // Filter out "Blank" from technologies
-    const filteredTech = madeWith.filter(tech => tech.toLowerCase() !== 'blank');
+    const filteredTech = madeWith.filter(tech => tech && tech.toLowerCase() !== 'blank');
 
     // Get project image with error handling
     const projectImage = React.useMemo(() => {
@@ -57,7 +58,9 @@ export const ProjectCard: React.FC<project> = (props) => {
     };
 
     const getProjectTypeInfo = () => {
-        if (projectType && projectType.toLowerCase() === 'work') {
+        
+        if (projectType === 'work') {
+            // Handle work projects
             if (companyName === 'Piclist') {
                 return {
                     logo: piclistLogo,
@@ -69,21 +72,28 @@ export const ProjectCard: React.FC<project> = (props) => {
                     logo: byobLogo,
                     text: 'BYOB'
                 };
-            }
+            }        
         }
-        if (projectType && projectType.toLowerCase() === 'school') {
+        
+        if (projectType === 'school') {
             return {
                 logo: cppLogo,
-                text: 'School'
+                text: 'CPP'
             };
         }
-        return {
-            logo: selfie,
-            text: 'Personal Project'
-        };
+        
+        if (projectType === 'personal') {
+            return {
+                logo: selfie,
+                text: 'Personal Project'
+            };
+        }
+        
     };
 
+    // Get the project type info and log it for debugging
     const projectTypeInfo = getProjectTypeInfo();
+    console.log(`ProjectCard: ${title} - Type: ${projectType}, Company: ${companyName} → Display: ${projectTypeInfo?.text}`);
 
     return (
         <>
@@ -107,9 +117,22 @@ export const ProjectCard: React.FC<project> = (props) => {
                 </div>
                 
                 <div className={styles.content}>
-                    <div className={styles.projectTypeIndicator}>
-                        <img src={projectTypeInfo.logo} alt={projectTypeInfo.text} className={styles.projectTypeImage} />
-                        <span>{projectTypeInfo.text}</span>
+                    {/* Add an extra div to help with debugging */}
+                    <div 
+                        className={styles.projectTypeIndicator}
+                        data-project-type={projectType}
+                        data-company-name={companyName || 'none'}
+                    >
+                        <img 
+                            src={projectTypeInfo?.logo} 
+                            alt={projectTypeInfo?.text} 
+                            className={styles.projectTypeImage} 
+                            onError={(e) => {
+                                console.error(`Failed to load project type logo for ${title}`);
+                                (e.target as HTMLImageElement).style.display = 'none';
+                            }}
+                        />
+                        <span>{projectTypeInfo?.text}</span>
                     </div>
                     
                     <h3 className={styles.title}>{title}</h3>
@@ -155,4 +178,4 @@ export const ProjectCard: React.FC<project> = (props) => {
     );
 };
 
-export default ProjectCard; 
+export default ProjectCard;

@@ -17,7 +17,7 @@ export interface project {
     codeLink: string;
     live: boolean;
     liveLink: string;
-    projectType?: 'personal' | 'work' | '';
+    projectType?: string;
     companyName?: string;
 }
 
