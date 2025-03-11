@@ -21,7 +21,7 @@ export interface project {
     companyName?: string;
 }
 
-export const HomeProjectComponent: React.FC<project> = ({
+export const HomeProjectComponent = ({
     className, 
     id, 
     imageUrl = '', 
@@ -34,7 +34,7 @@ export const HomeProjectComponent: React.FC<project> = ({
     demoLink = '', 
     live = false, 
     liveLink = ''
-}) => {
+}: project) => {
     // For debugging
     console.log(`Rendering project: ${title}, image: ${imageUrl}`);
     
@@ -122,5 +122,3 @@ export const HomeProjectComponent: React.FC<project> = ({
         </div>
     );
 };
-
-export default HomeProjectComponent;

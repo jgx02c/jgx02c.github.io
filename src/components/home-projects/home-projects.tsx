@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import styles from './home-projects.module.scss';
-import { project, HomeProjectComponent} from '../home-project-component/home-project-component';
-
+import { project, HomeProjectComponent } from '../home-project-component/home-project-component';
 export interface Projects {
     className?: string;
     projects: project[];
