@@ -1,13 +1,33 @@
 [
   {
     "id": 1,
+    "title": "Dialogica",
+    "imageUrl": "../assets/Dialogica/dialogica-demo.png",
+    "description": "Experience the world's smartest second chair, always at your side—your copilot for every deposition, examination, trial, hearing, and beyond Powered by the latest in AI, Dialogica is the perfect tool for any legal professional.",
+    "madeWith": [
+      "typescript",
+      "nodejs",
+      "next-js",
+      "tailwindcss"
+    ],
+    "demo": true,
+    "demoLink": "https://www.youtube.com/watch?v=2PnzFxdACoo",
+    "code": false,
+    "codeLink": "",
+    "live": true,
+    "liveLink": "https://www.dialogicaai.com/",
+    "projectType": "personal",
+    "companyName": ""
+  },
+  {
+    "id": 2,
     "title": "SEO Web Scraper",
     "imageUrl": "../assets/scope.png",
     "description": "This project is a web scraper that scrapes a website and returns a list of all the links on the page. It is a simple project that uses the BeautifulSoup library to scrape the website.",
     "madeWith": [
-      "javascript",
+      "typescript",
       "next-js",
-      "mysql",
+      "tailwindcss",
       "python",
       "fastapi",
       "mongodb"
@@ -22,17 +42,17 @@
     "companyName": ""
   },
   {
-    "id": 2,
+    "id": 3,
     "title": "Travel-4-All",
     "imageUrl": "../assets/travell4all.png",
     "description": "Exploring different technologies and frameworks, I wanted to do a recreation of popular website, Bring a Trailer. Inspired by my local Pastor on the superiority of International Harvesters, I built this site as a way for him to and others to list and sell all of his favorite vehicles.",
     "madeWith": [
       "typescript",
       "next-js",
-      "mongodb",
-      "javascript",
-      "blank",
-      "scss"
+      "redis",
+      "postgresql",
+      "tailwindcss",
+      "express"
     ],
     "demo": false,
     "demoLink": "",
@@ -44,48 +64,26 @@
     "companyName": ""
   },
   {
-    "id": 3,
-    "title": "Creator Deals",
-    "imageUrl": "../assets/BYOB.png",
-    "description": "Developed a comprehensive platform for BYOB that connects creators with exclusive brand deals and sponsorship opportunities. The platform features automated deal matching, analytics tracking, and a streamlined negotiation process.",
-    "madeWith": [
-      "react-native",
-      "nodejs",
-      "typescript",
-      "mongodb",
-      "aws",
-      "firebase"
-    ],
-    "demo": false,
-    "demoLink": "",
-    "code": false,
-    "codeLink": "",
-    "live": true,
-    "liveLink": "https://www.byob.ai",
-    "projectType": "work",
-    "companyName": "BYOB"
-  },
-  {
     "id": 4,
-    "title": "A.I. Crosslisting",
-    "imageUrl": "../assets/PiclistLogo.png",
-    "description": "Led the development of an AI-powered cross-listing solution for Piclist, enabling seamless product listing across multiple e-commerce platforms. The system intelligently optimizes listings for each marketplace while maintaining consistency and automating the cross-posting process.",
+    "title": "Snippetz",
+    "imageUrl": "../assets/emberlight.png",
+    "description": "Snippez is a personal project to store snippets of code that I want to quickly reference and reuse. It pairs with my BYOC GPT Coder. It helps improve efficiency and accuracy.",
     "madeWith": [
-      "react-native",
       "typescript",
-      "nodejs",
-      "openai",
+      "next-js",
       "mongodb",
-      "aws"
+      "javascript",
+      "scss",
+      "express"
     ],
     "demo": false,
     "demoLink": "",
-    "code": false,
-    "codeLink": "",
+    "code": true,
+    "codeLink": "https://github.com/jgx02c/snippets",
     "live": true,
-    "liveLink": "https://www.piclist.com",
-    "projectType": "work",
-    "companyName": "Piclist"
+    "liveLink": "https://joshuagoodman.me/Emberlight/",
+    "projectType": "school",
+    "companyName": ""
   },
   {
     "id": 5,
@@ -94,11 +92,10 @@
     "description": "Snippez is a personal project to store snippets of code that I want to quickly reference and reuse. It pairs with my BYOC GPT Coder. It helps improve efficiency and accuracy.",
     "madeWith": [
       "unity",
-      "c#",
-      "c++",
+      "csharp",
+      "cplusplus",
       "unreal-engine",
-      "blender",
-      "photoshop"
+      "blender"
     ],
     "demo": false,
     "demoLink": "",
@@ -111,23 +108,6 @@
   },
   {
     "id": 6,
-    "title": "Dialogica",
-    "imageUrl": "../assets/dialogica-demo.png",
-    "description": "Experience the world's smartest second chair, always at your side—your copilot for every deposition, examination, trial, hearing, and beyond Powered by the latest in AI, Dialogica is the perfect tool for any legal professional.",
-    "madeWith": [
-    
-    ],
-    "demo": true,
-    "demoLink": "https://www.youtube.com/watch?v=2PnzFxdACoo",
-    "code": false,
-    "codeLink": "",
-    "live": true,
-    "liveLink": "https://www.dialogicaai.com/",
-    "projectType": "personal",
-    "companyName": ""
-  },
-  {
-    "id": 7,
     "title": "Doctors Office Appoiment Booking",
     "imageUrl": "../assets/login.png",
     "description": "For this project, I took the key role of leading a small team to develop a small application connected to an external SQL back end. Our project featured a protected login and signup, appointment booking system, and text message appointment confirmation.",
@@ -149,29 +129,7 @@
     "companyName": ""
   },
   {
-    "id": 8,
-    "title": "Livable Wage Calcuator",
-    "imageUrl": "../assets/livableWage.png",
-    "description": "LivableWage calculator is a calculator that computes the livable wage needed in a certain area. Using an external API to fetch data from Open Cage and Numbeo. Using these external sources it can compare the monthly expenses entered into the program with the monthly livable wage cost in the area that is needed.",
-    "madeWith": [
-      "htmlfive",
-      "css",
-      "javascript",
-      "blank",
-      "blank",
-      "blank"
-    ],
-    "demo": false,
-    "demoLink": "",
-    "code": true,
-    "codeLink": "https://github.com/jgx02c/LivableWageCalcuator",
-    "live": false,
-    "liveLink": "",
-    "projectType": "personal",
-    "companyName": ""
-  },
-  {
-    "id": 9,
+    "id": 7,
     "title": "A.I. California Wildfire Prediction",
     "imageUrl": "../assets/wildfire-active-map-tracker-features.jpeg",
     "description": "For this project, I was Part of an A.I. team working in AWS Sage Maker. Our goal was to create and train an A.I. model to predict wether forcasting and the chance of wildfires across California. Our A.I. model was integrated with the back end (team) that then sent the data to the front end (team).",
@@ -193,13 +151,13 @@
     "companyName": ""
   },
   {
-    "id": 10,
+    "id": 8,
     "title": "GPT-2 On CPP HPC",
     "imageUrl": "../assets/gpt2hpccpp.png",
     "description": "Console app that manages tasks in a project. Users can load projects from a file and generate a seqeuence to complete them in, based on each task's dependencies. Users can also find earliest possible commencement time of each task, add new tasks, update tasks, remove tasks, and save the results to a text file.",
     "madeWith": [
-      "Shell",
-      "OpenAI"
+      "shell",
+      "openai"
     ],
     "demo": true,
     "demoLink": "https://youtu.be/AGwYorbxvgg",
@@ -210,5 +168,4 @@
     "projectType": "school",
     "companyName": ""
   }
-
 ] 

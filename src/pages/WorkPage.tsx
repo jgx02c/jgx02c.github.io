@@ -6,15 +6,16 @@ import workHistoryData from '../data/workHistory.json';
 import { NavFooter } from '../components/nav-footer/nav-footer';
 
 // Import all company logos
-import piclistLogo from '../assets/PiclistLogo.png';
-import finnedLogo from '../assets/finned_logo.png';
+import finnedLogo from '../assets/finned/finned_logo.png';
 import optionalityLogo from '../assets/optionality_logo.png';
 import mxLogo from '../assets/mx.webp';
-import dialogicaLogo from '../assets/dialogica_logo.png';
-import jgLogo from '../assets/jglogo.png';
-import byobLogo from '../assets/byob.png';
-import quicksightLogo from '../assets/quicksight.jpeg';
-import collegiatestandardLogo from '../assets/collegiatestandardlogo.png';
+import dialogicaLogo from '../assets/Dialogica/dialogica_logo.png';
+import jgLogo from '../assets/logos/jglogo.png';
+import byobLogo from '../assets/logos/BYOB.png';
+import quicksightLogo from '../assets/logos/quicksight.jpeg';
+import collegiatestandardLogo from '../assets/logos/collegiatestandardlogo.png';
+import mercorLogo from '../assets/logos/Mercor.png';
+import piclistLogo from '../assets/logos/piclist.webp';
 export interface WorkPageProps {
     className?: string;
 }
@@ -29,15 +30,16 @@ const WorkPage = ({ className }: WorkPageProps) => {
     useEffect(() => {
         // Create a mapping of logo paths to imported images
         const logoMap: { [key: string]: string } = {
-            '../assets/PiclistLogo.png': piclistLogo,
-            '../assets/finned_logo.png': finnedLogo,
+            '../assets/finned/finned_logo.png': finnedLogo,
             '../assets/optionality_logo.png': optionalityLogo,
             '../assets/mx.webp': mxLogo,
-            '../assets/dialogica_logo.png': dialogicaLogo,
-            '../assets/jglogo.png': jgLogo,
-            '../assets/byob.png': byobLogo,
-            '../assets/quicksight.jpeg': quicksightLogo,
-            '../assets/collegiatestandardlogo.png': collegiatestandardLogo
+            '../assets/Dialogica/dialogica_logo.png': dialogicaLogo,
+            '../assets/logos/jglogo.png': jgLogo,
+            '../assets/logos/BYOB.png': byobLogo,
+            '../assets/logos/quicksight.jpeg': quicksightLogo,
+            '../assets/logos/collegiatestandardlogo.png': collegiatestandardLogo,
+            '../assets/logos/Mercor.png': mercorLogo,
+            '../assets/logos/piclist.webp': piclistLogo
         };
         
         // Process the work history data to handle image paths

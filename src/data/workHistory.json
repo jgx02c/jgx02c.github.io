@@ -1,6 +1,20 @@
 [
     {
         "id": 1,
+        "companyName": "Mercor",
+        "role": "Software Engineer / Data Analyst",
+        "period": "February 2025 - Present",
+        "description": "LLM Evaluations & Assienment based Software Engineering",
+        "technologies": ["English"],
+        "achievements": [
+            "I cannot disclose any details due to NDA.",
+            "My contract has been extended 3 times. (I must be doing something right).",
+            "Worked with a variety of technologies and languages."
+        ],
+        "logo": "../assets/logos/Mercor.png"
+    },
+    {
+        "id": 1,
         "companyName": "Piclist AI",
         "role": "Full Stack Developer",
         "period": "July 2024 - March 2025",
@@ -11,7 +25,7 @@
             "Implemented image recognition AI to automate product listings",
             "Created scalable cloud infrastructure to handle growing user base"
         ],
-        "logo": "../assets/PiclistLogo.png"
+        "logo": "../assets/logos/piclist.webp"
     },
     {
         "id": 3,
@@ -21,11 +35,11 @@
         "description": "Worked with a team to build a full-stack mobile application, successfully launching it to users.",
         "technologies": ["JavaScript", "React", "Shopify", "Node.js", "React Native"],
         "achievements": [
-            "The App “Deals” can be found here: https://deals.byob.ai/BeYourOwnBoss",
+            "The App \"Deals\" can be found here: https://deals.byob.ai/BeYourOwnBoss",
             "Assisted in securing Google application approval by implementing TAC security.",
             "Worked with content creators."
         ],
-        "logo": "../assets/byob.png"
+        "logo": "../assets/logos/BYOB.png"
     },
     {
         "id": 3,
@@ -39,7 +53,7 @@
             "Performed unit testing using Jest and PyTest",
             "Spearheaded the migration to a more scalable Django architecture."
         ],
-        "logo": "../assets/quicksight.jpeg"
+        "logo": "../assets/logos/quicksight.jpeg"
     },
     {
         "id": 3,
@@ -53,7 +67,7 @@
             "Finned Cylinder Mug Patent, 29/879,585 - Filed Jul 10, 2023",
             "Created brand identity and digital marketing strategy closing a 13.5% conversion rate."
         ],
-        "logo": "../assets/finned_logo.png"
+        "logo": "../assets/finned/finned_logo.png"
     },
     {
         "id": 4,
@@ -83,7 +97,6 @@
         ],
         "logo": "../assets/optionality_logo.png"
     },
-   
     {
         "id": 6,
         "companyName": "The Collegiate Standard",
@@ -96,6 +109,6 @@
             "Shot and edited product photos.",
             "Managed social media accounts."
         ],
-        "logo": "../assets/collegiatestandardlogo.png"
+        "logo": "../assets/logos/collegiatestandardlogo.png"
     }
 ] 

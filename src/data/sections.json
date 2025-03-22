@@ -2,21 +2,21 @@
    
     {
         "id": 2,
-        "titleLogo": "../assets/finned_logo.png",
+        "titleLogo": "../assets/finned/finned_logo.png",
         "subText": "Passion Worth Sharing",
         "description": "The epitome of automotive heritage and modern craftsmanship, meticulously designed to pay homage to the timeless elegance.",
         "linkText": "View Website",
         "link": "https://www.finnedmugs.com",
-        "image": "../assets/mug.png"
+        "image": "../assets/finned/mug.png"
     },
     {
         "id": 3,
         "titleLogo": "../assets/optionality_logo.png",
         "subText": "Flexible Business Services & Technology Solutions",
-        "description": "Our clients include, local restaurants, online retailers, fitness brands and many more.",
+        "description": "Bringing your business to the next level with technology and services. Our clients include, local restaurants, online retailers, fitness brands and many more.",
         "linkText": "View Website",
         "link": "https://www.optionality.biz",
-        "image": "../assets/artboard.png"
+        "image": "../assets/logos/artboard.png"
     },
     {
         "id": 4,

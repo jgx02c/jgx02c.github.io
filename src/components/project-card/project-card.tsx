@@ -7,9 +7,9 @@ import getProjectImage from '../../utils/imageImporter';
 import ProjectModal from '../project-modal/project-modal';
 import ModalPortal from '../modal-portal/modal-portal';
 import selfie from '../../assets/selfie.png';
-import cppLogo from '../../assets/Cal-Poly-Pomona-Logo.png';
-import piclistLogo from '../../assets/PiclistLogo.png';
-import byobLogo from '../../assets/BYOB.png';
+import cppLogo from '../../assets/logos/Cal-Poly-Pomona-Logo.png';
+import piclistLogo from '../../assets/logos/PiclistLogo.png';
+import byobLogo from '../../assets/logos/BYOB.png';
 
 export const ProjectCard: React.FC<project> = (props) => {
     const {

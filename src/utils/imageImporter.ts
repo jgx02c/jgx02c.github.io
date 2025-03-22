@@ -1,9 +1,7 @@
 import project1PNG from '../assets/travell4all.png';
 import project2PNG from '../assets/emberlight.png';
-import project3PNG from '../assets/PiclistDashboard.png';
-import project4PNG from '../assets/dialogica-demo.png';
+import project4PNG from '../assets/Dialogica/dialogica-demo.png';
 import project5PNG from '../assets/login.png';
-import project7PNG from '../assets/livableWage.png';
 import project8PNG from '../assets/wildfire-active-map-tracker-features.jpeg';
 import project9PNG from '../assets/gpt2hpccpp.png';
 import scopePNG from '../assets/scope.png';
@@ -18,10 +16,8 @@ const fallbackImage = '';
 const imageMap: ImageMap = {
   '../assets/travell4all.png': project1PNG,
   '../assets/emberlight.png': project2PNG,
-  '../assets/PiclistDashboard.png': project3PNG,
-  '../assets/dialogica-demo.png': project4PNG,
+  '../assets/Dialogica/dialogica-demo.png': project4PNG,
   '../assets/login.png': project5PNG,
-  '../assets/livableWage.png': project7PNG,
   '../assets/wildfire-active-map-tracker-features.jpeg': project8PNG,
   '../assets/gpt2hpccpp.png': project9PNG,
   '../assets/scope.png': scopePNG

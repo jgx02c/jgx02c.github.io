@@ -17,7 +17,7 @@ import shopifyLogo from '../../assets/svg/shopify.svg';
 import cplusplusLogo from '../../assets/svg/cplusplus.svg';
 import openai from '../../assets/svg/openai.svg';
 import nextjs from '../../assets/svg/next-js.svg';
-import flask from '../../assets/flask.png';
+import flask from '../../assets/icons/flask.png';
 import fastapi from '../../assets/svg/fastapi.svg';
 import python from '../../assets/svg/python.svg';
 import langchain from '../../assets/svg/langchain-seeklogo.svg';

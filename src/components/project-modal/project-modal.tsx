@@ -4,9 +4,9 @@ import { project } from '../home-project-component/home-project-component';
 import getLogoImage from '../../utils/logoMapper';
 import getProjectImage from '../../utils/imageImporter';
 import selfie from '../../assets/selfie.png';
-import cppLogo from '../../assets/Cal-Poly-Pomona-Logo.png';
-import piclistLogo from '../../assets/PiclistLogo.png';
-import byobLogo from '../../assets/BYOB.png';
+import cppLogo from '../../assets/logos/Cal-Poly-Pomona-Logo.png';
+import piclistLogo from '../../assets/logos/PiclistLogo.png';
+import byobLogo from '../../assets/logos/BYOB.png';
 
 interface ProjectModalProps {
     project: project;
@@ -101,12 +101,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
                     </div>
 
                     <div className={styles.contentSection}>
-                        <div className={styles.projectTypeIndicator}>
-                            <img src={projectTypeInfo.logo} alt={projectTypeInfo.text} className={styles.projectTypeImage} />
-                            <span>{projectTypeInfo.text}</span>
+                        <div className={styles.headerRow}>
+                            <h2 className={styles.title}>{project.title}</h2>
+                            <div className={styles.projectTypeIndicator}>
+                                <img src={projectTypeInfo.logo} alt={projectTypeInfo.text} />
+                                <span>{projectTypeInfo.text}</span>
+                            </div>
                         </div>
-
-                        <h2 className={styles.title}>{project.title}</h2>
                         
                         <div className={styles.technologies}>
                             {filteredTech.map((tech, index) => (
@@ -114,9 +115,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
                                     <img
                                         src={getLogoImage(tech)}
                                         alt={tech}
-                                        className={styles.techLogo}
                                     />
-                                    <span className={styles.techName}>{tech}</span>
+                                    <span>{tech}</span>
                                 </div>
                             ))}
                         </div>
