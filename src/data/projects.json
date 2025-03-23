@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Dialogica",
     "imageUrl": "../assets/Dialogica/dialogica-demo.png",
-    "description": "Experience the world's smartest second chair, always at your side—your copilot for every deposition, examination, trial, hearing, and beyond Powered by the latest in AI, Dialogica is the perfect tool for any legal professional.",
+    "description": "Experience the world's smartest second chair, always at your side—your copilot for every deposition, examination, trial, hearing, and beyond Powered by the latest in AI, Dialogica is the perfect tool for any legal professional. This project is a work in progress and will be updated as I add more features.",
     "madeWith": [
       "typescript",
       "nodejs",
@@ -15,7 +15,7 @@
     "code": false,
     "codeLink": "",
     "live": true,
-    "liveLink": "https://www.dialogicaai.com/",
+    "liveLink": "https://demo.dialogicaai.com/",
     "projectType": "personal",
     "companyName": ""
   },
