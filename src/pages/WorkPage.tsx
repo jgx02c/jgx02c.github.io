@@ -14,7 +14,7 @@ import jgLogo from '../assets/logos/jglogo.png';
 import byobLogo from '../assets/logos/BYOB.png';
 import quicksightLogo from '../assets/logos/quicksight.jpeg';
 import collegiatestandardLogo from '../assets/logos/collegiatestandardlogo.png';
-import mercorLogo from '../assets/logos/Mercor.png';
+import mercorLogo from '../assets/logos/mercor.png';
 import piclistLogo from '../assets/logos/piclist.webp';
 export interface WorkPageProps {
     className?: string;
