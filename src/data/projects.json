@@ -1,0 +1,171 @@
+[
+  {
+    "id": 1,
+    "title": "Dialogica",
+    "imageUrl": "../assets/Dialogica/dialogica-demo.png",
+    "description": "Experience the world's smartest second chair, always at your side—your copilot for every deposition, examination, trial, hearing, and beyond Powered by the latest in AI, Dialogica is the perfect tool for any legal professional.",
+    "madeWith": [
+      "typescript",
+      "nodejs",
+      "next-js",
+      "tailwindcss"
+    ],
+    "demo": true,
+    "demoLink": "https://www.youtube.com/watch?v=2PnzFxdACoo",
+    "code": false,
+    "codeLink": "",
+    "live": true,
+    "liveLink": "https://www.dialogicaai.com/",
+    "projectType": "personal",
+    "companyName": ""
+  },
+  {
+    "id": 2,
+    "title": "SEO Web Scraper",
+    "imageUrl": "../assets/scope.png",
+    "description": "This project is a web scraper that scrapes a website and returns a list of all the links on the page. It is a simple project that uses the BeautifulSoup library to scrape the website. The main website displays the full concept (I might continue this project in the future).",
+    "madeWith": [
+      "typescript",
+      "next-js",
+      "tailwindcss",
+      "python",
+      "fastapi",
+      "mongodb"
+    ],
+    "demo": false,
+    "demoLink": "",
+    "code": true,
+    "codeLink": "https://github.com/jgx02c/web-anlysis-scraper",
+    "live": true,
+    "liveLink": "https://www.scopelabsai.com/",
+    "projectType": "personal",
+    "companyName": ""
+  },
+  {
+    "id": 3,
+    "title": "Travel-4-All",
+    "imageUrl": "../assets/travell4all.png",
+    "description": "Exploring different technologies and frameworks, I wanted to do a recreation of popular website, Bring a Trailer. Inspired by my local Pastor on the superiority of International Harvesters, I built this site as a way for him to and others to list and sell all of his favorite vehicles.",
+    "madeWith": [
+      "typescript",
+      "next-js",
+      "redis",
+      "postgresql",
+      "tailwindcss",
+      "express"
+    ],
+    "demo": false,
+    "demoLink": "",
+    "code": true,
+    "codeLink": "https://github.com/jgx02c/Frontend-Auction",
+    "live": false,
+    "liveLink": "",
+    "projectType": "personal",
+    "companyName": ""
+  },
+  {
+    "id": 4,
+    "title": "Snippetz",
+    "imageUrl": "../assets/snippetz.png",
+    "description": "Snippez is a personal project to store snippets of code that I want to quickly reference and reuse. It pairs with my BYOC GPT Coder. It helps improve efficiency and accuracy.",
+    "madeWith": [
+      "typescript",
+      "next-js",
+      "mongodb",
+      "javascript",
+      "scss",
+      "express"
+    ],
+    "demo": false,
+    "demoLink": "",
+    "code": true,
+    "codeLink": "https://github.com/jgx02c/snippets",
+    "live": false,
+    "liveLink": "",
+    "projectType": "personal",
+    "companyName": ""
+  },
+  {
+    "id": 5,
+    "title": "Emberlight",
+    "imageUrl": "../assets/emberlight.png",
+    "description": "Snippez is a personal project to store snippets of code that I want to quickly reference and reuse. It pairs with my BYOC GPT Coder. It helps improve efficiency and accuracy.",
+    "madeWith": [
+      "unity",
+      "csharp",
+      "cplusplus",
+      "unreal-engine",
+      "blender"
+    ],
+    "demo": false,
+    "demoLink": "",
+    "code": true,
+    "codeLink": "https://github.com/jgx02c/snippets",
+    "live": true,
+    "liveLink": "https://joshuagoodman.me/Emberlight/",
+    "projectType": "school",
+    "companyName": ""
+  },
+  {
+    "id": 6,
+    "title": "Doctors Office Appoiment Booking",
+    "imageUrl": "../assets/login.png",
+    "description": "For this project, I took the key role of leading a small team to develop a small application connected to an external SQL back end. Our project featured a protected login and signup, appointment booking system, and text message appointment confirmation.",
+    "madeWith": [
+      "typescript",
+      "react",
+      "mysql",
+      "javascript",
+      "nodejs",
+      "vite"
+    ],
+    "demo": false,
+    "demoLink": "",
+    "code": true,
+    "codeLink": "https://github.com/cs3560-03-01/CS3560-Proj",
+    "live": false,
+    "liveLink": "",
+    "projectType": "school",
+    "companyName": ""
+  },
+  {
+    "id": 7,
+    "title": "A.I. California Wildfire Prediction",
+    "imageUrl": "../assets/wildfire-active-map-tracker-features.jpeg",
+    "description": "For this project, I was Part of an A.I. team working in AWS Sage Maker. Our goal was to create and train an A.I. model to predict wether forcasting and the chance of wildfires across California. Our A.I. model was integrated with the back end (team) that then sent the data to the front end (team).",
+    "madeWith": [
+      "cplusplus",
+      "aws",
+      "blank",
+      "blank",
+      "blank",
+      "blank"
+    ],
+    "demo": false,
+    "demoLink": "",
+    "code": true,
+    "codeLink": "https://github.com/doxid/CS4800.01_AWS2_AI",
+    "live": false,
+    "liveLink": "",
+    "projectType": "school",
+    "companyName": ""
+  },
+  {
+    "id": 8,
+    "title": "GPT-2 On CPP HPC",
+    "imageUrl": "../assets/gpt2hpccpp.png",
+    "description": "Console app that manages tasks in a project. Users can load projects from a file and generate a seqeuence to complete them in, based on each task's dependencies. Users can also find earliest possible commencement time of each task, add new tasks, update tasks, remove tasks, and save the results to a text file.",
+    "madeWith": [
+      "shell",
+      "openai"
+    ],
+    "demo": true,
+    "demoLink": "https://youtu.be/AGwYorbxvgg",
+    "code": true,
+    "codeLink": "https://github.com/jgx02c/cs3700-presentation",
+    "live": false,
+    "liveLink": "",
+    "projectType": "school",
+    "companyName": ""
+  }
+] 

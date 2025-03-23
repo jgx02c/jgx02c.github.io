@@ -1,0 +1,256 @@
+.root {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 0;
+    position: relative;
+    min-height: 60vh;
+    opacity: 0.4;
+    transition: opacity 0.6s ease-out;
+    background-color: #ffffff;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1.2px, transparent 1.2px);
+    background-size: 22px 22px;
+    
+    // Dotted line background
+    &:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background-image: linear-gradient(to bottom, rgba(200, 200, 200, 0.5) 50%, transparent 50%);
+        background-size: 2px 10px;
+        z-index: 0;
+    }
+}
+
+.visible {
+    opacity: 0.7;
+}
+
+.active {
+    opacity: 1;
+}
+
+.mainDiv {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 1.5rem;
+    
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+}
+
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    transform: translateY(3rem);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    max-width: 600px;
+    margin-left: 0;
+    
+    .active & {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.headerSection {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.spanLogo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    justify-content: flex-start;
+}
+
+.preLogoImage {
+    width: 1.8rem;
+    height: 1.8rem;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.imgLogo {
+    width: 14rem;
+    max-height: 4.5rem;
+    object-fit: contain;
+}
+
+.subtextDiv {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.subText {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+}
+
+.divParagraph {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.paragraph {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #4a5568;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+.spanlink {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-left: 0;
+    gap: 0.5rem;
+}
+
+.linkClass {
+    color: #1a73e8;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    transition: all 0.2s ease;
+    padding: 0.5rem 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    
+    &:hover {
+        color: #1557b0;
+    }
+    
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #1a73e8;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease;
+    }
+    
+    &:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+}
+
+.arrowImg {
+    width: 1.2rem;
+    height: 1.2rem;
+    transition: transform 0.3s ease;
+    opacity: 0.8;
+}
+
+.spanlink:hover .arrowImg {
+    transform: translateX(4px);
+    opacity: 1;
+}
+
+.divImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    
+    .active & {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 1.2rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+}
+
+// Progress indicator
+.progressIndicator {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    
+    .active & {
+        opacity: 1;
+    }
+}
+
+.progressDot {
+    width: 12px;
+    height: 12px;
+    background-color: #1a73e8;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 4px rgba(26, 115, 232, 0.2);
+}
+
+@media (max-width: 768px) {
+    .root {
+        padding: 4rem 0;
+    }
+
+    .subText {
+        font-size: 1.4rem;
+    }
+
+    .paragraph {
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+
+    .linkClass {
+        font-size: 1rem;
+    }
+
+    .arrowImg {
+        width: 1rem;
+        height: 1rem;
+    }
+}

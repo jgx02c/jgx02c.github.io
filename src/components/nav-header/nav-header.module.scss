@@ -1,0 +1,110 @@
+/* Existing styles */
+
+.root {
+    padding: 1.5rem 1rem;
+    width: 100%;
+}
+
+.divContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.spanClass {
+    padding: 0.5rem;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.nameH1 {
+    font-family: "BillionDreams";
+    font-weight: 200;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.5em;
+    background-color: rgba(235, 235, 235, 0.8);
+    padding: 0.6em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+.navLink {
+    margin: 0.5em;
+    text-decoration: none;
+    color: #333;
+    font-weight: 300;
+    font-size: 1em;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    transition: all 0.2s ease;
+
+    &:hover {
+        color: #666;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+.activeLink {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+    font-weight: 400;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+@font-face {
+    font-family: "BillionDreams";
+    src: local("BillionDreams"),
+        url("../../assets/BillionDreams.ttf") format("truetype");
+    font-weight: bold;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .spanClass {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .div {
+        flex-direction: row;
+        padding: 0.4em 0.8em;
+    }
+
+    .navLink {
+        font-size: 1.1em;
+        margin: 0 0.5em;
+    }
+
+    .nameH1 {
+        font-size: 3em;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .div {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .navLink {
+        width: 100%;
+        text-align: center;
+        padding: 0.8em;
+    }
+}

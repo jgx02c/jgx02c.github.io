@@ -1,0 +1,157 @@
+.masterDiv {
+    border: 1px solid #DBDBDB;
+    border-radius: 0.8em;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 60em;
+    background-color: #F2F2F2;
+    padding: 1em;
+    margin: 1em 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    position: relative;
+}
+
+.mainDiv {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.main_span {
+    display: flex;
+    align-items: center;
+}
+
+.divRight {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divLeft {
+    width: 50%;
+    margin-right: 2vh;
+}
+
+.divLeft {
+    margin-bottom: 1em;
+}
+
+.h1Class {
+    text-align: left;
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.span_logo {
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+.spanLogo {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.h4Class {
+    font-size: 1em;
+    margin-right: 0.5em;
+    color: #555;
+}
+
+.languageLogo {
+    height: 2em;
+    width: 2em;
+    margin: 0.25em;
+    object-fit: contain;
+}
+
+.paragraph {
+    text-align: left;
+    max-width: 100%;
+    font-weight: 200;
+    margin-bottom: 1em;
+    color: #666;
+    line-height: 1.5;
+}
+
+.divButton {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button {
+    margin: 0.5em;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 24px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+    color: #3c4043;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 48px;
+    justify-content: center;
+    padding: 2px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+    user-select: none;
+    width: auto;
+    will-change: transform, opacity;
+}
+
+.button:hover {
+    background: #F6F9FE;
+    color: #174ea6;
+}
+
+.button:active {
+    box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+}
+
+.button:focus {
+    outline: none;
+    border: 2px solid #4285f4;
+}
+
+.imgClass {
+    border: 1px solid lightgray;
+    border-radius: 1em;
+    height: auto;
+    width: 100%;
+    max-width: 30em;
+    object-fit: cover;
+    max-height: 25em;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 860px) {
+    .main_span {
+        flex-direction: column;
+    }
+
+    .divLeft, .divRight {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .divRight {
+        margin-top: 2em;
+    }
+
+    .imgClass {
+        height: auto;
+        width: 100%;
+        max-width: none;
+    }
+}

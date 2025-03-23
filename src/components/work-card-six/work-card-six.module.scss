@@ -1,0 +1,51 @@
+.root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.divCardSix {
+  width: 80%;
+  padding: 1em;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.imgCardSix {
+  width: 100%;
+  height: auto;
+  border-radius: .5em;
+  border: 1px solid #ededed;
+}
+
+.h2CardSix {
+  color: #4d4d4d;
+  text-align: left;
+  font-size: 1.5em;
+  margin-top: 0.5em;
+}
+
+.parCardSix {
+  text-align: left;
+  color: #000000;
+  font-size: 1.2em;
+  margin-top: 0.5em;
+  max-width: 100%;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .divCardSix {
+      padding: 0.5em;
+  }
+
+  .h2CardSix {
+      font-size: 1.3em;
+  }
+
+  .parCardSix {
+      font-size: 1em;
+  }
+}

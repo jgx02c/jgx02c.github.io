@@ -1,0 +1,114 @@
+[
+    {
+        "id": 1,
+        "companyName": "Mercor",
+        "role": "Software Engineer / Data Analyst",
+        "period": "February 2025 - Present",
+        "description": "LLM Evaluations & Assienment based Software Engineering",
+        "technologies": ["English"],
+        "achievements": [
+            "I cannot disclose any details due to NDA.",
+            "My contract has been extended 3 times. (I must be doing something right).",
+            "Worked with a variety of technologies and languages."
+        ],
+        "logo": "../assets/logos/Mercor.png"
+    },
+    {
+        "id": 1,
+        "companyName": "Piclist AI",
+        "role": "Full Stack Developer",
+        "period": "July 2024 - March 2025",
+        "description": "Developing an AI-powered platform for ecommerce entrepreneurs to optimize and manage their online businesses. Building full-stack applications with modern web technologies.",
+        "technologies": ["React", "TypeScript", "Node.js", "AWS", "AI/ML"],
+        "achievements": [
+            "Designed and built the entire platform from concept to production",
+            "Implemented image recognition AI to automate product listings",
+            "Created scalable cloud infrastructure to handle growing user base"
+        ],
+        "logo": "../assets/logos/piclist.webp"
+    },
+    {
+        "id": 3,
+        "companyName": "Byob",
+        "role": "Full Stack Developer",
+        "period": "Agust 2024 - October 2024",
+        "description": "Worked with a team to build a full-stack mobile application, successfully launching it to users.",
+        "technologies": ["JavaScript", "React", "Shopify", "Node.js", "React Native"],
+        "achievements": [
+            "The App \"Deals\" can be found here: https://deals.byob.ai/BeYourOwnBoss",
+            "Assisted in securing Google application approval by implementing TAC security.",
+            "Worked with content creators."
+        ],
+        "logo": "../assets/logos/BYOB.png"
+    },
+    {
+        "id": 3,
+        "companyName": "Quicksight",
+        "role": "Full Stack Developer",
+        "period": "November 2023 - Feburary 2024",
+        "description": "Collaborated closely with a small team to define project requirements, design system architecture, and implement key features",
+        "technologies": ["JavaScript", "React", "Shopify", "Node.js"],
+        "achievements": [
+            "Designed and implemented fully responsive React library.",
+            "Performed unit testing using Jest and PyTest",
+            "Spearheaded the migration to a more scalable Django architecture."
+        ],
+        "logo": "../assets/logos/quicksight.jpeg"
+    },
+    {
+        "id": 3,
+        "companyName": "Finned",
+        "role": "Founder",
+        "period": "Jan 2023 - Present",
+        "description": "Established and developed an automotive-inspired lifestyle brand. Created the entire web presence and ecommerce platform with modern technologies.",
+        "technologies": ["JavaScript", "React", "Shopify", "Node.js"],
+        "achievements": [
+            "Sold and distributed products to retailers.",
+            "Finned Cylinder Mug Patent, 29/879,585 - Filed Jul 10, 2023",
+            "Created brand identity and digital marketing strategy closing a 13.5% conversion rate."
+        ],
+        "logo": "../assets/finned/finned_logo.png"
+    },
+    {
+        "id": 4,
+        "companyName": "Most Xcellent Juice",
+        "role": "Prep / Technical Support",
+        "period": "May 2022 - January 2023",
+        "description": "Designed and developed a custom website with content creation featuring Lottie animations. Created engaging user experience for a specialty beverage company.",
+        "technologies": ["HTML", "CSS", "JavaScript", "Lottie Animations"],
+        "achievements": [
+            "Worked with a team to create a custom website with content creation featuring Lottie animations.",
+            "Worked morning and afternoon shifts.",
+            "Created engaging brand storytelling through interactive elements"
+        ],
+        "logo": "../assets/mx.webp"
+    },
+    {
+        "id": 5,
+        "companyName": "Optionality",
+        "role": "Founder & Technical Director",
+        "period": "June 2021 - February 2025",
+        "description": "Founded a business services and technology solutions company serving clients across multiple industries. Providing web development, digital marketing, and technical consulting.",
+        "technologies": ["JavaScript", "React", "WordPress", "PHP", "Digital Marketing"],
+        "achievements": [
+            "Built a diverse portfolio of clients including restaurants and retailers",
+            "Delivered customized technical solutions for small businesses",
+            "Implemented effective digital marketing strategies increasing client revenues"
+        ],
+        "logo": "../assets/optionality_logo.png"
+    },
+    {
+        "id": 6,
+        "companyName": "The Collegiate Standard",
+        "role": "Ecommerce Manager",
+        "period": "May 2021 - August 2021",
+        "description": "Managed the ecommerce platform and provided customer service to clients.",
+        "technologies": ["JavaScript", "React", "Google Maps API", "Firebase"],
+        "achievements": [
+            "Provided customer service to clients.",
+            "Shot and edited product photos.",
+            "Managed social media accounts."
+        ],
+        "logo": "../assets/logos/collegiatestandardlogo.png"
+    }
+] 

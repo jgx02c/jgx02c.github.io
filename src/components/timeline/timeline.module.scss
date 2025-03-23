@@ -1,0 +1,166 @@
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    overflow: visible;
+}
+
+.timelineLine {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: rgba(26, 115, 232, 0.3);
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.timelineStart, .timelineEnd {
+    position: absolute;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #1a73e8;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.timelineStart {
+    top: 0;
+}
+
+.timelineEnd {
+    bottom: 0;
+}
+
+.timelineItems {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+.timelineItem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2em;
+    width: 100%;
+    padding: 0 2em;
+}
+
+.timelineMarker {
+    position: absolute;
+    width: .5em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timelineContent {
+    width: 50%;
+    padding: 1em;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.timelineContent h3 {
+    margin: 0;
+}
+
+.timelineContent p {
+    margin: 0.5em 0;
+}
+
+.timelineContent span {
+    display: block;
+    font-size: 0.8em;
+    color: #777;
+}
+
+/* Position items left and right of the line */
+.timelineItem:nth-child(even) .timelineContent {
+    margin-left: auto;
+}
+
+.timelineItem:nth-child(odd) .timelineContent {
+    margin-right: auto;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .timelineItem {
+        margin-bottom: 3em;
+    }
+}
+
+/* Animation for items coming into view */
+.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Media query for narrow screens */
+@media (max-width: 768px) {
+    .timeline {
+        padding: 2rem 1rem;
+    }
+    
+    .timelineLine {
+        left: 30px;  /* Align with mobile timeline points */
+    }
+    
+    .timelineStart, .timelineEnd {
+        left: 30px;  /* Align with mobile timeline points */
+    }
+    
+    /* On mobile, all items appear on the right of the timeline */
+    .leftItem, .rightItem {
+        align-self: flex-start !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 60px !important;
+        
+        .timelinePoint {
+            left: 30px !important;
+            transform: translateX(-50%) !important;
+        }
+    }
+}
+
+/* Explicitly position items left or right */
+.leftItem {
+    align-self: flex-start !important;
+    margin-right: 50% !important; 
+    padding-right: 40px !important;
+    
+    .timelinePoint {
+        right: -10px !important;
+        transform: translateX(50%) !important;
+    }
+}
+
+.rightItem {
+    align-self: flex-end !important;
+    margin-left: 50% !important;
+    padding-left: 40px !important;
+    
+    .timelinePoint {
+        left: -10px !important;
+        transform: translateX(-50%) !important;
+    }
+}
+
+/* Add this to properly export the CSS classes for JS access */
+:export {
+    timelineItem: "timelineItem";
+    visible: "visible";
+    leftItem: "leftItem";
+    rightItem: "rightItem";
+}

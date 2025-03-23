@@ -1,0 +1,36 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "homepage": "https://jgx02c.github.io/jgx02c.github.io",
+  "type": "module",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "classnames": "^2.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
+    "react-microsoft-clarity": "^2.0.0",
+    "react-particles": "^2.12.2",
+    "react-reveal": "^1.2.2",
+    "react-router-dom": "^6.18.0",
+    "vite-plugin-svgr": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.21",
+    "@types/react-animate-on-scroll": "^2.1.5",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.4",
+    "@wixc3/react-board": "^2.3.0",
+    "gh-pages": "^6.0.0",
+    "sass": "^1.66.1",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.9"
+  }
+}
