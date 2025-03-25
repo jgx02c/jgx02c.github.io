@@ -65,16 +65,13 @@
   },
   {
     "id": 4,
-    "title": "Snippetz",
+    "title": "Health Tracker",
     "imageUrl": "../assets/snippetz.png",
-    "description": "Snippez is a personal project to store snippets of code that I want to quickly reference and reuse. It pairs with my BYOC GPT Coder. It helps improve efficiency and accuracy.",
+    "description": "Health Tracker is a personal project that I am working on. It is a web application that allows you to track your health and fitness goals.",
     "madeWith": [
-      "typescript",
-      "next-js",
-      "mongodb",
-      "javascript",
-      "scss",
-      "express"
+      "reactnative",
+      "expo",
+      "piclist"
     ],
     "demo": false,
     "demoLink": "",
