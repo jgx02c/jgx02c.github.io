@@ -1,12 +1,13 @@
-import project1PNG from '../assets/travell4all.png';
+
 import project2PNG from '../assets/emberlight.png';
 import project4PNG from '../assets/Dialogica/dialogica-demo.png';
 import project5PNG from '../assets/login.png';
 import project8PNG from '../assets/wildfire-active-map-tracker-features.jpeg';
 import project9PNG from '../assets/gpt2hpccpp.png';
 import scopePNG from '../assets/scope.png';
-import snippetzPNG from '../assets/snippetz.png';
-
+import fitHealthPNG from '../assets/fitness.png';
+import vaultwrapPNG from '../assets/vaultwrap.png';
+import npmrchPNG from '../assets/npm-rch.png';
 interface ImageMap {
   [key: string]: string;
 }
@@ -15,14 +16,17 @@ interface ImageMap {
 const fallbackImage = '';
 
 const imageMap: ImageMap = {
-  '../assets/travell4all.png': project1PNG,
+
   '../assets/emberlight.png': project2PNG,
   '../assets/Dialogica/dialogica-demo.png': project4PNG,
   '../assets/login.png': project5PNG,
   '../assets/wildfire-active-map-tracker-features.jpeg': project8PNG,
   '../assets/gpt2hpccpp.png': project9PNG,
   '../assets/scope.png': scopePNG,
-  '../assets/snippetz.png': snippetzPNG
+
+  '../assets/fitness.png': fitHealthPNG,
+  '../assets/vaultwrap.png': vaultwrapPNG,
+  '../assets/npm-rch.png': npmrchPNG
 };
 
 export const getProjectImage = (imagePath: string): string => {
