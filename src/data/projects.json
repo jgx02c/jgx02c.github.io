@@ -70,7 +70,7 @@
     "imageUrl": "../assets/vaultwrap.png",
     "description": "A secure, memory-hardened environment variable injection system for development teams. VaultWrap enables secure sharing of sensitive environment variables between team members while maintaining strict access control and memory safety.",
     "madeWith": [
-      "Rust"
+      "rust"
     ],
     "demo": false,
     "demoLink": "",
@@ -118,7 +118,7 @@
     "code": true,
     "codeLink": "https://github.com/jgx02c/Emberlight",
     "live": true,
-    "liveLink": "https://joshuagoodman.me/Emberlight/",
+    "liveLink": "https://jgx02c.github.io/Emberlight/",
     "projectType": "school",
     "companyName": ""
   },
