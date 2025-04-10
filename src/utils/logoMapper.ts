@@ -28,6 +28,16 @@ import ShellLogo from '../assets/svg/command-prompt-svgrepo-com.svg';
 import CsharpLogo from '../assets/svg/csharp.svg';
 import RedisLogo from '../assets/svg/redis-logo-svgrepo-com.svg';
 import FallbackLogo from '../assets/svg/react.svg';
+import AzureLogo from '../assets/svg/azure.png';
+import KubernetesLogo from '../assets/svg/kubernettes.png';
+import Neo4jLogo from '../assets/svg/neo4j.png';
+import KafkaLogo from '../assets/svg/kafka.svg';
+import LlamaIndexLogo from '../assets/svg/llama.png';
+import NPMLogo from '../assets/svg/npm-logo.png';
+import DockerLogo from '../assets/svg/docker.svg';
+import RustLogo from '../assets/svg/rust.png';
+import ExpoLogo from '../assets/svg/expo.png';
+import PiclistLogo from '../assets/logos/piclist.webp';
 
 interface LogoMap {
   [key: string]: string;
@@ -63,7 +73,17 @@ const logoMap: LogoMap = {
   shell: ShellLogo,
   csharp: CsharpLogo,
   redis: RedisLogo,
-  blank: FallbackLogo
+  blank: FallbackLogo,
+  azure: AzureLogo,
+  "kubernetes": KubernetesLogo,
+  neo4j: Neo4jLogo,
+  kafka: KafkaLogo,
+  "llama-index": LlamaIndexLogo,
+  npm: NPMLogo,
+  docker: DockerLogo,
+  rust: RustLogo,
+  expo: ExpoLogo,
+  piclist: PiclistLogo
 };
 
 export const getLogoImage = (technology: string): string => {
