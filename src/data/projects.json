@@ -92,8 +92,8 @@
       "react",
       "npm"
     ],
-    "demo": false,
-    "demoLink": "",
+    "demo": true,
+    "demoLink": "https://cursive-npm-testing.vercel.app/",
     "code": true,
     "codeLink": "https://github.com/jgx02c/react-cursive-handwrite",
     "live": true,
