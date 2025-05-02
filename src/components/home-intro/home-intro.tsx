@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import styles from './home-intro.module.scss';
 import selfie from '../../assets/selfie.png';
+import { HandwritingText } from 'react-cursive-handwrite';
 
 export interface HomeIntroProps {
     className?: string;
@@ -15,7 +16,14 @@ export const HomeIntro = ({ className }: HomeIntroProps) => {
                 </div>
                 <div className={styles.textContent}>
                     <h1 className={styles.title}>
-                        Hi, I'm Joshua Goodman
+                        <HandwritingText 
+                            fontPath="./dist/fonts/google"
+                            strokeColor="#222222"
+                            strokeWidth={2}
+                            duration={5}
+                        >
+                            {'Joshua Goodman'}
+                        </HandwritingText>
                     </h1>
                     <h2 className={styles.subtitle}>
                         Software Engineer & Creative Designer
