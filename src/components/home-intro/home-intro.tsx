@@ -16,14 +16,7 @@ export const HomeIntro = ({ className }: HomeIntroProps) => {
                 </div>
                 <div className={styles.textContent}>
                     <h1 className={styles.title}>
-                        <HandwritingText 
-                            fontPath="/assets/fonts/google"
-                            strokeColor="#222222"
-                            strokeWidth={2}
-                            duration={5}
-                        >
-                            {'Joshua Goodman'}
-                        </HandwritingText>
+                       Hi, I'm Joshua Goodman
                     </h1>
                     <h2 className={styles.subtitle}>
                         Software Engineer & Creative Designer
