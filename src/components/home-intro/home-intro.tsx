@@ -17,7 +17,7 @@ export const HomeIntro = ({ className }: HomeIntroProps) => {
                 <div className={styles.textContent}>
                     <h1 className={styles.title}>
                         <HandwritingText 
-                            fontPath="./dist/fonts/google"
+                            fontPath="src/assets/fonts/google"
                             strokeColor="#222222"
                             strokeWidth={2}
                             duration={5}
