@@ -9,6 +9,11 @@ export interface TimelineItemProps {
 }
 
 export const TimelineItem = ({ className, item, position }: TimelineItemProps) => {
+    if (!item || typeof item !== 'object') {
+        console.error('TimelineItem: invalid item prop');
+        return null;
+    }
+
     const {
         companyName,
         role,
@@ -17,6 +22,11 @@ export const TimelineItem = ({ className, item, position }: TimelineItemProps) =
         achievements,
         logo
     } = item;
+
+    if (!companyName || !role || !period || !description) {
+        console.error('TimelineItem: missing required item properties');
+        return null;
+    }
 
     return (
         <div 
@@ -44,7 +54,7 @@ export const TimelineItem = ({ className, item, position }: TimelineItemProps) =
                 
                 <p className={styles.description}>{description}</p>
                 
-                {achievements && achievements.length > 0 && (
+                {achievements && Array.isArray(achievements) && achievements.length > 0 && (
                     <div className={styles.achievements}>
                         <h5 className={styles.sectionTitle}>Key Achievements</h5>
                         <ul className={styles.achievementList}>

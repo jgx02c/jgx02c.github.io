@@ -14,7 +14,7 @@
         "logo": "../assets/logos/Mercor.png"
     },
     {
-        "id": 1,
+        "id": 2,
         "companyName": "Piclist AI",
         "role": "Full Stack Developer",
         "period": "July 2024 - April 2025",
@@ -42,7 +42,7 @@
         "logo": "../assets/logos/BYOB.png"
     },
     {
-        "id": 3,
+        "id": 4,
         "companyName": "Quicksight",
         "role": "Full Stack Developer",
         "period": "November 2023 - Feburary 2024",
@@ -56,7 +56,7 @@
         "logo": "../assets/logos/quicksight.jpeg"
     },
     {
-        "id": 3,
+        "id": 5,
         "companyName": "Finned",
         "role": "Founder",
         "period": "Jan 2023 - Present",
@@ -70,7 +70,7 @@
         "logo": "../assets/finned/finned_logo.png"
     },
     {
-        "id": 4,
+        "id": 6,
         "companyName": "Most Xcellent Juice",
         "role": "Prep / Technical Support",
         "period": "May 2022 - January 2023",
@@ -84,7 +84,7 @@
         "logo": "../assets/mx.webp"
     },
     {
-        "id": 5,
+        "id": 7,
         "companyName": "Optionality",
         "role": "Founder & Technical Director",
         "period": "June 2021 - February 2025",
@@ -98,7 +98,7 @@
         "logo": "../assets/optionality_logo.png"
     },
     {
-        "id": 6,
+        "id": 8,
         "companyName": "The Collegiate Standard",
         "role": "Ecommerce Manager",
         "period": "May 2021 - August 2021",
