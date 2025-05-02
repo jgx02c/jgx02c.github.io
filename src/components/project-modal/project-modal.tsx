@@ -56,7 +56,17 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
     const filteredTech = project.madeWith.filter(tech => tech.toLowerCase() !== 'blank');
 
     const getProjectTypeInfo = () => {
-        if (project.projectType && project.projectType.toLowerCase() === 'work') {
+        // Default values
+        const defaultInfo = {
+            logo: selfie,
+            text: 'Personal Project'
+        };
+
+        if (!project.projectType) {
+            return defaultInfo;
+        }
+
+        if (project.projectType.toLowerCase() === 'work') {
             if (project.companyName === 'Piclist') {
                 return {
                     logo: piclistLogo,
@@ -70,16 +80,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
                 };
             }
         }
-        if (project.projectType && project.projectType.toLowerCase() === 'school') {
+        if (project.projectType.toLowerCase() === 'school') {
             return {
                 logo: cppLogo,
                 text: 'School'
             };
         }
-        return {
-            logo: selfie,
-            text: 'Personal Project'
-        };
+        
+        return defaultInfo;
     };
 
     const projectTypeInfo = getProjectTypeInfo();
