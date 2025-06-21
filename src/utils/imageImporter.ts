@@ -1,4 +1,3 @@
-
 import project2PNG from '../assets/emberlight.png';
 import project4PNG from '../assets/Dialogica/dialogica-demo.png';
 import project5PNG from '../assets/login.png';
@@ -8,6 +7,8 @@ import scopePNG from '../assets/scope.png';
 import fitHealthPNG from '../assets/fitness.png';
 import vaultwrapPNG from '../assets/vaultwrap.png';
 import npmrchPNG from '../assets/npm-rch.png';
+import dialogicaMainPNG from '../assets/dialogicaMain.png';
+
 interface ImageMap {
   [key: string]: string;
 }
@@ -26,7 +27,8 @@ const imageMap: ImageMap = {
 
   '../assets/fitness.png': fitHealthPNG,
   '../assets/vaultwrap.png': vaultwrapPNG,
-  '../assets/npm-rch.png': npmrchPNG
+  '../assets/npm-rch.png': npmrchPNG,
+  '../assets/dialogicaMain.png': dialogicaMainPNG
 };
 
 export const getProjectImage = (imagePath: string): string => {

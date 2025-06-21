@@ -1,5 +1,12 @@
-[
-   
+[  {
+    "id": 1,
+    "titleLogo": "../assets/Dialogica/dialogica_logo.png",
+    "subText": "the worlds smartest 2nd chair",
+    "description": "your copilot for every deposition, examination, trial, hearing, and beyond...",
+    "linkText": "View Website",
+    "link": "https://www.dialogicaai.com",
+    "image": "../assets/Dialogica/dialogica-demo.png"
+},
     {
         "id": 2,
         "titleLogo": "../assets/finned/finned_logo.png",
