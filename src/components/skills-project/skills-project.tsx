@@ -13,7 +13,6 @@ import javascriptLogo from '../../assets/svg/javascript.svg';
 import mongodbLogo from '../../assets/svg/mongodb.svg';
 import mysqlLogo from '../../assets/svg/mysql.svg';
 import nodejsLogo from '../../assets/svg/nodejs.svg';
-import shopifyLogo from '../../assets/svg/shopify.svg';
 import cplusplusLogo from '../../assets/svg/cplusplus.svg';
 import openai from '../../assets/svg/openai.svg';
 import nextjs from '../../assets/svg/next-js.svg';
@@ -21,6 +20,15 @@ import flask from '../../assets/icons/flask.png';
 import fastapi from '../../assets/svg/fastapi.svg';
 import python from '../../assets/svg/python.svg';
 import langchain from '../../assets/svg/langchain-seeklogo.svg';
+
+// Import new logos
+import csharpLogo from '../../assets/svg/csharp.svg';
+import dockerLogo from '../../assets/svg/docker.svg';
+import terraformLogo from '../../assets/terraform.png';
+import goLogo from '../../assets/svg/cplusplus.svg'; // Using C++ as fallback
+import azureLogo from '../../assets/svg/azure.png';
+import redisLogo from '../../assets/svg/redis-logo-svgrepo-com.svg';
+import postgresLogo from '../../assets/svg/Postgresql_elephant.svg.png';
 
 interface Skill {
     logo: string;
@@ -38,14 +46,20 @@ const skills: Skill[] = [
     // Backend & Databases
     { logo: nodejsLogo, name: 'Node.js' },
     { logo: python, name: 'Python' },
+    { logo: goLogo, name: 'Go' },
     { logo: flask, name: 'Flask' },
     { logo: fastapi, name: 'FastAPI' },
+    { logo: csharpLogo, name: 'C#' },
     { logo: mongodbLogo, name: 'MongoDB' },
     { logo: mysqlLogo, name: 'MySQL' },
+    { logo: postgresLogo, name: 'PostgreSQL' },
+    { logo: redisLogo, name: 'Redis' },
     // Tools & Platforms
     { logo: viteLogo, name: 'Vite' },
     { logo: awsLogo, name: 'AWS' },
-    { logo: shopifyLogo, name: 'Shopify' },
+    { logo: azureLogo, name: 'Azure' },
+    { logo: dockerLogo, name: 'Docker' },
+    { logo: terraformLogo, name: 'Terraform' },
     { logo: cplusplusLogo, name: 'C++' },
     // AI & ML
     { logo: openai, name: 'OpenAI' },

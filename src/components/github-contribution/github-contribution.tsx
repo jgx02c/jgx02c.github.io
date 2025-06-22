@@ -9,7 +9,7 @@ export const GitHubContribution: React.FC<GitHubContributionProps> = ({ username
     const iframeUrl = `https://ghchart.rshah.org/${username}`;
     
     // Hardcoded value based on what you mentioned
-    const contributionsCount = 1446;
+    const contributionsCount = 1917;
     
     return (
         <div className={styles.container}>
