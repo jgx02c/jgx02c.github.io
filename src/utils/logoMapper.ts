@@ -38,6 +38,7 @@ import DockerLogo from '../assets/svg/docker.svg';
 import RustLogo from '../assets/svg/rust.png';
 import ExpoLogo from '../assets/svg/expo.png';
 import PiclistLogo from '../assets/logos/piclist.webp';
+import TerraformLogo from '../assets/terraform.png';
 
 interface LogoMap {
   [key: string]: string;
@@ -83,7 +84,9 @@ const logoMap: LogoMap = {
   docker: DockerLogo,
   rust: RustLogo,
   expo: ExpoLogo,
-  piclist: PiclistLogo
+  piclist: PiclistLogo,
+  go: CplusplusLogo,
+  terraform: TerraformLogo
 };
 
 export const getLogoImage = (technology: string): string => {

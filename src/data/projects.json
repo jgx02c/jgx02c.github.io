@@ -1,24 +1,23 @@
 [
   {
     "id": 1,
-    "title": "Dialogica",
-    "imageUrl": "../assets/Dialogica/dialogica-demo.png",
-    "description": "Experience the world's smartest second chair, always at your side—your copilot for every deposition, examination, trial, hearing, and beyond Powered by the latest in AI, Dialogica is the perfect tool for any legal professional. This project is private and cannot be shared.",
+    "title": "Employee Timecard Portal",
+    "imageUrl": "../assets/orderside.jpeg",
+    "description": "A comprehensive employee timecard management system built with Go and Echo framework. Features include JWT-based authentication, role-based access control, automated payroll calculations, and real-time reporting. The system is deployed using Terraform on Azure with Docker containers, implementing CI/CD pipelines for seamless deployment and scaling.",
     "madeWith": [
+      "go",
+      "docker",
+      "terraform",
       "azure",
-      "kubernetes",
-      "neo4j",
-      "kafka",
-      "redis",
-      "llama-index",
-      "openai"
+      "postgresql",
+      "redis"
     ],
     "demo": true,
-    "demoLink": "https://www.youtube.com/watch?v=2PnzFxdACoo",
-    "code": false,
-    "codeLink": "",
-    "live": true,
-    "liveLink": "https://demo.dialogicaai.com/",
+    "demoLink": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "code": true,
+    "codeLink": "https://github.com/jgx02c/timecard-portal",
+    "live": false,
+    "liveLink": "",
     "projectType": "personal",
     "companyName": ""
   },

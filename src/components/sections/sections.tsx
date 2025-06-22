@@ -21,67 +21,39 @@ export const Sections = ({ className, id, titleLogo, subText, description, linkT
     const sectionRef = useRef<HTMLDivElement>(null);
     
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                // Update visibility state when element enters viewport
-                setIsVisible(entry.isIntersecting);
-                
-                // Set active state when element is centered in viewport
-                if (entry.isIntersecting) {
-                    const rect = entry.boundingClientRect;
-                    const windowHeight = window.innerHeight;
-                    const elementCenter = rect.top + rect.height / 2;
-                    const viewportCenter = windowHeight / 2;
-                    
-                    setIsActive(
-                        Math.abs(elementCenter - viewportCenter) < windowHeight / 4
-                    );
-                } else {
-                    setIsActive(false);
-                }
-            },
-            {
-                root: null,
-                threshold: [0.1, 0.5, 0.9],
-                rootMargin: '-10% 0px -10% 0px'
-            }
-        );
-        
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
-        }
-        
-        return () => {
-            if (sectionRef.current) {
-                observer.unobserve(sectionRef.current);
-            }
-        };
-    }, []);
-    
-    // Track scroll position for parallax effect
-    useEffect(() => {
         const handleScroll = () => {
             if (!sectionRef.current) return;
-            
+
             const rect = sectionRef.current.getBoundingClientRect();
             const windowHeight = window.innerHeight;
-            const scrollProgress = 1 - (rect.top + rect.height / 2) / windowHeight;
-            
-            // When element is in optimal viewing position
-            if (scrollProgress > 0.1 && scrollProgress < 0.9) {
-                setIsActive(true);
-            } else {
-                setIsActive(false);
+
+            const isElementVisible = rect.top < windowHeight && rect.bottom >= 0;
+            setIsVisible(isElementVisible);
+
+            const elementCenter = rect.top + rect.height / 2;
+            const viewportCenter = windowHeight / 2;
+            const distanceFromCenter = elementCenter - viewportCenter;
+
+            const isActiveNow = Math.abs(distanceFromCenter) < windowHeight / 2;
+            setIsActive(isActiveNow);
+
+            if (isElementVisible) {
+                const parallaxFactor = 0.03;
+                const contentParallax = -distanceFromCenter * parallaxFactor;
+                const imageParallax = distanceFromCenter * parallaxFactor;
+
+                sectionRef.current.style.setProperty('--parallax-y', `${contentParallax}px`);
+                sectionRef.current.style.setProperty('--parallax-img-y', `${imageParallax}px`);
             }
         };
-        
-        window.addEventListener('scroll', handleScroll);
-        handleScroll(); // Initial check
-        
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll(); // Initial call to set position
+
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, []); // No dependencies
     
     return (
         <div 
