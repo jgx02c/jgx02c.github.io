@@ -16,6 +16,7 @@ import quicksightLogo from '../assets/logos/quicksight.jpeg';
 import collegiatestandardLogo from '../assets/logos/collegiatestandardlogo.png';
 import mercorLogo from '../assets/logos/mercor.png';
 import piclistLogo from '../assets/logos/piclist.webp';
+import ppmLogo from '../assets/ppm.jpeg';
 export interface WorkPageProps {
     className?: string;
 }
@@ -39,7 +40,8 @@ const WorkPage = ({ className }: WorkPageProps) => {
             '../assets/logos/quicksight.jpeg': quicksightLogo,
             '../assets/logos/collegiatestandardlogo.png': collegiatestandardLogo,
             '../assets/logos/Mercor.png': mercorLogo,
-            '../assets/logos/piclist.webp': piclistLogo
+            '../assets/logos/piclist.webp': piclistLogo,
+            '../assets/ppm.jpeg': ppmLogo
         };
         
         // Process the work history data to handle image paths

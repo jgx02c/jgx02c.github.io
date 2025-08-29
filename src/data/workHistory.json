@@ -1,6 +1,20 @@
 [
     {
         "id": 1,
+        "companyName": "Pan Pacific Mechanical",
+        "role": "DevOps Engineer",
+        "period": "Intern: 2 months, Engineer: 2 months",
+        "description": "Worked as a DevOps engineer, implementing infrastructure automation and deployment pipelines. Started as an intern and was promoted to engineer role before leaving to start Dialogica.",
+        "technologies": ["DevOps", "Infrastructure", "Automation", "Deployment"],
+        "achievements": [
+            "Successfully transitioned from intern to engineer role",
+            "Implemented infrastructure automation and deployment pipelines",
+            "Left to pursue entrepreneurial opportunity with Dialogica"
+        ],
+        "logo": "../assets/ppm.jpeg"
+    },
+    {
+        "id": 2,
         "companyName": "Mercor",
         "role": "Software Engineer / Data Analyst",
         "period": "February 2025 - Present",
@@ -14,7 +28,7 @@
         "logo": "../assets/logos/Mercor.png"
     },
     {
-        "id": 2,
+        "id": 3,
         "companyName": "Piclist AI",
         "role": "Full Stack Developer",
         "period": "July 2024 - April 2025",
@@ -28,7 +42,7 @@
         "logo": "../assets/logos/piclist.webp"
     },
     {
-        "id": 3,
+        "id": 4,
         "companyName": "Byob",
         "role": "Full Stack Developer",
         "period": "Agust 2024 - October 2024",
@@ -42,7 +56,7 @@
         "logo": "../assets/logos/BYOB.png"
     },
     {
-        "id": 4,
+        "id": 5,
         "companyName": "Quicksight",
         "role": "Full Stack Developer",
         "period": "November 2023 - Feburary 2024",
@@ -56,7 +70,7 @@
         "logo": "../assets/logos/quicksight.jpeg"
     },
     {
-        "id": 5,
+        "id": 6,
         "companyName": "Finned",
         "role": "Founder",
         "period": "Jan 2023 - Present",
@@ -70,7 +84,7 @@
         "logo": "../assets/finned/finned_logo.png"
     },
     {
-        "id": 6,
+        "id": 7,
         "companyName": "Most Xcellent Juice",
         "role": "Prep / Technical Support",
         "period": "May 2022 - January 2023",
@@ -84,7 +98,7 @@
         "logo": "../assets/mx.webp"
     },
     {
-        "id": 7,
+        "id": 8,
         "companyName": "Optionality",
         "role": "Founder & Technical Director",
         "period": "June 2021 - February 2025",
@@ -98,7 +112,7 @@
         "logo": "../assets/optionality_logo.png"
     },
     {
-        "id": 8,
+        "id": 9,
         "companyName": "The Collegiate Standard",
         "role": "Ecommerce Manager",
         "period": "May 2021 - August 2021",
