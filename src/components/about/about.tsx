@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './about.module.scss';
 import { Reveal } from '../reveal/reveal';
-import josh from '../../assets/selfie.png';
+import josh from '../../assets/selfie.jpg';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 export const About = () => {

@@ -1,0 +1,167 @@
+/* Tall scroller with a pinned inner stage. Scroll length gives room for
+   four beats; the sticky stage stays put while the orb performs. */
+
+.scroller {
+    position: relative;
+    height: 320vh;
+    margin: 1rem 0 var(--section-gap);
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+}
+
+/* ---- Left: narrative ---- */
+
+.copy {
+    position: relative;
+    min-width: 0;
+}
+
+.step {
+    display: inline-block;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+
+    span {
+        color: var(--text-tertiary);
+    }
+}
+
+.beats {
+    position: relative;
+    min-height: 168px;
+}
+
+.beat {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+    pointer-events: none;
+}
+
+.beat[data-active='true'] {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.kicker {
+    display: block;
+    font-size: var(--text-xl);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.body {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    line-height: 1.5;
+    max-width: 30ch;
+}
+
+.progress {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 2rem;
+
+    span {
+        width: 34px;
+        height: 3px;
+        border-radius: 2px;
+        background: var(--border-strong);
+        transition: background 0.4s var(--ease);
+    }
+
+    span[data-on='true'] {
+        background: var(--accent);
+    }
+}
+
+/* ---- Right: orb stage ---- */
+
+.stageWrap {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 440px;
+    border-radius: var(--radius-lg);
+    background:
+        radial-gradient(circle at 50% 40%, rgba(124, 29, 23, 0.06), transparent 60%),
+        var(--bg-elevated);
+    border: 1px solid var(--border);
+    padding: 2rem;
+}
+
+/* ---- Reduced-motion / static fallback ---- */
+
+.static {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+    margin-bottom: var(--section-gap);
+}
+
+.staticCopy {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.staticBeat .kicker {
+    font-size: var(--text-lg);
+    margin-bottom: 0.35rem;
+}
+
+.staticStage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 440px;
+    border-radius: var(--radius-lg);
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    padding: 2rem;
+}
+
+@media (max-width: 860px) {
+    .scroller {
+        height: 300vh;
+    }
+
+    .grid,
+    .static {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .stageWrap {
+        order: -1;
+        min-height: 360px;
+    }
+
+    .beats {
+        min-height: 150px;
+    }
+}

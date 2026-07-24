@@ -1,0 +1,275 @@
+/* ------------------------------------------------------------------ */
+/* Ported orb motion — verbatim from Dialogica OrbBarStyles.tsx         */
+/* ------------------------------------------------------------------ */
+
+@keyframes orbPulse {
+    0%, 100% { transform: scale(1); opacity: 0.92; }
+    50% { transform: scale(1.04); opacity: 1; }
+}
+
+@keyframes orbListeningPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.09); }
+}
+
+@keyframes orbShimmer {
+    0% { opacity: 0.35; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.35; }
+}
+
+@keyframes orbGradientRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes orbContentIn {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes cardIn {
+    from { opacity: 0; transform: translateY(14px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes typing {
+    from { max-width: 0; }
+    to { max-width: var(--len); }
+}
+
+@keyframes caretBlink {
+    0%, 100% { border-color: transparent; }
+    50% { border-color: #727272; }
+}
+
+/* ------------------------------------------------------------------ */
+/* Stage                                                               */
+/* ------------------------------------------------------------------ */
+
+.stage {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* ------------------------------------------------------------------ */
+/* Orb                                                                 */
+/* ------------------------------------------------------------------ */
+
+$orb: 116px;
+
+.orb {
+    position: relative;
+    width: $orb;
+    height: $orb;
+    border-radius: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* lifted verbatim */
+    background: linear-gradient(145deg, #6b2028 0%, #340404 100%);
+    border: 1px solid rgba(64, 10, 12, 0.002);
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.06),
+        0 1px 2px rgba(0, 0, 0, 0.04),
+        0 2px 4px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 240ms var(--ease), transform 240ms var(--ease);
+}
+
+.orb[data-state='idle'] {
+    animation: orbPulse 3.4s ease-in-out infinite;
+}
+
+.orb[data-state='listening'] {
+    animation: orbListeningPulse 1.6s ease-in-out infinite;
+    box-shadow:
+        0 0 0 1px rgba(124, 29, 23, 0.25),
+        0 0 0 10px rgba(124, 29, 23, 0.12),
+        0 0 40px 6px rgba(124, 29, 23, 0.35);
+}
+
+.orb[data-state='thinking'] {
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.06),
+        0 0 30px 4px rgba(52, 4, 4, 0.3);
+}
+
+.orb[data-state='responding'] {
+    box-shadow:
+        0 0 0 1px rgba(124, 29, 23, 0.2),
+        0 8px 30px -6px rgba(52, 4, 4, 0.4);
+}
+
+.emblem {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
+    z-index: 1;
+}
+
+/* Soft brand glow behind the orb, amplified while shimmering/thinking */
+.glow {
+    position: absolute;
+    inset: -30%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(124, 29, 23, 0.5) 0%, transparent 65%);
+    opacity: 0;
+    transition: opacity 300ms var(--ease);
+}
+
+.orb[data-state='thinking'] .glow {
+    opacity: 1;
+    animation: orbShimmer 1.4s ease-in-out infinite;
+}
+
+.orb[data-state='responding'] .glow {
+    opacity: 0.5;
+}
+
+/* Thinking spinner ring — cream arc, verbatim timing */
+.spinner {
+    position: absolute;
+    inset: 5px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #f7f1e8;
+    border-right-color: rgba(247, 241, 232, 0.3);
+    animation: orbGradientRotate 0.9s linear infinite;
+}
+
+/* ------------------------------------------------------------------ */
+/* Prompt pill                                                         */
+/* ------------------------------------------------------------------ */
+
+.pill {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    width: min(100%, 420px);
+    padding: 0.7rem 1.1rem;
+    background: #ffffff;
+    border: 1px solid rgba(51, 4, 3, 0.08);
+    border-radius: 999px;
+    box-shadow: 0 6px 24px -12px rgba(52, 4, 4, 0.4);
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+    transition: opacity 280ms var(--ease), transform 280ms var(--ease);
+    pointer-events: none;
+}
+
+.pill[data-visible='true'] {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    animation: orbContentIn 280ms var(--ease);
+}
+
+.pillOrb {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #6b2028 0%, #340404 100%);
+
+    img {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Placeholder cut — Ibarra italic, verbatim colour */
+.pillText,
+.typed {
+    font-family: 'Ibarra Real Nova', Georgia, serif;
+    font-style: italic;
+    font-size: 1.02rem;
+    color: #727272;
+    white-space: nowrap;
+    overflow: hidden;
+    min-width: 0;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.typed {
+    max-width: 0;
+    border-right: 2px solid transparent;
+    animation:
+        typing 1.5s steps(36, end) forwards,
+        caretBlink 0.8s step-end infinite;
+}
+
+/* ------------------------------------------------------------------ */
+/* Response card                                                       */
+/* ------------------------------------------------------------------ */
+
+.response {
+    width: min(100%, 420px);
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.1rem 1.25rem;
+    box-shadow: 0 12px 34px -16px rgba(52, 4, 4, 0.35);
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+    transition: opacity 300ms var(--ease), transform 300ms var(--ease);
+    pointer-events: none;
+}
+
+.response[data-visible='true'] {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    animation: cardIn 360ms var(--ease);
+}
+
+.responseTitle {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: var(--brand);
+    margin-bottom: 0.7rem;
+}
+
+.responseList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.55rem;
+        font-size: var(--text-sm);
+        color: var(--text-secondary);
+        line-height: 1.4;
+    }
+}
+
+.check {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: 1px;
+    color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .orb,
+    .orb .glow,
+    .spinner,
+    .typed {
+        animation: none !important;
+    }
+}

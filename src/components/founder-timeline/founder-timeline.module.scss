@@ -1,0 +1,181 @@
+.section {
+    padding-top: var(--section-gap);
+}
+
+.header {
+    max-width: var(--container);
+    margin: 0 auto 3.5rem;
+    padding: 0 var(--gutter);
+}
+
+.title {
+    font-size: var(--text-xl);
+    max-width: 20ch;
+    margin-bottom: 1.25rem;
+
+    em {
+        color: var(--accent);
+    }
+}
+
+.intro {
+    max-width: 44rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* ------------------------------------------------------------------ */
+/* Spine                                                               */
+/* ------------------------------------------------------------------ */
+
+.timeline {
+    position: relative;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+    --rail-w: 172px;
+    --spine-x: calc(var(--gutter) + var(--rail-w));
+}
+
+/* Static baseline line + animated accent fill, both pinned to the rail edge */
+.spine {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--spine-x);
+    width: 2px;
+    background: var(--border);
+    transform: translateX(-1px);
+}
+
+.spineFill {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, var(--accent), var(--brand));
+    transform-origin: top center;
+    transform: scaleY(0);
+}
+
+/* ------------------------------------------------------------------ */
+/* Chapter                                                             */
+/* ------------------------------------------------------------------ */
+
+.chapter {
+    position: relative;
+    display: grid;
+    grid-template-columns: var(--rail-w) 1fr;
+    column-gap: clamp(1.75rem, 4vw, 3.25rem);
+    padding-bottom: var(--section-gap);
+
+    /* per-chapter accent, overridden by tint classes */
+    --chapter-accent: var(--accent);
+    --chapter-accent-soft: var(--accent-soft);
+    --chapter-ink: var(--brand);
+}
+
+.gold {
+    --chapter-accent: #b4791a;
+    --chapter-accent-soft: rgba(180, 121, 26, 0.12);
+    --chapter-ink: #7a4e0c;
+}
+
+.silver {
+    --chapter-accent: #5c636b;
+    --chapter-accent-soft: rgba(92, 99, 107, 0.12);
+    --chapter-ink: #363b41;
+}
+
+.maroon {
+    --chapter-accent: var(--accent);
+    --chapter-accent-soft: var(--accent-soft);
+    --chapter-ink: var(--brand);
+}
+
+.rail {
+    position: relative;
+}
+
+.railInner {
+    position: sticky;
+    top: clamp(96px, 16vh, 150px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.node {
+    position: absolute;
+    top: 0.55rem;
+    right: -7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--chapter-accent);
+    border: 3px solid var(--bg);
+    box-shadow: 0 0 0 1px var(--chapter-accent);
+    z-index: 1;
+}
+
+.year {
+    font-family: var(--font-serif);
+    font-size: clamp(2.25rem, 1.6rem + 2vw, 3.25rem);
+    line-height: 1;
+    color: var(--chapter-ink);
+    letter-spacing: -0.01em;
+}
+
+.company {
+    margin-top: 0.5rem;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--chapter-accent);
+}
+
+.content {
+    min-width: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* Mobile — collapse rail onto a far-left line                          */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 760px) {
+    .timeline {
+        --rail-w: 0px;
+        --spine-x: calc(var(--gutter) + 7px);
+    }
+
+    .chapter {
+        grid-template-columns: 1fr;
+        padding-left: 30px;
+    }
+
+    .rail {
+        margin-bottom: 1.5rem;
+    }
+
+    .railInner {
+        position: static;
+        flex-direction: row;
+        align-items: baseline;
+        gap: 0.75rem;
+        text-align: left;
+    }
+
+    .node {
+        top: 0.35rem;
+        right: auto;
+        left: -30px;
+    }
+
+    .year {
+        font-size: 2rem;
+    }
+
+    .company {
+        margin-top: 0;
+    }
+}
