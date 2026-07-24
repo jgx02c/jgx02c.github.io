@@ -32,7 +32,7 @@ export const HomeIntro = () => {
                 </motion.span>
 
                 <motion.h1 variants={item} className={styles.headline}>
-                    I build products from first commit{' '}
+                    I build products from first idea{' '}
                     <em className="serif-accent">to first customer.</em>
                 </motion.h1>
 
