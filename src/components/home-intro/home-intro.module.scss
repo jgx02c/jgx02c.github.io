@@ -1,143 +1,113 @@
 .root {
-    width: 100%;
-    padding: 4rem 2rem;
+    min-height: 92svh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    min-height: 80vh;
+    position: relative;
+    overflow: hidden;
+
+    /* Faint radial glow behind the headline */
+    &::before {
+        content: '';
+        position: absolute;
+        top: -30%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(900px, 120vw);
+        height: 700px;
+        background: radial-gradient(ellipse at center, var(--accent-soft), transparent 65%);
+        pointer-events: none;
+    }
 }
 
 .content {
-    max-width: 1200px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 8rem var(--gutter) 4rem;
+    position: relative;
 }
 
-.imageContainer {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.profileImage {
-    width: 12rem;
-    height: 12rem;
-    border-radius: 50%;
-    border: 4px solid #C0C0C0;
-    object-fit: cover;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.textContent {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.title {
-    font-size: 3.2rem;
-    font-weight: 300;
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
-    color: #333;
-}
-
-.subtitle {
-    font-size: 1.8rem;
-    font-weight: 400;
-    margin-bottom: 1.5rem;
-    color: #666;
-}
-
-.description {
-    font-size: 1.4rem;
-    font-weight: 300;
-    line-height: 1.6;
+.headline {
+    font-size: var(--text-display);
+    max-width: 17ch;
     margin-bottom: 2rem;
-    color: #555;
-    max-width: 800px;
+
+    em {
+        color: var(--text-secondary);
+    }
 }
 
-.buttonContainer {
+.sub {
+    max-width: 34rem;
+    font-size: var(--text-lg);
+    line-height: 1.55;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+
+    a {
+        color: var(--text);
+        border-bottom: 1px solid var(--border-strong);
+        transition: border-color 0.25s var(--ease);
+
+        &:hover {
+            border-bottom-color: var(--accent);
+        }
+    }
+}
+
+.actions {
     display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    width: 100%;
-    margin-top: 2rem;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.25rem;
 }
 
-.button {
-    padding: 0.8rem 2rem;
-    font-size: 1.1rem;
-    font-weight: 500;
-    text-decoration: none;
-    color: #333;
-    background-color: transparent;
-    border: 2px solid #333;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    min-width: 120px;
-    text-align: center;
-    
+.primary,
+.secondary {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    border-radius: 999px;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    transition: transform 0.25s var(--ease), background 0.25s var(--ease),
+        border-color 0.25s var(--ease);
+
     &:hover {
-        background-color: #333;
-        color: white;
         transform: translateY(-2px);
     }
 }
 
-@media (max-width: 768px) {
-    .content {
-        gap: 2rem;
-    }
+.primary {
+    background: var(--text);
+    color: var(--bg);
 
-    .title {
-        font-size: 2.8rem;
-    }
-
-    .subtitle {
-        font-size: 1.5rem;
-    }
-
-    .description {
-        font-size: 1.2rem;
-    }
-
-    .buttonContainer {
-        justify-content: center;
-        width: 100%;
-    }
-
-    .button {
-        flex: 1;
-        max-width: 200px;
+    &:hover {
+        opacity: 0.88;
     }
 }
 
-@media (max-width: 480px) {
-    .root {
-        padding: 3rem 1rem;
-    }
+.secondary {
+    border: 1px solid var(--border-strong);
+    color: var(--text);
 
-    .title {
-        font-size: 2.4rem;
+    &:hover {
+        border-color: var(--text-secondary);
     }
+}
 
-    .subtitle {
-        font-size: 1.3rem;
-    }
+.links {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
 
-    .description {
-        font-size: 1.1rem;
-    }
+    a {
+        color: var(--text-secondary);
+        transition: color 0.25s var(--ease);
 
-    .button {
-        padding: 0.7rem 1.5rem;
-        font-size: 1rem;
+        &:hover {
+            color: var(--text);
+        }
     }
 }

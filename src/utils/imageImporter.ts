@@ -32,36 +32,13 @@ const imageMap: ImageMap = {
 };
 
 export const getProjectImage = (imagePath: string): string => {
-  try {
-    if (!imagePath) {
-      console.warn('Empty image path provided to getProjectImage');
-      return fallbackImage;
-    }
+  if (!imagePath) return fallbackImage;
+  if (imageMap[imagePath]) return imageMap[imagePath];
 
-    // Log all available keys for debugging
-    console.log('Available image paths:', Object.keys(imageMap).join(', '));
-    console.log('Requested image path:', imagePath);
-
-    // Check if the image path exists in our map
-    if (imageMap[imagePath]) {
-      return imageMap[imagePath];
-    }
-
-    // Try alternate paths if the exact path isn't found
-    const fileName = imagePath.split('/').pop();
-    const alternateKeys = Object.keys(imageMap).filter(key => key.includes(fileName || ''));
-    
-    if (alternateKeys.length > 0) {
-      console.log(`Using alternate image path: ${alternateKeys[0]} for ${imagePath}`);
-      return imageMap[alternateKeys[0]];
-    }
-
-    console.warn(`Image not found: ${imagePath}`);
-    return fallbackImage;
-  } catch (error) {
-    console.error('Error in getProjectImage:', error);
-    return fallbackImage;
-  }
+  // Fall back to matching by filename when the path prefix differs.
+  const fileName = imagePath.split('/').pop();
+  const alternateKey = Object.keys(imageMap).find((key) => key.includes(fileName || ''));
+  return alternateKey ? imageMap[alternateKey] : fallbackImage;
 };
 
 export default getProjectImage; 

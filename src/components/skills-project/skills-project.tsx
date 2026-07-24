@@ -73,19 +73,18 @@ export interface SkillsProjectProps {
 export const SkillsProject = ({ className }: SkillsProjectProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <div className={styles.divSVG}>
-                <span className={styles.spanSVG}>
-                    {skills.map((skill, index) => (
-                        <div key={index} className={styles.svgContainer}>
-                            <img 
-                                src={skill.logo} 
-                                alt={`${skill.name} Logo`} 
-                                className={styles.logoSpace}
-                                title={skill.name}
-                            />
-                        </div>
-                    ))}
-                </span>
+            <div className={styles.grid}>
+                {skills.map((skill) => (
+                    <div key={skill.name} className={styles.skill}>
+                        <img
+                            src={skill.logo}
+                            alt={`${skill.name} logo`}
+                            className={styles.logo}
+                            loading="lazy"
+                        />
+                        <span className={styles.name}>{skill.name}</span>
+                    </div>
+                ))}
             </div>
         </div>
     );

@@ -1,41 +1,70 @@
-import classNames from 'classnames';
+import { motion, useReducedMotion, Variants } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import styles from './home-intro.module.scss';
-import selfie from '../../assets/selfie.png';
-import { HandwritingText } from 'react-cursive-handwrite';
 
-export interface HomeIntroProps {
-    className?: string;
-}
+const container: Variants = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+};
 
-export const HomeIntro = ({ className }: HomeIntroProps) => {
+const item: Variants = {
+    hidden: { opacity: 0, y: 28 },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+    },
+};
+
+export const HomeIntro = () => {
+    const reduceMotion = useReducedMotion();
+
     return (
-        <div className={classNames(styles.root, className)}>
-            <div className={styles.content}>
-                <div className={styles.imageContainer}>
-                    <img src={selfie} alt="Joshua Goodman" className={styles.profileImage} />
-                </div>
-                <div className={styles.textContent}>
-                    <h1 className={styles.title}>
-                       Hi, I'm Joshua Goodman
-                    </h1>
-                    <h2 className={styles.subtitle}>
-                        Software Engineer & Creative Designer
-                    </h2>
-                    <p className={styles.description}>
-                        Currently working as a Contract Software Engineer at Mercor, 
-                        while also serving as a Creative Designer at Finned and 
-                        founding Optionality.
-                    </p>
-                    <div className={styles.buttonContainer}>
-                        <a href="https://www.linkedin.com/in/joshuajgoodman" className={styles.button}>
-                            LinkedIn
-                        </a>
-                        <a href="https://github.com/jgx02c" className={styles.button}>
-                            GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <section className={styles.root}>
+            <motion.div
+                className={styles.content}
+                variants={reduceMotion ? undefined : container}
+                initial="hidden"
+                animate="show"
+            >
+                <motion.span variants={item} className="eyebrow">
+                    Joshua Goodman · Co-Founder &amp; CTO, Dialogica AI
+                </motion.span>
+
+                <motion.h1 variants={item} className={styles.headline}>
+                    I build products from first commit{' '}
+                    <em className="serif-accent">to first customer.</em>
+                </motion.h1>
+
+                <motion.p variants={item} className={styles.sub}>
+                    Today that&rsquo;s <a href="https://www.dialogicaai.com" target="_blank" rel="noopener noreferrer">Dialogica AI</a> —
+                    a new class of legal cognition, built by lawyers, for lawyers.
+                    Before that: two companies founded, a design patent filed, an npm
+                    package published, and a decade of shipping across the stack.
+                </motion.p>
+
+                <motion.div variants={item} className={styles.actions}>
+                    <a
+                        href="https://www.dialogicaai.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.primary}
+                    >
+                        See Dialogica
+                    </a>
+                    <Link to="/work" className={styles.secondary}>
+                        The full story
+                    </Link>
+                </motion.div>
+
+                <motion.div variants={item} className={styles.links}>
+                    <a href="https://github.com/jgx02c" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <span aria-hidden="true">·</span>
+                    <a href="https://www.linkedin.com/in/joshuajgoodman" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <span aria-hidden="true">·</span>
+                    <a href="mailto:joshua.goodman02@gmail.com">Email</a>
+                </motion.div>
+            </motion.div>
+        </section>
     );
 };

@@ -1,13 +1,7 @@
-import { About } from "../components/about/about";
-import { Line } from "../components/line/line";
-import { NavFooter } from "../components/nav-footer/nav-footer";
-function ContactPage () {
-    return(
-        <div>
-            <About /> 
-            <NavFooter />
-        </div>
-    )
+import { About } from '../components/about/about';
+
+function ContactPage() {
+    return <About />;
 }
 
 export default ContactPage;

@@ -103,7 +103,7 @@
     "id": 6,
     "title": "A.I. California Wildfire Prediction",
     "imageUrl": "../assets/wildfire-active-map-tracker-features.jpeg",
-    "description": "For this project, I was Part of an A.I. team working in AWS Sage Maker. Our goal was to create and train an A.I. model to predict wether forcasting and the chance of wildfires across California. Our A.I. model was integrated with the back end (team) that then sent the data to the front end (team).",
+    "description": "For this project, I was Part of an A.I. team working in AWS Sage Maker. Our goal was to create and train an A.I. model to predict weather forecasting and the chance of wildfires across California. Our A.I. model was integrated with the back end (team) that then sent the data to the front end (team).",
     "madeWith": [
       "cplusplus",
       "aws",

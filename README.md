@@ -1,33 +1,40 @@
-<div align="center">  
-    <img height="50" src="./src/assets/codux.svg">  
-    <h1><img height="30" src="./src/assets/vite.svg"> Vite template for Codux</h1>
-</div>
+# joshuagoodman.me
 
-### A Visual IDE for React Projects
+Personal site of **Joshua Goodman** — Co-Founder & CTO of [Dialogica AI](https://www.dialogicaai.com).
 
-Codux is an all-in-one visual development environment. Whether you’re starting a new app, creating components, or editing an existing project, every visual change you make reflects instantly in the code and vice versa. To learn more about Codux, visit our website - [https://www.codux.com/](https://www.codux.com/)
+Built with React 18, TypeScript, Vite, and SCSS modules. Deployed to GitHub Pages on a custom domain.
 
-This project was bootstrapped with [`Vite`](https://vitejs.dev).
+## Development
 
-It includes a single React component to start your project with, a sample [`codux.config.json`](codux.config.json) with preconfigured keys, a `package.json` file to describe the project's packages and dependencies, and a folder and component structure to put everything neatly in its place.
+Requires Node 20 (see `.nvmrc`).
 
-- Edit, render and compose apps that make use of **`React`**-based components.
-- Create components with **`TypeScript`**, **`SCSS`** and **`CSS Modules`** support.
-- Visually edit in real-time and in an isolated environment.
+```bash
+make install    # install dependencies
+make dev        # start the dev server (http://localhost:5173)
+make build      # typecheck + production build into dist/
+make preview    # serve the production build locally
+make typecheck  # tsc --noEmit
+make deploy     # build and publish dist/ to the gh-pages branch
+make clean      # remove dist/
+make nuke       # remove dist/ and node_modules/
+```
 
-### Available Scripts
+`make help` lists all targets.
 
-In the project directory, you can run:
+## Structure
 
-### `npm run build`
+```
+src/
+  pages/        Route-level pages (Home, Work, Projects, Contact)
+  components/   One folder per component (tsx + scss module)
+  data/         Content as JSON (projects, work history, home sections)
+  assets/       Images, logos, fonts
+  styles/       Design tokens and global styles
+plans/          Planning docs for the cleanup and redesign
+```
 
-Build the application in production mode into a folder named `dist`. This folder can be served using any HTTP server.
+## Deployment
 
-### `npm run dev`
-
-Start dev server, aliases: `vite dev`, `vite serve`.\
-Open [http://127.0.0.1:5173/](http://127.0.0.1:5173/) to view it in the browser.
-
-### `npm run preview`
-
-Boots up a local static web server that serves the files from dist at [`http://localhost:4173`](http://localhost:4173) . It's an easy way to check if the production build looks OK in your local environment.
+`make deploy` builds and pushes `dist/` to the `gh-pages` branch via the `gh-pages` package.
+The custom domain (`public/CNAME`) and SPA fallback (`public/404.html`) are copied into the
+build automatically.

@@ -1,53 +1,46 @@
+import { useEffect, useState } from 'react';
 import classNames from 'classnames';
+import { NavLink } from 'react-router-dom';
 import styles from './nav-header.module.scss';
-import { NavLink } from "react-router-dom";
 
-export interface NavHeaderProps {
-    className?: string;
-}
+const LINKS = [
+    { to: '/', label: 'Home' },
+    { to: '/work', label: 'Work' },
+    { to: '/projects', label: 'Projects' },
+    { to: '/contact', label: 'About' },
+];
 
-export const NavHeader = ({ className }: NavHeaderProps) => {
+export const NavHeader = () => {
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 12);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
     return (
-        <div className={classNames(styles.root, className)}>
-            <div className={styles.divContent}>
-                <span className={styles.spanClass}>
-                    <h1 className={styles.nameH1}>Joshua Goodman</h1>
-                    <div className={styles.div}>
+        <header className={classNames(styles.root, { [styles.scrolled]: scrolled })}>
+            <div className={styles.inner}>
+                <NavLink to="/" className={styles.brand}>
+                    Joshua Goodman
+                    <span className={styles.brandRole}>CTO, Dialogica AI</span>
+                </NavLink>
+                <nav className={styles.nav}>
+                    {LINKS.map(({ to, label }) => (
                         <NavLink
-                            to="/"
+                            key={to}
+                            to={to}
                             className={({ isActive }) =>
-                                classNames(styles.navLink, { [styles.activeLink]: isActive })
+                                classNames(styles.link, { [styles.active]: isActive })
                             }
                         >
-                            Home
+                            {label}
                         </NavLink>
-                        <NavLink
-                            to="/work"
-                            className={({ isActive }) =>
-                                classNames(styles.navLink, { [styles.activeLink]: isActive })
-                            }
-                        >
-                            Work
-                        </NavLink>
-                        <NavLink
-                            to="/projects"
-                            className={({ isActive }) =>
-                                classNames(styles.navLink, { [styles.activeLink]: isActive })
-                            }
-                        >
-                            Projects
-                        </NavLink>
-                        <NavLink
-                            to="/contact"
-                            className={({ isActive }) =>
-                                classNames(styles.navLink, { [styles.activeLink]: isActive })
-                            }
-                        >
-                            About
-                        </NavLink>
-                    </div>
-                </span>
+                    ))}
+                </nav>
             </div>
-        </div>
+        </header>
     );
 };

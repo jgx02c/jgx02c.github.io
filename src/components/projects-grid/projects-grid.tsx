@@ -1,70 +1,22 @@
-import React, { useEffect, useRef } from 'react';
 import styles from './projects-grid.module.scss';
-import { project } from '../home-project-component/home-project-component';
+import { Project } from '../../types/project';
 import { ProjectCard } from '../project-card/project-card';
+import { Reveal } from '../reveal/reveal';
 
 interface ProjectsGridProps {
-    projects: project[];
+    projects: Project[];
 }
 
-export const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
-    const projectsRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        if (!projectsRef.current) return;
-
-        const projectItems = projectsRef.current.querySelectorAll(`.${styles.projectItem}`);
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add(styles.visible);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { 
-            threshold: 0.1,
-            rootMargin: '50px'
-        });
-
-        projectItems.forEach(item => observer.observe(item));
-
-        return () => observer.disconnect();
-    }, []);
-
-    if (!projects?.length) {
-        return (
-            <div className={styles.emptyState}>
-                <p>No projects available</p>
-            </div>
-        );
-    }
-
+export const ProjectsGrid = ({ projects }: ProjectsGridProps) => {
     return (
-        <div className={styles.container}>
-            <div className={styles.grid} ref={projectsRef}>
-                {projects.map((project) => (
-                    <div key={project.id} className={styles.projectItem}>
-                        <ProjectCard
-                            id={project.id}
-                            title={project.title}
-                            description={project.description}
-                            imageUrl={project.imageUrl}
-                            madeWith={project.madeWith}
-                            demo={project.demo}
-                            demoLink={project.demoLink}
-                            code={project.code}
-                            codeLink={project.codeLink}
-                            live={project.live}
-                            liveLink={project.liveLink}
-                            projectType={project.projectType}
-                            companyName={project.companyName}
-                        />
-                    </div>
-                ))}
-            </div>
+        <div className={styles.grid}>
+            {projects.map((project, index) => (
+                <Reveal key={project.id} delay={(index % 3) * 0.06}>
+                    <ProjectCard project={project} />
+                </Reveal>
+            ))}
         </div>
     );
 };
 
-export default ProjectsGrid; 
+export default ProjectsGrid;

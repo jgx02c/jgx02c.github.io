@@ -1,5 +1,19 @@
 [
     {
+        "id": 0,
+        "companyName": "Dialogica AI",
+        "role": "Co-Founder & CTO",
+        "period": "2025 - Present",
+        "description": "Building a new class of legal cognition: Dia, a voice-native assistant that manages a law firm's entire workflow — calendar, redlining, email, documents, and billable hours — built by lawyers, for lawyers.",
+        "technologies": ["AI/ML", "Voice", "Desktop", "Security", "Full Stack", "Integrations"],
+        "achievements": [
+            "Own the technical architecture end to end: local-first AI processing, end-to-end encryption, desktop-native product.",
+            "75+ firm integrations supported; trusted by attorneys from the AmLaw100 and beyond.",
+            "Measured impact: 21.5% attorney productivity gain and 2+ hours saved per attorney daily."
+        ],
+        "logo": "../assets/Dialogica/dialogica_logo.png"
+    },
+    {
         "id": 1,
         "companyName": "Pan Pacific Mechanical",
         "role": "DevOps Engineer",
@@ -45,7 +59,7 @@
         "id": 4,
         "companyName": "Byob",
         "role": "Full Stack Developer",
-        "period": "Agust 2024 - October 2024",
+        "period": "August 2024 - October 2024",
         "description": "Worked with a team to build a full-stack mobile application, successfully launching it to users.",
         "technologies": ["JavaScript", "React", "Shopify", "Node.js", "React Native"],
         "achievements": [
@@ -59,7 +73,7 @@
         "id": 5,
         "companyName": "Quicksight",
         "role": "Full Stack Developer",
-        "period": "November 2023 - Feburary 2024",
+        "period": "November 2023 - February 2024",
         "description": "Collaborated closely with a small team to define project requirements, design system architecture, and implement key features",
         "technologies": ["JavaScript", "React", "Shopify", "Node.js"],
         "achievements": [

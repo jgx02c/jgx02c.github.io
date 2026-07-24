@@ -1,18 +1,10 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
 import styles from './about.module.scss';
+import { Reveal } from '../reveal/reveal';
 import josh from '../../assets/selfie.png';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
-export interface AboutProps {
-    className?: string;
-}
-
-/**
- * This component was created using Codux's Default new component template.
- * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
- */
-export const About = ({ className }: AboutProps) => {
+export const About = () => {
     const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -20,49 +12,66 @@ export const About = ({ className }: AboutProps) => {
         setFormStatus('sending');
 
         const form = e.currentTarget;
-        const formData = new FormData(form);
-
         try {
             const response = await fetch('https://formspree.io/f/xjkyvwrq', {
                 method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                body: new FormData(form),
+                headers: { Accept: 'application/json' },
             });
-
-            if (response.ok) {
-                setFormStatus('sent');
-                form.reset();
-            } else {
-                throw new Error('Failed to send message');
-            }
-        } catch (error) {
+            if (!response.ok) throw new Error('Failed to send message');
+            setFormStatus('sent');
+            form.reset();
+        } catch {
             setFormStatus('error');
         }
     };
 
     return (
-        <div className={classNames(styles.root, className)}>
-            <div className={styles.divMaster}>
-                {/* About Section */}
-                <section className={styles.aboutSection}>
-                    <div className={styles.divIntro}>
-                        <img src={josh} alt="Joshua Goodman" className={styles.imageClass} />
-                        <div className={styles.divText}>
-                            <h1 className={styles.title}>About Me</h1>
-                            <p className={styles.paragraph}>
-                                Starting to work with computers in 8th grade by building websites, learning C++, and eventually having a small internship working with computer hardware 1 year later, I found myself set on a path chasing computers. Throughout high school, I self-studied computer hardware, I.T. Support, and Computer Programming. At 15 years of age, I found myself repairing iPhones in class, refurbishing MacBooks for the secondary market, and learning about servers by setting up my own network in my garage. Starting my first company at age 19 with the intention to help others with their computer problems, web development, and other business needs, I found success early on.
-                            </p>
-                        </div>
+        <div className={styles.root}>
+            <Reveal>
+                <header className={styles.header}>
+                    <span className="eyebrow">About</span>
+                    <h1 className={styles.title}>
+                        The path to <em className="serif-accent">Dialogica.</em>
+                    </h1>
+                </header>
+            </Reveal>
+
+            <Reveal>
+                <section className={styles.bio}>
+                    <img src={josh} alt="Joshua Goodman" className={styles.photo} />
+                    <div className={styles.bioText}>
+                        <p>
+                            I started with computers in 8th grade — building websites, learning
+                            C++, and landing a hardware internship a year later. Through high
+                            school I was repairing iPhones in class, refurbishing MacBooks for
+                            the secondary market, and running my own server rack out of the
+                            garage.
+                        </p>
+                        <p>
+                            At 19 I founded Optionality, a technology consultancy for small
+                            businesses, and later Finned, a product brand with a design patent
+                            to its name. Along the way I shipped full-stack products at
+                            startups like Piclist and BYOB, published an npm package, and
+                            worked on LLM evaluations at Mercor.
+                        </p>
+                        <p>
+                            Today I&rsquo;m the co-founder &amp; CTO of{' '}
+                            <a href="https://www.dialogicaai.com" target="_blank" rel="noopener noreferrer">
+                                Dialogica AI
+                            </a>
+                            , where we&rsquo;re building a new class of legal cognition — a
+                            voice-native assistant built by lawyers, for lawyers, crafted in
+                            Santa Monica.
+                        </p>
                     </div>
                 </section>
+            </Reveal>
 
-                {/* Contact Section */}
-                <section className={styles.contactSection}>
-                    <h2 className={styles.contactTitle}>Get in Touch</h2>
-                    
-                    {/* Social Links */}
+            <Reveal>
+                <section className={styles.contact}>
+                    <h2 className={styles.contactTitle}>Get in touch</h2>
+
                     <div className={styles.socialLinks}>
                         <a href="https://github.com/jgx02c" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
                             <FaGithub /> GitHub
@@ -75,59 +84,44 @@ export const About = ({ className }: AboutProps) => {
                         </a>
                     </div>
 
-                    {/* Contact Form */}
-                    <form onSubmit={handleSubmit} className={styles.contactForm}>
-                        <div className={styles.formGroup}>
-                            <label htmlFor="name">Name</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                required
-                                placeholder="Your name"
-                            />
-                        </div>
-                        
-                        <div className={styles.formGroup}>
-                            <label htmlFor="email">Email</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                required
-                                placeholder="your.email@example.com"
-                            />
-                        </div>
-                        
-                        <div className={styles.formGroup}>
-                            <label htmlFor="message">Message</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                required
-                                placeholder="Your message..."
-                                rows={4}
-                            />
+                    <form onSubmit={handleSubmit} className={styles.form}>
+                        <div className={styles.formRow}>
+                            <div className={styles.field}>
+                                <label htmlFor="name">Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Your name" />
+                            </div>
+                            <div className={styles.field}>
+                                <label htmlFor="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="you@example.com" />
+                            </div>
                         </div>
 
-                        <button 
-                            type="submit" 
-                            className={styles.submitButton}
+                        <div className={styles.field}>
+                            <label htmlFor="message">Message</label>
+                            <textarea id="message" name="message" required placeholder="What are you building?" rows={5} />
+                        </div>
+
+                        <button
+                            type="submit"
+                            className={styles.submit}
                             disabled={formStatus === 'sending' || formStatus === 'sent'}
                         >
-                            {formStatus === 'sending' ? 'Sending...' : 
-                             formStatus === 'sent' ? 'Message Sent!' : 
-                             'Send Message'}
+                            {formStatus === 'sending'
+                                ? 'Sending…'
+                                : formStatus === 'sent'
+                                  ? 'Message sent'
+                                  : 'Send message'}
                         </button>
 
                         {formStatus === 'error' && (
-                            <p className={styles.errorMessage}>
-                                Failed to send message. Please try again or contact directly via email.
+                            <p className={styles.error}>
+                                Something went wrong — email me directly at
+                                joshua.goodman02@gmail.com.
                             </p>
                         )}
                     </form>
                 </section>
-            </div>
+            </Reveal>
         </div>
     );
 };
