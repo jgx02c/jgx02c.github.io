@@ -62,7 +62,7 @@ export const HomeIntro = () => {
                     <span aria-hidden="true">·</span>
                     <a href="https://www.linkedin.com/in/joshuajgoodman" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     <span aria-hidden="true">·</span>
-                    <a href="mailto:joshua.goodman02@gmail.com">Email</a>
+                    <Link to="/contact">Contact</Link>
                 </motion.div>
             </motion.div>
         </section>

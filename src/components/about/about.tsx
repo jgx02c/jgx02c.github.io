@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './about.module.scss';
 import { Reveal } from '../reveal/reveal';
 import josh from '../../assets/selfie.jpg';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 export const About = () => {
     const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
@@ -79,9 +79,6 @@ export const About = () => {
                         <a href="https://www.linkedin.com/in/joshuajgoodman/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
                             <FaLinkedin /> LinkedIn
                         </a>
-                        <a href="mailto:joshua.goodman02@gmail.com" className={styles.socialLink}>
-                            <FaEnvelope /> Email
-                        </a>
                     </div>
 
                     <form onSubmit={handleSubmit} className={styles.form}>
@@ -115,8 +112,8 @@ export const About = () => {
 
                         {formStatus === 'error' && (
                             <p className={styles.error}>
-                                Something went wrong — email me directly at
-                                joshua.goodman02@gmail.com.
+                                Something went wrong — please try again in a moment, or reach
+                                out via LinkedIn.
                             </p>
                         )}
                     </form>

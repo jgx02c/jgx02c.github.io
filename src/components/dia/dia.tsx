@@ -3,7 +3,8 @@ import { OrbShowcase } from '../dia-orb/orb-showcase';
 import chapter from '../founder-timeline/chapter.module.scss';
 import styles from './dia.module.scss';
 import diaEmblem from '../../assets/Dialogica/brand/emblem-maroon.svg';
-import onboarding from '../../assets/Dialogica/video/dia-onboarding.mp4';
+import diaVideo from '../../assets/Dialogica/video/dia-one.mp4';
+import diaPoster from '../../assets/Dialogica/video/dia-one-poster.jpg';
 import clio from '../../assets/Dialogica/integrations/clio.png';
 import imanage from '../../assets/Dialogica/integrations/iManage.png';
 import ms365 from '../../assets/Dialogica/integrations/ms365.png';
@@ -86,7 +87,8 @@ export const Dia = () => {
             <Reveal>
                 <div className={styles.videoFrame}>
                     <video
-                        src={onboarding}
+                        src={diaVideo}
+                        poster={diaPoster}
                         autoPlay
                         muted
                         loop

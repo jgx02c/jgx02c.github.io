@@ -13,9 +13,9 @@ export const NavFooter = () => {
                         Let&rsquo;s build something{' '}
                         <em className="serif-accent">extraordinary.</em>
                     </h2>
-                    <a href="mailto:joshua.goodman02@gmail.com" className={styles.emailLink}>
-                        joshua.goodman02@gmail.com
-                    </a>
+                    <Link to="/contact" className={styles.emailLink}>
+                        Get in touch →
+                    </Link>
                 </div>
 
                 <div className={styles.columns}>

@@ -2,7 +2,8 @@ import { Reveal } from '../reveal/reveal';
 import chapter from '../founder-timeline/chapter.module.scss';
 import styles from './finned.module.scss';
 import finnedLogo from '../../assets/finned/finned_logo.png';
-import adShot from '../../assets/finned/web/ad.jpg';
+import finnedVideo from '../../assets/finned/video/finned-hero.mp4';
+import finnedPoster from '../../assets/finned/video/finned-hero-poster.jpg';
 
 export const Finned = () => {
     return (
@@ -31,7 +32,16 @@ export const Finned = () => {
                     rel="noopener noreferrer"
                     className={chapter.media}
                 >
-                    <img src={adShot} alt="Finned cylinder mug — unmistakably iconic" loading="lazy" />
+                    <video
+                        src={finnedVideo}
+                        poster={finnedPoster}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="metadata"
+                        aria-label="Finned cylinder mug in motion"
+                    />
                     <span className={chapter.mediaCta}>Visit finnedmugs.com →</span>
                 </a>
             </Reveal>
