@@ -1,10 +1,10 @@
-/* Tall scroller with a pinned inner stage. Scroll length gives room for
-   four beats; the sticky stage stays put while the orb performs. */
+/* Tall scroller with a pinned stage. The orb sits center; product cards
+   spread outward with parallax as you scroll through the four beats. */
 
 .scroller {
     position: relative;
-    height: 320vh;
-    margin: 1rem 0 var(--section-gap);
+    height: 400vh;
+    margin: 1.5rem 0 var(--section-gap);
 }
 
 .sticky {
@@ -13,29 +13,64 @@
     height: 100vh;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
-.grid {
-    width: 100%;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: clamp(2rem, 5vw, 4rem);
-    align-items: center;
-}
-
-/* ---- Left: narrative ---- */
-
-.copy {
+.stage {
     position: relative;
-    min-width: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+/* ---- Parallax card layer ---- */
+
+.cards {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cardPos {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    will-change: transform, opacity;
+}
+
+.cardCenter {
+    transform: translate(-50%, -50%);
+}
+
+/* ---- Orb ---- */
+
+.orbCenter {
+    position: absolute;
+    left: 50%;
+    top: 47%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+/* ---- Caption ---- */
+
+.caption {
+    position: absolute;
+    left: 50%;
+    bottom: 3vh;
+    transform: translateX(-50%);
+    width: min(86%, 520px);
+    text-align: center;
+    z-index: 4;
 }
 
 .step {
     display: inline-block;
     font-family: var(--font-serif);
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--accent);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
 
     span {
         color: var(--text-tertiary);
@@ -44,14 +79,14 @@
 
 .beats {
     position: relative;
-    min-height: 168px;
+    min-height: 96px;
 }
 
 .beat {
     position: absolute;
     inset: 0;
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(10px);
     transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
     pointer-events: none;
 }
@@ -59,33 +94,34 @@
 .beat[data-active='true'] {
     opacity: 1;
     transform: translateY(0);
-    pointer-events: auto;
 }
 
 .kicker {
     display: block;
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
     font-weight: 600;
     letter-spacing: -0.02em;
     line-height: 1.15;
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
     color: var(--text);
 }
 
 .body {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
     color: var(--text-secondary);
     line-height: 1.5;
-    max-width: 30ch;
+    max-width: 42ch;
+    margin: 0 auto;
 }
 
 .progress {
     display: flex;
+    justify-content: center;
     gap: 0.5rem;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 
     span {
-        width: 34px;
+        width: 30px;
         height: 3px;
         border-radius: 2px;
         background: var(--border-strong);
@@ -97,36 +133,39 @@
     }
 }
 
-/* ---- Right: orb stage ---- */
-
-.stageWrap {
-    min-width: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 440px;
-    border-radius: var(--radius-lg);
-    background:
-        radial-gradient(circle at 50% 40%, rgba(124, 29, 23, 0.06), transparent 60%),
-        var(--bg-elevated);
-    border: 1px solid var(--border);
-    padding: 2rem;
-}
-
-/* ---- Reduced-motion / static fallback ---- */
+/* ------------------------------------------------------------------ */
+/* Static / reduced-motion / mobile fallback                            */
+/* ------------------------------------------------------------------ */
 
 .static {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: clamp(2rem, 5vw, 4rem);
-    align-items: center;
     margin-bottom: var(--section-gap);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.staticOrb {
+    display: flex;
+    justify-content: center;
+}
+
+.staticCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    width: 100%;
+}
+
+.staticCards > * {
+    width: 100% !important;
 }
 
 .staticCopy {
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    gap: 1.5rem;
+    width: 100%;
 }
 
 .staticBeat .kicker {
@@ -134,34 +173,6 @@
     margin-bottom: 0.35rem;
 }
 
-.staticStage {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 440px;
-    border-radius: var(--radius-lg);
-    background: var(--bg-elevated);
-    border: 1px solid var(--border);
-    padding: 2rem;
-}
-
-@media (max-width: 860px) {
-    .scroller {
-        height: 300vh;
-    }
-
-    .grid,
-    .static {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .stageWrap {
-        order: -1;
-        min-height: 360px;
-    }
-
-    .beats {
-        min-height: 150px;
-    }
+.staticBeat .body {
+    margin: 0;
 }

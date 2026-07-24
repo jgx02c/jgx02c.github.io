@@ -50,13 +50,13 @@ export const FounderTimeline = ({ children }: FounderTimelineProps) => {
                 <Reveal>
                     <span className="eyebrow">The arc · three companies</span>
                     <h2 className={styles.title}>
-                        From first idea to first customer,{' '}
+                        First idea to first customer,{' '}
                         <em className="serif-accent">three times over.</em>
                     </h2>
                     <p className={styles.intro}>
-                        Every venture a bigger leap than the last — a service business at
-                        nineteen, a patented physical product, and now a venture-scale AI
-                        company. Same instinct each time: take an idea all the way to a
+                        Working back from today: a venture-scale AI company, a patented
+                        physical product before it, and the service business I started at
+                        nineteen. Same instinct each time — take an idea all the way to a
                         paying customer.
                     </p>
                 </Reveal>

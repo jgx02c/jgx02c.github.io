@@ -9,14 +9,14 @@ function HomePage() {
         <>
             <HomeIntro />
             <FounderTimeline>
-                <TimelineChapter year="2021" company="Optionality" tint="gold">
-                    <Optionality />
+                <TimelineChapter year="2025" company="Dialogica AI" tint="maroon">
+                    <Dia />
                 </TimelineChapter>
                 <TimelineChapter year="2023" company="Finned" tint="silver">
                     <Finned />
                 </TimelineChapter>
-                <TimelineChapter year="2025" company="Dialogica AI" tint="maroon">
-                    <Dia />
+                <TimelineChapter year="2021" company="Optionality" tint="gold">
+                    <Optionality />
                 </TimelineChapter>
             </FounderTimeline>
         </>

@@ -23,16 +23,6 @@
     to { transform: rotate(360deg); }
 }
 
-@keyframes orbContentIn {
-    from { opacity: 0; transform: scale(0.96); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes cardIn {
-    from { opacity: 0; transform: translateY(14px) scale(0.98); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
 @keyframes typing {
     from { max-width: 0; }
     to { max-width: var(--len); }
@@ -44,36 +34,38 @@
 }
 
 /* ------------------------------------------------------------------ */
-/* Stage                                                               */
+/* Orb bar — orb + expanding pill (the real product lockup)             */
 /* ------------------------------------------------------------------ */
 
-.stage {
-    position: relative;
-    width: 100%;
-    min-width: 0;
-    min-height: 340px;
+.bar {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
+    gap: 12px;
+    padding: 8px;
+    border-radius: 999px;
+    background: transparent;
+    transition: background 300ms var(--ease), box-shadow 300ms var(--ease);
 }
 
-/* ------------------------------------------------------------------ */
-/* Orb                                                                 */
-/* ------------------------------------------------------------------ */
+.bar[data-open='true'] {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow:
+        0 1px 2px rgba(52, 4, 4, 0.05),
+        0 24px 60px -24px rgba(52, 4, 4, 0.4);
+    backdrop-filter: blur(6px);
+}
 
-$orb: 116px;
+$orb: 90px;
 
 .orb {
     position: relative;
+    flex-shrink: 0;
     width: $orb;
     height: $orb;
     border-radius: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* lifted verbatim */
     background: linear-gradient(145deg, #6b2028 0%, #340404 100%);
     border: 1px solid rgba(64, 10, 12, 0.002);
     box-shadow:
@@ -108,15 +100,14 @@ $orb: 116px;
 }
 
 .emblem {
-    width: 46px;
-    height: 46px;
+    width: 38px;
+    height: 38px;
     object-fit: contain;
     user-select: none;
     -webkit-user-drag: none;
     z-index: 1;
 }
 
-/* Soft brand glow behind the orb, amplified while shimmering/thinking */
 .glow {
     position: absolute;
     inset: -30%;
@@ -135,7 +126,6 @@ $orb: 116px;
     opacity: 0.5;
 }
 
-/* Thinking spinner ring — cream arc, verbatim timing */
 .spinner {
     position: absolute;
     inset: 5px;
@@ -147,48 +137,29 @@ $orb: 116px;
 }
 
 /* ------------------------------------------------------------------ */
-/* Prompt pill                                                         */
+/* Pill                                                                */
 /* ------------------------------------------------------------------ */
 
 .pill {
     display: flex;
     align-items: center;
-    gap: 0.65rem;
-    width: min(100%, 420px);
-    padding: 0.7rem 1.1rem;
-    background: #ffffff;
-    border: 1px solid rgba(51, 4, 3, 0.08);
-    border-radius: 999px;
-    box-shadow: 0 6px 24px -12px rgba(52, 4, 4, 0.4);
+    min-width: 0;
+    max-width: 0;
+    padding: 0;
     opacity: 0;
-    transform: translateY(8px) scale(0.96);
-    transition: opacity 280ms var(--ease), transform 280ms var(--ease);
-    pointer-events: none;
+    overflow: hidden;
+    transition:
+        max-width 360ms var(--ease),
+        opacity 260ms var(--ease),
+        padding 360ms var(--ease);
 }
 
-.pill[data-visible='true'] {
+.pill[data-open='true'] {
+    max-width: 410px;
     opacity: 1;
-    transform: translateY(0) scale(1);
-    animation: orbContentIn 280ms var(--ease);
+    padding-right: 1.25rem;
 }
 
-.pillOrb {
-    flex-shrink: 0;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(145deg, #6b2028 0%, #340404 100%);
-
-    img {
-        width: 12px;
-        height: 12px;
-    }
-}
-
-/* Placeholder cut — Ibarra italic, verbatim colour */
 .pillText,
 .typed {
     font-family: 'Ibarra Real Nova', Georgia, serif;
@@ -210,66 +181,27 @@ $orb: 116px;
         caretBlink 0.8s step-end infinite;
 }
 
-/* ------------------------------------------------------------------ */
-/* Response card                                                       */
-/* ------------------------------------------------------------------ */
-
-.response {
-    width: min(100%, 420px);
-    background: var(--bg-elevated);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    padding: 1.1rem 1.25rem;
-    box-shadow: 0 12px 34px -16px rgba(52, 4, 4, 0.35);
-    opacity: 0;
-    transform: translateY(14px) scale(0.98);
-    transition: opacity 300ms var(--ease), transform 300ms var(--ease);
-    pointer-events: none;
-}
-
-.response[data-visible='true'] {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    animation: cardIn 360ms var(--ease);
-}
-
-.responseTitle {
-    display: block;
-    font-family: var(--font-serif);
-    font-size: 1.15rem;
-    color: var(--brand);
-    margin-bottom: 0.7rem;
-}
-
-.responseList {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-
-    li {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.55rem;
-        font-size: var(--text-sm);
-        color: var(--text-secondary);
-        line-height: 1.4;
-    }
-}
-
-.check {
-    flex-shrink: 0;
-    width: 16px;
-    height: 16px;
-    margin-top: 1px;
-    color: var(--accent);
-}
-
 @media (prefers-reduced-motion: reduce) {
     .orb,
     .orb .glow,
     .spinner,
     .typed {
         animation: none !important;
+    }
+}
+
+@media (max-width: 520px) {
+    .orb {
+        width: 74px;
+        height: 74px;
+    }
+
+    .emblem {
+        width: 32px;
+        height: 32px;
+    }
+
+    .pill[data-open='true'] {
+        max-width: 210px;
     }
 }

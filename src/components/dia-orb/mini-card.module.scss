@@ -1,0 +1,249 @@
+.card {
+    width: 240px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 0.9rem 1rem;
+    box-shadow:
+        0 1px 2px rgba(52, 4, 4, 0.04),
+        0 18px 40px -20px rgba(52, 4, 4, 0.35);
+    text-align: left;
+}
+
+.eyebrow {
+    display: block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 0.6rem;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.55rem;
+}
+
+.title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.55rem;
+}
+
+.head .title {
+    margin-bottom: 0;
+}
+
+.confidence {
+    font-size: 0.6rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    background: rgba(46, 125, 50, 0.12);
+    color: #2e7d32;
+    white-space: nowrap;
+}
+
+.bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    li {
+        position: relative;
+        padding-left: 0.85rem;
+        font-size: 0.78rem;
+        color: var(--text-secondary);
+        line-height: 1.35;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5em;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+    }
+}
+
+/* Checklist */
+.checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.78rem;
+        color: var(--text);
+    }
+
+    li[data-done='true'] {
+        color: var(--text-tertiary);
+        text-decoration: line-through;
+    }
+}
+
+.dot {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid var(--border-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+
+    svg {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+.dot[data-done='true'] {
+    background: #2e7d32;
+    border-color: #2e7d32;
+}
+
+/* Redline result */
+.fileRow {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
+}
+
+.fileIcon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    color: var(--brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.fileName {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.fileSub {
+    display: block;
+    font-size: 0.64rem;
+    color: var(--text-tertiary);
+    margin-top: 0.1rem;
+}
+
+.action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    color: var(--brand);
+    border: 1px solid rgba(51, 4, 3, 0.15);
+    cursor: default;
+}
+
+/* Sources */
+.sourceRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.45rem 0.55rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+
+    & + & {
+        margin-top: 0.4rem;
+    }
+}
+
+.sourceName {
+    font-size: 0.74rem;
+    font-weight: 500;
+    color: var(--text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pin {
+    flex-shrink: 0;
+    font-size: 0.64rem;
+    color: var(--text-tertiary);
+}
+
+/* Billable */
+.billing {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+}
+
+.hours {
+    font-family: var(--font-serif);
+    font-size: 1.7rem;
+    line-height: 1;
+    color: var(--brand);
+}
+
+.matter {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+}
+
+/* Next steps */
+.steps {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.76rem;
+        color: var(--text-secondary);
+    }
+}
+
+.arrow {
+    flex-shrink: 0;
+    color: var(--accent);
+
+    svg {
+        width: 14px;
+        height: 14px;
+        display: block;
+    }
+}

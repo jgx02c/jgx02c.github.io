@@ -3,8 +3,6 @@ import chapter from '../founder-timeline/chapter.module.scss';
 import styles from './finned.module.scss';
 import finnedLogo from '../../assets/finned/finned_logo.png';
 import adShot from '../../assets/finned/web/ad.jpg';
-import render from '../../assets/finned/web/render.jpg';
-import mug from '../../assets/finned/web/mug.jpg';
 
 export const Finned = () => {
     return (
@@ -14,13 +12,13 @@ export const Finned = () => {
                     <img src={finnedLogo} alt="Finned" className={styles.logo} />
                 </div>
                 <h3 className={chapter.statement}>
-                    A coffee mug precision-machined like the{' '}
+                    A coffee mug cast like the{' '}
                     <em>engine cylinders that inspired it.</em>
                 </h3>
                 <p className={chapter.lead}>
                     From selling services to shipping a physical product. Finned is an
                     automotive-inspired brand I founded and built end to end — concept,
-                    industrial design in CAD, a filed design patent, brand, and ecommerce.
+                    industrial design, a filed design patent, brand, and ecommerce.
                     Proof that &ldquo;first idea to first customer&rdquo; isn&rsquo;t only
                     about software.
                 </p>
@@ -39,19 +37,6 @@ export const Finned = () => {
             </Reveal>
 
             <Reveal delay={0.05}>
-                <div className={styles.gallery}>
-                    <figure className={styles.shot}>
-                        <img src={render} alt="Nickel-plated Finned cylinder mug CAD render" loading="lazy" />
-                        <figcaption>Modeled in CAD, down to the cooling fins.</figcaption>
-                    </figure>
-                    <figure className={styles.shot}>
-                        <img src={mug} alt="Finned cylinder coffee mug" loading="lazy" />
-                        <figcaption>Machined, anodized, ready for the shelf.</figcaption>
-                    </figure>
-                </div>
-            </Reveal>
-
-            <Reveal delay={0.05}>
                 <div className={chapter.milestones}>
                     <div className={chapter.milestone}>
                         <span className={chapter.milestonePhase}>The idea · Jan 2023</span>
@@ -66,11 +51,11 @@ export const Finned = () => {
                     <div className={chapter.milestone}>
                         <span className={chapter.milestonePhase}>Design &amp; prototype</span>
                         <div className={chapter.milestoneBody}>
-                            <h4 className={chapter.milestoneTitle}>Machined, not molded.</h4>
+                            <h4 className={chapter.milestoneTitle}>Cast in aluminum.</h4>
                             <p className={chapter.milestoneText}>
-                                Modeled the cylinder body in CAD — real cooling fins, a
-                                nickel-plated finish, a cast-style handle — and precision-machined
-                                prototypes until it came off like a real engine part.
+                                Shaped the cylinder body with real cooling fins, a nickel-plated
+                                finish, and a cast-style handle — cast in aluminum so it came off
+                                like a genuine engine part.
                             </p>
                         </div>
                     </div>
