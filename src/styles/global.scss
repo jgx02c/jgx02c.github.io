@@ -3,29 +3,32 @@
 /* ------------------------------------------------------------------ */
 
 :root {
-  /* Color — warm editorial light theme */
-  --bg: #f8f7f4;
-  --bg-elevated: #ffffff;
-  --surface: #efeee9;
-  --surface-hover: #e7e6e0;
-  --border: rgba(20, 20, 24, 0.1);
-  --border-strong: rgba(20, 20, 24, 0.2);
+  /* Color — warm editorial light theme, keyed to the Dialogica brand */
+  --bg: #f7f2ea;
+  --bg-elevated: #fffdf9;
+  --surface: #efe8dc;
+  --surface-hover: #e7dece;
+  --border: rgba(51, 4, 3, 0.1);
+  --border-strong: rgba(51, 4, 3, 0.2);
 
-  --text: #16161a;
-  --text-secondary: #55534d;
-  --text-tertiary: #8a877f;
+  --text: #1f0202;
+  --text-secondary: #6a4a45;
+  --text-tertiary: #9a7f78;
 
-  --accent: #2563eb;
-  --accent-soft: rgba(37, 99, 235, 0.1);
+  /* Dialogica maroon */
+  --brand: #330403;
+  --brand-hover: #4a0605;
+  --accent: #7c1d17;
+  --accent-soft: rgba(124, 29, 23, 0.1);
 
   /* Translucent overlays keyed to the surrounding surface */
-  --overlay: rgba(248, 247, 244, 0.8);
-  --overlay-strong: rgba(255, 255, 255, 0.9);
-  --scrim: rgba(20, 20, 24, 0.45);
+  --overlay: rgba(247, 242, 234, 0.82);
+  --overlay-strong: rgba(255, 253, 249, 0.92);
+  --scrim: rgba(31, 2, 2, 0.5);
 
   /* Type */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-serif: 'Ibarra Real Nova', Georgia, serif;
 
   --text-xs: 0.8125rem;
   --text-sm: 0.9375rem;

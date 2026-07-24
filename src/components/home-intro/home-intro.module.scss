@@ -78,11 +78,11 @@
 }
 
 .primary {
-    background: var(--text);
-    color: var(--bg);
+    background: var(--brand);
+    color: #fffdf9;
 
     &:hover {
-        opacity: 0.88;
+        background: var(--brand-hover);
     }
 }
 

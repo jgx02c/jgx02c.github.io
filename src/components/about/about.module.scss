@@ -134,14 +134,15 @@
     align-self: flex-start;
     padding: 0.8rem 1.75rem;
     border-radius: 999px;
-    background: var(--text);
-    color: var(--bg);
+    background: var(--brand);
+    color: #fffdf9;
     font-size: var(--text-sm);
     font-weight: 600;
-    transition: transform 0.25s var(--ease), opacity 0.25s var(--ease);
+    transition: transform 0.25s var(--ease), background 0.25s var(--ease);
 
     &:hover:not(:disabled) {
         transform: translateY(-2px);
+        background: var(--brand-hover);
     }
 
     &:disabled {
