@@ -1,0 +1,15 @@
+{
+  "name": "Joshua Goodman",
+  "short_name": "Joshua Goodman",
+  "description": "Personal site of Joshua Goodman — Co-Founder & CTO at Dialogica AI.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7f2ea",
+  "theme_color": "#330403",
+  "icons": [
+    { "src": "/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/favicon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/favicon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Joshua Goodman, Co-Founder and CTO, Dialogica AI">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f2ea"/>
+      <stop offset="100%" stop-color="#efe8dc"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <rect x="96" y="96" width="140" height="140" rx="28" fill="#330403"/>
+  <text x="166" y="196" text-anchor="middle" dominant-baseline="alphabetic"
+        font-family="Georgia, 'Ibarra Real Nova', serif" font-style="italic" font-weight="600"
+        font-size="92" fill="#f7f2ea">jg</text>
+
+  <text x="96" y="330" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="700"
+        font-size="22" letter-spacing="4" fill="#9a7f78">CO-FOUNDER &#183; CTO &#183; DIALOGICA AI</text>
+
+  <text x="96" y="410" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="700"
+        font-size="80" fill="#1f0202" letter-spacing="-2">Joshua Goodman</text>
+
+  <text x="96" y="480" font-family="Georgia, 'Ibarra Real Nova', serif" font-style="italic"
+        font-size="34" fill="#6a4a45">Building a new class of legal cognition.</text>
+
+  <text x="96" y="560" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="500"
+        font-size="22" fill="#7c1d17">joshuagoodman.me</text>
+</svg>

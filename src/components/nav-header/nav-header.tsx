@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import styles from './nav-header.module.scss';
 
 const LINKS = [
-    { to: '/', label: 'Home' },
+    { to: '/', label: 'Home', end: true },
     { to: '/work', label: 'Work' },
     { to: '/projects', label: 'Projects' },
     { to: '/contact', label: 'About' },
@@ -28,10 +28,11 @@ export const NavHeader = () => {
                     <span className={styles.brandRole}>CTO, Dialogica AI</span>
                 </NavLink>
                 <nav className={styles.nav}>
-                    {LINKS.map(({ to, label }) => (
+                    {LINKS.map(({ to, label, end }) => (
                         <NavLink
                             key={to}
                             to={to}
+                            end={end}
                             className={({ isActive }) =>
                                 classNames(styles.link, { [styles.active]: isActive })
                             }

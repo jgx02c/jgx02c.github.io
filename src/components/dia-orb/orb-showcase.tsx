@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import {
     motion,
     useScroll,
@@ -82,7 +82,11 @@ export const OrbShowcase = () => {
     const reduceMotion = useReducedMotion();
     const canParallax = useMediaQuery('(min-width: 1000px)');
     const [index, setIndex] = useState(0);
-    const prompt = useMemo(() => PROMPTS[Math.floor(Math.random() * PROMPTS.length)], []);
+    // Pick a random prompt once, at mount. Using a `useState` initializer keeps
+    // the impurity out of the render body (satisfies `react-hooks/purity`).
+    const [prompt] = useState(
+        () => PROMPTS[Math.floor(Math.random() * PROMPTS.length)],
+    );
 
     const { scrollYProgress } = useScroll({
         target: ref,

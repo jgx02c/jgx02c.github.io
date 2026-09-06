@@ -47,21 +47,31 @@
 }
 
 .link {
-    padding: 0.45rem 0.85rem;
+    position: relative;
+    padding: 0.45rem 0.9rem;
     border-radius: 999px;
     font-size: var(--text-sm);
     font-weight: 500;
     color: var(--text-secondary);
-    transition: color 0.25s var(--ease), background 0.25s var(--ease);
+    transition: color 0.25s var(--ease), background 0.25s var(--ease),
+        box-shadow 0.25s var(--ease);
 
     &:hover {
-        color: var(--text);
+        color: var(--brand);
+        background: var(--accent-soft);
+    }
+
+    &:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
     }
 }
 
-.active {
-    color: var(--text);
-    background: var(--surface);
+.active,
+.active:hover {
+    color: #fffdf9;
+    background: var(--brand);
+    box-shadow: 0 6px 18px -8px rgba(51, 4, 3, 0.55);
 }
 
 @media (max-width: 560px) {

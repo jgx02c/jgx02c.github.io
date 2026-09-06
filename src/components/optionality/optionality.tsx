@@ -1,8 +1,8 @@
 import { Reveal } from '../reveal/reveal';
 import chapter from '../founder-timeline/chapter.module.scss';
 import styles from './optionality.module.scss';
-import siteShot from '../../assets/optionality/site-full.png';
-import gear from '../../assets/logos/artboard.png';
+import siteShot from '../../assets/optionality/optionality-biz.png';
+import optionalityLogo from '../../assets/optionality/logo-wordmark.png';
 
 const SERVICES = [
     'Web Design',
@@ -18,8 +18,11 @@ export const Optionality = () => {
         <div>
             <Reveal>
                 <div className={chapter.lockup}>
-                    <img src={gear} alt="" className={styles.gear} />
-                    <span className={styles.wordmark}>Optionality</span>
+                    <img
+                        src={optionalityLogo}
+                        alt="Optionality"
+                        className={styles.brandLogo}
+                    />
                 </div>
                 <h3 className={chapter.statement}>
                     Founded at nineteen to serve the businesses{' '}

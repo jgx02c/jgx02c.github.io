@@ -1,12 +1,18 @@
-.gear {
-    height: 38px;
+/* The real Optionality wordmark (logo + "Optionality") on a transparent
+   background — pulled from the optionality.biz brand kit. Sized to match
+   the visual weight of the other chapter lockups (Dialogica, Finned). */
+.brandLogo {
+    height: 44px;
     width: auto;
+    display: block;
+    /* The PNG has a subtle drop-shadow-friendly gold — a small shadow here
+       adds a little presence against the cream chapter background without
+       feeling heavy. */
+    filter: drop-shadow(0 1px 2px rgba(51, 4, 3, 0.08));
 }
 
-.wordmark {
-    font-family: var(--font-serif);
-    font-size: 1.75rem;
-    line-height: 1;
-    color: var(--chapter-ink);
-    letter-spacing: 0.01em;
+@media (max-width: 560px) {
+    .brandLogo {
+        height: 38px;
+    }
 }

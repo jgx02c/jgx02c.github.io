@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import styles from './modal-portal.module.scss';
 
@@ -7,35 +7,34 @@ interface ModalPortalProps {
     isOpen: boolean;
 }
 
-export const ModalPortal: React.FC<ModalPortalProps> = ({ children, isOpen }) => {
-    const [modalRoot, setModalRoot] = useState<HTMLElement | null>(null);
-    
-    useEffect(() => {
-        // Find or create modal root element
-        let modalRootEl = document.getElementById('modal-root');
-        
-        if (!modalRootEl) {
-            modalRootEl = document.createElement('div');
-            modalRootEl.id = 'modal-root';
-            document.body.appendChild(modalRootEl);
-        }
-        
-        setModalRoot(modalRootEl);
-        
-        // We don't need to remove the modal root on component unmount
-        // It will be shared between all modals
-        return () => {};
-    }, []);
+/**
+ * Ensures a single `<div id="modal-root">` exists at the end of `<body>` and
+ * portals its children into it.
+ *
+ * The lookup runs once, lazily, inside the state initializer — that keeps it
+ * off the render-then-effect-then-rerender path (which triggered the
+ * `react-hooks/set-state-in-effect` rule) and avoids the flash of empty state
+ * on the first paint.
+ */
+const ensureModalRoot = (): HTMLElement | null => {
+    if (typeof document === 'undefined') return null;
+    const existing = document.getElementById('modal-root');
+    if (existing) return existing;
+    const el = document.createElement('div');
+    el.id = 'modal-root';
+    document.body.appendChild(el);
+    return el;
+};
 
-    // Don't render anything if modal root doesn't exist or modal is not open
+export const ModalPortal: React.FC<ModalPortalProps> = ({ children, isOpen }) => {
+    const [modalRoot] = useState<HTMLElement | null>(ensureModalRoot);
+
     if (!modalRoot || !isOpen) return null;
-    
+
     return createPortal(
-        <div className={styles.modalPortalInstance}>
-            {children}
-        </div>,
-        modalRoot
+        <div className={styles.modalPortalInstance}>{children}</div>,
+        modalRoot,
     );
 };
 
-export default ModalPortal; 
+export default ModalPortal;

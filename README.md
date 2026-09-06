@@ -14,6 +14,9 @@ make dev        # start the dev server (http://localhost:5173)
 make build      # typecheck + production build into dist/
 make preview    # serve the production build locally
 make typecheck  # tsc --noEmit
+make lint       # ESLint across src/
+make format     # Prettier --write .
+make audit      # npm audit for vulnerable dependencies
 make deploy     # build and publish dist/ to the gh-pages branch
 make clean      # remove dist/
 make nuke       # remove dist/ and node_modules/

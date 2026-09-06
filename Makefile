@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := help
-.PHONY: help install dev build preview typecheck deploy clean nuke
+.PHONY: help install dev build preview typecheck lint format audit deploy clean nuke
 
 help: ## Show this help
 	@awk 'BEGIN {FS = ":.*##"} /^[a-zA-Z_-]+:.*?##/ {printf "  \033[36m%-12s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
@@ -18,6 +18,15 @@ preview: ## Serve the production build locally
 
 typecheck: ## Run the TypeScript compiler with no emit
 	npm run typecheck
+
+lint: ## Run ESLint across the project
+	npm run lint
+
+format: ## Format the project with Prettier
+	npm run format
+
+audit: ## Run npm audit for vulnerable dependencies
+	npm audit
 
 deploy: ## Build and publish dist/ to the gh-pages branch
 	npm run deploy
