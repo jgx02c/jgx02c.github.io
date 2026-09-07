@@ -8,6 +8,8 @@ import fitHealthPNG from '../assets/fitness.png';
 import vaultwrapPNG from '../assets/vaultwrap.png';
 import npmrchPNG from '../assets/npm-rch.png';
 import dialogicaMainPNG from '../assets/dialogicaMain.png';
+import dialogicaAssistantPNG from '../assets/Dialogica/dialogica-assistant.png';
+import breadboardsPNG from '../assets/breadboards.png';
 
 interface ImageMap {
   [key: string]: string;
@@ -28,7 +30,9 @@ const imageMap: ImageMap = {
   '../assets/fitness.png': fitHealthPNG,
   '../assets/vaultwrap.png': vaultwrapPNG,
   '../assets/npm-rch.png': npmrchPNG,
-  '../assets/dialogicaMain.png': dialogicaMainPNG
+  '../assets/dialogicaMain.png': dialogicaMainPNG,
+  '../assets/Dialogica/dialogica-assistant.png': dialogicaAssistantPNG,
+  '../assets/breadboards.png': breadboardsPNG,
 };
 
 export const getProjectImage = (imagePath: string): string => {

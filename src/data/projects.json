@@ -1,5 +1,36 @@
 [
   {
+    "id": 8,
+    "title": "Dialogica",
+    "imageUrl": "../assets/Dialogica/dialogica-assistant.png",
+    "description": "Dialogica (Dia) is a voice-first class of legal cognition built to empower lawyers to reclaim their time while preserving legal judgment, trust, and confidentiality. As Co-Founder & CTO, I lead the technical vision and infrastructure powering Dia across secure, on-prem and cloud environments for AmLaw-tier firms.",
+    "madeWith": [],
+    "demo": true,
+    "demoLink": "https://www.dialogicaai.com",
+    "demoLabel": "Visit website",
+    "code": false,
+    "codeLink": "",
+    "live": true,
+    "liveLink": "https://app.dialogicaai.com/signup",
+    "projectType": "work",
+    "companyName": "Dialogica"
+  },
+  {
+    "id": 9,
+    "title": "Breadboards",
+    "imageUrl": "../assets/breadboards.png",
+    "description": "A Godot-based sandbox game where you build electronic circuits virtually — drop components onto a breadboard, wire them up, and watch the physics play out. A creative playground for learning circuits without the burnt fingertips.",
+    "madeWith": [],
+    "demo": false,
+    "demoLink": "",
+    "code": true,
+    "codeLink": "https://github.com/jgx02c/breadboards-godot-game",
+    "live": false,
+    "liveLink": "",
+    "projectType": "personal",
+    "companyName": ""
+  },
+  {
     "id": 1,
     "title": "SEO Web Scraper",
     "imageUrl": "../assets/scope.png",
@@ -139,4 +170,4 @@
     "projectType": "school",
     "companyName": ""
   }
-] 
+]

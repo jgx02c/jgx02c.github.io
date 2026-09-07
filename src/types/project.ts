@@ -6,6 +6,7 @@ export interface Project {
     madeWith: string[];
     demo: boolean;
     demoLink: string;
+    demoLabel?: string;
     code: boolean;
     codeLink: string;
     live: boolean;

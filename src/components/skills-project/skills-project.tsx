@@ -28,6 +28,14 @@ import goLogo from '../../assets/svg/cplusplus.svg'; // Using C++ as fallback
 import azureLogo from '../../assets/svg/azure.png';
 import redisLogo from '../../assets/svg/redis-logo-svgrepo-com.svg';
 import postgresLogo from '../../assets/svg/Postgresql_elephant.svg.png';
+import rustLogo from '../../assets/svg/rust.png';
+import tauriLogo from '../../assets/svg/tauri.svg';
+import solidjsLogo from '../../assets/svg/solidjs.svg';
+import tailwindLogo from '../../assets/svg/tailwind-css-svgrepo-com.svg';
+import digitaloceanLogo from '../../assets/svg/digitalocean.svg';
+import anthropicLogo from '../../assets/svg/anthropic.svg';
+import lancedbLogo from '../../assets/svg/lancedb.png';
+import helixdbLogo from '../../assets/svg/helixdb.png';
 
 interface Skill {
     logo: string;
@@ -38,13 +46,17 @@ const skills: Skill[] = [
     // Frontend
     { logo: reactLogo, name: 'React' },
     { logo: nextjs, name: 'Next.js' },
+    { logo: solidjsLogo, name: 'SolidJS' },
     { logo: typescriptLogo, name: 'TypeScript' },
     { logo: javascriptLogo, name: 'JavaScript' },
     { logo: htmlfiveLogo, name: 'HTML5' },
     { logo: scssLogo, name: 'SCSS' },
+    { logo: tailwindLogo, name: 'Tailwind' },
+    { logo: tauriLogo, name: 'Tauri' },
     // Backend & Databases
     { logo: nodejsLogo, name: 'Node.js' },
     { logo: python, name: 'Python' },
+    { logo: rustLogo, name: 'Rust' },
     { logo: goLogo, name: 'Go' },
     { logo: flask, name: 'Flask' },
     { logo: fastapi, name: 'FastAPI' },
@@ -53,15 +65,19 @@ const skills: Skill[] = [
     { logo: mysqlLogo, name: 'MySQL' },
     { logo: postgresLogo, name: 'PostgreSQL' },
     { logo: redisLogo, name: 'Redis' },
+    { logo: lancedbLogo, name: 'LanceDB' },
+    { logo: helixdbLogo, name: 'HelixDB' },
     // Tools & Platforms
     { logo: viteLogo, name: 'Vite' },
     { logo: awsLogo, name: 'AWS' },
     { logo: azureLogo, name: 'Azure' },
+    { logo: digitaloceanLogo, name: 'DigitalOcean' },
     { logo: dockerLogo, name: 'Docker' },
     { logo: terraformLogo, name: 'Terraform' },
     { logo: cplusplusLogo, name: 'C++' },
     // AI & ML
     { logo: openai, name: 'OpenAI' },
+    { logo: anthropicLogo, name: 'Anthropic' },
     { logo: langchain, name: 'LangChain' },
 ];
 

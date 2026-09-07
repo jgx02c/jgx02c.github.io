@@ -64,7 +64,7 @@ export const ProjectModal = ({ project, onClose, isOpen }: ProjectModalProps) =>
                         )}
                         {project.demo && project.demoLink && (
                             <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className={styles.secondary}>
-                                Watch demo
+                                {project.demoLabel ?? 'Watch demo'}
                             </a>
                         )}
                     </div>
