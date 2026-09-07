@@ -31,7 +31,7 @@ function ProjectsPage() {
             <section className={styles.section}>
                 <Reveal>
                     <h2 className={styles.sectionTitle}>GitHub activity</h2>
-                    <GitHubContribution usernames={['jgx02c', 'joshatdia']} />
+                    <GitHubContribution personal="jgx02c" work="joshatdia" cutover="2025-09-01" />
                 </Reveal>
             </section>
 
